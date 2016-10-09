@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CModel id="ChangelingSpeedBeam">
+        <Model value="Assets\Effects\Zerg\XelNagaTempleDrainBeam\XelNagaTempleDrainBeam.m3"/>
+    </CModel>
+    <CModel id="CorrosiveSpit" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\RavasaurMissile\RavasaurMissile.m3"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.200000,0.200000,0.200000"/>
+    </CModel>
+    <CModel id="CorrosiveSpitImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\RavasaurMissileImpact\RavasaurMissileImpact.m3"/>
+        <ScaleMax value="0.200000,0.200000,0.200000"/>
+        <ScaleMin value="0.200000,0.200000,0.200000"/>
+    </CModel>
+    <CModel id="HolyLight" parent="OneShotSpellFX">
+        <Model value="Assets\Abilities\Spells\Human\War3_HealTarget\War3_HealTarget_02.m3"/>
+    </CModel>
+    <CModel id="Invisible2">
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Radius value="-1.000000"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="AngelofLight" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\XelNaga_Kerrigan\XelNaga_Kerrigan.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="KerriganEpilogue03_Birth_ImpactExplosion"/>
+            <Type value="Sound"/>
+            <Time value="1.850000"/>
+            <Payload value="KerriganEpilogue03_Birth_ImpactExplosion"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="KerriganEpilogue03_Birth_Incoming"/>
+            <Type value="Sound"/>
+            <Time value="0.450000"/>
+            <Payload value="KerriganEpilogue03_Birth_Incoming"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="KerriganEpilogue03_Vox_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.100000"/>
+            <Payload value="KerriganEpilogue03_Vox_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,A,00"/>
+            <Name value="KerriganEpilogue03_Birth_ImpactExplosion"/>
+            <Type value="Sound"/>
+            <Time value="1.520000"/>
+            <Payload value="KerriganEpilogue03_Birth_ImpactExplosion"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,A,00"/>
+            <Name value="KerriganEpilogue03_Birth_Incoming"/>
+            <Type value="Sound"/>
+            <Time value="0.100000"/>
+            <Payload value="KerriganEpilogue03_Birth_Incoming"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,A,00"/>
+            <Name value="KerriganEpilogue03_Vox_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="KerriganEpilogue03_Vox_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganDeathStart"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganVoxDeathPart1"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganDeathPreExplosionStart"/>
+            <Type value="Sound"/>
+            <Time value="0.150000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganVoxDeathPart2"/>
+            <Type value="Sound"/>
+            <Time value="0.730000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="KerriganVoxDeathPart3"/>
+            <Type value="Sound"/>
+            <Time value="1.790000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.250000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="KerriganAttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.250000"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+    </CModel>
+    <CModel id="ProtossSmallUnitDeathLow2" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\ProtossUnitDeath\ProtossUnitDeath_Low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="0.400000"/>
+        <ShadowRadius value="0.400000"/>
+    </CModel>
+    <CModel id="Spellbreaker" parent="Unit">
+        <Model value="Assets\Units\Other\War3_BloodElfLieutenant\War3_BloodElfLieutenant.m3"/>
+        <EditorCategories value=""/>
+    </CModel>
+    <CModel id="TerranSmallUnitDeathLow2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath_Low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.454300"/>
+        <ShadowRadius value="0.454300"/>
+    </CModel>
+    <CModel id="TychusCommando2" parent="Unit">
+        <Model value="Assets\Units\Terran\MarineTychus\MarineTychus.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <ScaleMax value="1.150000,1.150000,1.150000"/>
+        <ScaleMin value="1.150000,1.150000,1.150000"/>
+        <SelectionRadius value="0.416500"/>
+        <ShadowRadius value="0.416500"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="TychusCommandoAttackImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponImpact\AutoTurretWeaponImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="DutchTurretAttackImpact"/>
+    </CModel>
+    <CModel id="TychusCommandoAttackLaunch2" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponLaunch\AutoTurretWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Lighting value="DutchTurretAttackLaunch"/>
+    </CModel>
+    <CModel id="TychusCommandoDeathFire2" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\MarineTychusDeathFire\MarineTychusDeathFire.m3"/>
+    </CModel>
+    <CModel id="TychusGrenadeWeapon2" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\PodMissile\PodMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
+    <CModel id="TychusPortrait2" parent="FXAPortrait" Race="Terran">
+        <Model value="Assets\Portraits\Terran\TychusPortrait\TychusPortrait.m3"/>
+        <RequiredAnims value="Assets\Portraits\Terran\TychusPortrait_RequiredAnims\TychusPortrait_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\StoryModeCharacters\Terran\SM_Marine_01_FacialAnims\SM_Marine_01_FacialAnims.m3a"/>
+        <FacialController value="LocalizedData\Facial\TychusPortrait.fxa"/>
+        <Image value="Assets\Textures\TychusPortrait_Static.dds"/>
+        <Lighting value="TychusPortrait"/>
+    </CModel>
+    <CModel id="TychusTossGrenade2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\PodMissile\PodMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
+    <CModel id="TychusTossGrenadeImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TerranLargeUnitDeath\TerranLargeUnitDeath.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="ChangelingReshapeFX" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\FungalGrowthMissileImpact\FungalGrowthMissileImpact.m3"/>
+    </CModel>
+    <CModel id="ZergSmallUnitDeathLow2" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergSmallUnitDeath\ZergSmallUnitDeath_low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+</Catalog>

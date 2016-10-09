@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CItemEffectInstant id="MajorEnergyPotion" parent="POTION">
+        <Flags index="DropOnDeath" value="1"/>
+        <Flags index="KillWhenDepleted" value="1"/>
+        <Effect value="MajorEnergyPotionModifyUnit"/>
+        <EffectCost>
+            <Charge CountMax="3" CountStart="3" CountUse="1"/>
+            <Cooldown TimeUse="5"/>
+        </EffectCost>
+    </CItemEffectInstant>
+    <CItemEffectInstant id="MinorRegenerationPotion" parent="POTION">
+        <Flags index="DropOnDeath" value="1"/>
+        <Flags index="KillWhenDepleted" value="1"/>
+        <Effect value="MinorRegenerationPotionApplyBehavior"/>
+        <EffectCost>
+            <Charge CountMax="5" CountStart="5" CountUse="1"/>
+            <Cooldown TimeUse="5"/>
+        </EffectCost>
+    </CItemEffectInstant>
+    <CItemEffectInstant id="MajorRegenerationPotion" parent="POTION">
+        <Flags index="DropOnDeath" value="1"/>
+        <Flags index="KillWhenDepleted" value="1"/>
+        <Effect value="MajorRegenerationPotionApplyBehavior"/>
+        <EffectCost>
+            <Charge CountMax="5" CountStart="5" CountUse="1"/>
+            <Cooldown TimeUse="5"/>
+        </EffectCost>
+    </CItemEffectInstant>
+    <CItemEffectInstant id="MinorEnergyPotion" parent="POTION">
+        <Flags index="DropOnDeath" value="1"/>
+        <Flags index="KillWhenDepleted" value="1"/>
+        <Effect value="MinorEnergyPotionModifyUnit"/>
+        <EffectCost>
+            <Charge CountMax="3" CountStart="3" CountUse="1"/>
+            <Cooldown TimeUse="5"/>
+        </EffectCost>
+    </CItemEffectInstant>
+    <CItem id="Overclocker">
+        <Class value="Weapon"/>
+        <EquipBehaviorArray value="Overclocker"/>
+    </CItem>
+    <CItem id="ProtectivePlating">
+        <Class value="Armor"/>
+    </CItem>
+    <CItem id="PsionicOrb">
+        <Class value="Weapon"/>
+        <EquipBehaviorArray value="PsionicOrb"/>
+    </CItem>
+    <CItem id="SpiritStaff">
+        <Face value="CommanderKaraxUnlockSOAPassiveOrbitalStrike"/>
+        <Class value="Weapon"/>
+        <CarryWeaponArray Link="SpiritStaff"/>
+    </CItem>
+    <CItem id="TemplateItem">
+        <Class value="Misc"/>
+    </CItem>
+    <CItem id="PowerAmplifier">
+        <Class value="Weapon"/>
+        <EquipBehaviorArray value="PowerAmplifier"/>
+    </CItem>
+    <CItem id="MicroReactor">
+        <Class value="Armor"/>
+        <EquipBehaviorArray value="MicroReactor"/>
+    </CItem>
+</Catalog>

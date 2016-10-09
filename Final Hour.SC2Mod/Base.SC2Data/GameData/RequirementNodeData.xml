@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirementCountAbil id="CountAbilCombatSuitCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="CombatSuit" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountAbil>
+    <CRequirementCountAbil id="CountAbilDanceofDeathCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="DanceofDeath" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountAbil>
+    <CRequirementEq id="EqCountAbilCombatSuitCompleteOnlyAtUnitSum1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountAbilCombatSuitCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilCombatSuitCompleteOnlyAtUnitSum2">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountAbilCombatSuitCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum2"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilCombatSuitCompleteOnlyAtUnitSum3">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountAbilCombatSuitCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum3"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum2">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum2"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum3">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum3"/>
+    </CRequirementEq>
+    <CRequirementSum id="Sum1">
+        <Tooltip value=""/>
+        <OperandArray value="1"/>
+    </CRequirementSum>
+    <CRequirementSum id="Sum2">
+        <Tooltip value=""/>
+        <OperandArray value="2"/>
+    </CRequirementSum>
+    <CRequirementSum id="Sum3">
+        <Tooltip value=""/>
+        <OperandArray value="3"/>
+    </CRequirementSum>
+</Catalog>

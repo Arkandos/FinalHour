@@ -1,0 +1,122 @@
+include "TriggerLibs/NativeLib"
+include "Lib47D24EE7_h"
+
+include "Lib8DAF555C_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: DataTriggers
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void lib8DAF555C_InitLibraries () {
+    libNtve_InitVariables();
+    lib47D24EE7_InitVariables();
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: DataTrigger: Init
+//--------------------------------------------------------------------------------------------------
+bool lib8DAF555C_gt_DataTriggerInit_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_8DAF555C_C75B8D4F"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib8DAF555C_gt_DataTriggerInit_Init () {
+    lib8DAF555C_gt_DataTriggerInit = TriggerCreate("lib8DAF555C_gt_DataTriggerInit_Func");
+    TriggerAddEventMapInit(lib8DAF555C_gt_DataTriggerInit);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: TinySize is Applied
+//--------------------------------------------------------------------------------------------------
+bool lib8DAF555C_gt_TinySizeisApplied_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitSetScale(EventUnit(), 50.0, 50.0, 50.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib8DAF555C_gt_TinySizeisApplied_Init () {
+    lib8DAF555C_gt_TinySizeisApplied = TriggerCreate("lib8DAF555C_gt_TinySizeisApplied_Func");
+    TriggerAddEventUnitBehaviorChange(lib8DAF555C_gt_TinySizeisApplied, null, "TinySize50", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: SmallSize is Applied
+//--------------------------------------------------------------------------------------------------
+bool lib8DAF555C_gt_SmallSizeisApplied_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitSetScale(EventUnit(), 75.0, 75.0, 75.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib8DAF555C_gt_SmallSizeisApplied_Init () {
+    lib8DAF555C_gt_SmallSizeisApplied = TriggerCreate("lib8DAF555C_gt_SmallSizeisApplied_Func");
+    TriggerAddEventUnitBehaviorChange(lib8DAF555C_gt_SmallSizeisApplied, null, "SmallSize75", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Changeling: Reshape
+//--------------------------------------------------------------------------------------------------
+bool lib8DAF555C_gt_ChangelingReshape_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_8DAF555C_3CACB8E0"));
+    UnitGroupLoopBegin(UnitGroupSearch(null, c_playerAny, UnitGetPosition(EventUnit()), 3.0, UnitFilter(0, 0, (1 << c_targetFilterSelf) | (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterMissile) | (1 << c_targetFilterBuried), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterUnstoppable - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitDamage(EventUnit(), "DummySpellDamage", UnitGroupLoopCurrent(), (UnitGetPropertyFixed(EventUnit(), c_unitPropLife, c_unitPropCurrent) * 0.3));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, FixedToText(UnitGetPropertyFixed(EventUnit(), c_unitPropLife, c_unitPropCurrent), c_fixedPrecisionAny));
+    }
+    UnitGroupLoopEnd();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib8DAF555C_gt_ChangelingReshape_Init () {
+    lib8DAF555C_gt_ChangelingReshape = TriggerCreate("lib8DAF555C_gt_ChangelingReshape_Func");
+    TriggerAddEventUnitAbility(lib8DAF555C_gt_ChangelingReshape, null, AbilityCommand("Reshape", 0), c_abilEffectStageCast, false);
+}
+
+void lib8DAF555C_InitTriggers () {
+    lib8DAF555C_gt_DataTriggerInit_Init();
+    lib8DAF555C_gt_TinySizeisApplied_Init();
+    lib8DAF555C_gt_SmallSizeisApplied_Init();
+    lib8DAF555C_gt_ChangelingReshape_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool lib8DAF555C_InitLib_completed = false;
+
+void lib8DAF555C_InitLib () {
+    if (lib8DAF555C_InitLib_completed) {
+        return;
+    }
+
+    lib8DAF555C_InitLib_completed = true;
+
+    lib8DAF555C_InitLibraries();
+    lib8DAF555C_InitTriggers();
+}
+
+include "Lib47D24EE7"
+

@@ -1,0 +1,212 @@
+include "TriggerLibs/NativeLib"
+
+include "Lib47D24EE7_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Utilities
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void lib47D24EE7_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool lib47D24EE7_InitVariables_completed = false;
+
+void lib47D24EE7_InitVariables () {
+    if (lib47D24EE7_InitVariables_completed) {
+        return;
+    }
+
+    lib47D24EE7_InitVariables_completed = true;
+
+}
+
+// Functions
+void lib47D24EE7_gf_UtilitiesInitCreateRevealers () {
+    // Implementation
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+        VisRevealerCreate(PlayerGroupLoopCurrent(), RegionEntireMap());
+    }
+    PlayerGroupLoopEnd();
+}
+
+void lib47D24EE7_gf_UtilitiesInitDisablePlayerOptions () {
+    // Implementation
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+        PlayerOptionOverride(PlayerGroupLoopCurrent(), "selectuncontrolable", "1");
+        PlayerOptionOverride(PlayerGroupLoopCurrent(), "simplecommandcard", "0");
+        PlayerOptionOverride(PlayerGroupLoopCurrent(), "displayunitstatus", "1");
+    }
+    PlayerGroupLoopEnd();
+}
+
+void lib47D24EE7_gf_UtilitiesDebugGodMode (unit lp_unit) {
+    // Implementation
+    UnitSetPropertyFixed(lp_unit, c_unitPropLife, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropLifeMax, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropLifeRegen, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropEnergy, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropEnergyMax, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropEnergyRegen, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropShieldsMax, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropShieldsRegen, 9999.0);
+    UnitSetPropertyFixed(lp_unit, c_unitPropLevel, 9999.0);
+}
+
+void lib47D24EE7_gf_UtilitiesDebugDebugMessage (text lp_message) {
+    // Implementation
+    if ((lib47D24EE7_gv_utilitiesDebugDebugModeOn == true)) {
+        if ((lib47D24EE7_gv_utilitiesDebugDebugChat == true)) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, lp_message);
+        }
+
+        if ((lib47D24EE7_gv_utilitiesDebugDebugWindow == true)) {
+            TriggerDebugOutput(1, lp_message, true);
+        }
+        else {
+            TriggerDebugOutput(1, lp_message, false);
+        }
+    }
+
+}
+
+bool lib47D24EE7_gf_UtilitiesDebugGetDebugModeOn () {
+    // Implementation
+    return lib47D24EE7_gv_utilitiesDebugDebugModeOn;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Beacon Test
+//--------------------------------------------------------------------------------------------------
+bool lib47D24EE7_gt_BeaconTest_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_47D24EE7_99BC1F4B"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib47D24EE7_gt_BeaconTest_Init () {
+    lib47D24EE7_gt_BeaconTest = TriggerCreate("lib47D24EE7_gt_BeaconTest_Func");
+    TriggerAddEventUnitBehaviorChange(lib47D24EE7_gt_BeaconTest, null, "BeaconInvulnerable", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Beacon Takes Dmg
+//--------------------------------------------------------------------------------------------------
+bool lib47D24EE7_gt_BeaconTakesDmg_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib47D24EE7_gf_UtilitiesDebugDebugMessage(UnitGetName(EventUnit()));
+    lib47D24EE7_gf_UtilitiesDebugDebugMessage(FixedToText(EventUnitDamageAmount(), c_fixedPrecisionAny));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib47D24EE7_gt_BeaconTakesDmg_Init () {
+    lib47D24EE7_gt_BeaconTakesDmg = TriggerCreate("lib47D24EE7_gt_BeaconTakesDmg_Func");
+    TriggerAddEventUnitDamaged(lib47D24EE7_gt_BeaconTakesDmg, null, c_unitDamageTypeAny, c_unitDamageEither, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init
+//--------------------------------------------------------------------------------------------------
+bool lib47D24EE7_gt_Init_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugSetTypeFile(1, "TriggerDebug1.txt");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib47D24EE7_gt_Init_Init () {
+    lib47D24EE7_gt_Init = TriggerCreate("lib47D24EE7_gt_Init_Func");
+    TriggerAddEventMapInit(lib47D24EE7_gt_Init);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DebugCommands
+//--------------------------------------------------------------------------------------------------
+bool lib47D24EE7_gt_DebugCommands_Func (bool testConds, bool runActions) {
+    string auto83E481B8_val;
+
+    // Variable Declarations
+    playergroup lv_playerGroup;
+
+    // Variable Initialization
+    lv_playerGroup = PlayerGroupEmpty();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_playerGroup = PlayerGroupSingle(EventPlayer());
+    auto83E481B8_val = EventChatMessage(false);
+    if (auto83E481B8_val == "-debug") {
+        lib47D24EE7_gv_utilitiesDebugDebugModeOn = !(lib47D24EE7_gv_utilitiesDebugDebugModeOn);
+        UIDisplayMessage(lv_playerGroup, c_messageAreaSubtitle, (StringExternal("Param/Value/lib_47D24EE7_87C550BD") + libNtve_gf_ConvertBooleanToText(lib47D24EE7_gv_utilitiesDebugDebugModeOn)));
+    }
+    else if (auto83E481B8_val == "-debug chat") {
+        lib47D24EE7_gv_utilitiesDebugDebugChat = !(lib47D24EE7_gv_utilitiesDebugDebugChat);
+        UIDisplayMessage(lv_playerGroup, c_messageAreaSubtitle, (StringExternal("Param/Value/lib_47D24EE7_98CD89C1") + libNtve_gf_ConvertBooleanToText(lib47D24EE7_gv_utilitiesDebugDebugChat)));
+    }
+    else if (auto83E481B8_val == "-debug window") {
+        lib47D24EE7_gv_utilitiesDebugDebugWindow = !(lib47D24EE7_gv_utilitiesDebugDebugWindow);
+        UIDisplayMessage(lv_playerGroup, c_messageAreaSubtitle, (StringExternal("Param/Value/lib_47D24EE7_22716FD8") + libNtve_gf_ConvertBooleanToText(lib47D24EE7_gv_utilitiesDebugDebugWindow)));
+    }
+    else if (auto83E481B8_val == "-god") {
+        UnitGroupLoopBegin(UnitGroupSelected(EventPlayer()));
+        for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+            lib47D24EE7_gf_UtilitiesDebugGodMode(UnitGroupLoopCurrent());
+        }
+        UnitGroupLoopEnd();
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib47D24EE7_gt_DebugCommands_Init () {
+    lib47D24EE7_gt_DebugCommands = TriggerCreate("lib47D24EE7_gt_DebugCommands_Func");
+    TriggerAddEventChatMessage(lib47D24EE7_gt_DebugCommands, c_playerAny, "-", false);
+}
+
+void lib47D24EE7_InitTriggers () {
+    lib47D24EE7_gt_BeaconTest_Init();
+    lib47D24EE7_gt_BeaconTakesDmg_Init();
+    lib47D24EE7_gt_Init_Init();
+    lib47D24EE7_gt_DebugCommands_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool lib47D24EE7_InitLib_completed = false;
+
+void lib47D24EE7_InitLib () {
+    if (lib47D24EE7_InitLib_completed) {
+        return;
+    }
+
+    lib47D24EE7_InitLib_completed = true;
+
+    lib47D24EE7_InitLibraries();
+    lib47D24EE7_InitVariables();
+    lib47D24EE7_InitTriggers();
+}
+

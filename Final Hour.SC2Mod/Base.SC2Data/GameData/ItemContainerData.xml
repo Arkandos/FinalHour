@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CItemContainer id="ShopSlot"/>
+    <CItemContainer id="WeaponContainer">
+        <Slots>
+            <EmptyFace value="10SlotBag"/>
+            <Equip value="1"/>
+            <Row value="0"/>
+            <Column value="0"/>
+            <Classes value="Weapon"/>
+        </Slots>
+        <Slots>
+            <EmptyFace value="10SlotBag"/>
+            <Equip value="1"/>
+            <Row value="0"/>
+            <Column value="1"/>
+            <Classes value="Armor"/>
+        </Slots>
+        <Slots>
+            <EmptyFace value="10SlotBag"/>
+            <Equip value="1"/>
+            <Row value="0"/>
+            <Column value="2"/>
+            <Classes value="Trinket"/>
+        </Slots>
+    </CItemContainer>
+    <CItemContainer id="GeneralBag">
+        <Slots EmptyFace="10SlotBag" Row="0" Column="0">
+            <Classes value="Armor"/>
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Potion"/>
+            <Classes value="Trinket"/>
+        </Slots>
+        <Slots EmptyFace="10SlotBag" Row="0" Column="1">
+            <Classes value="Armor"/>
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Potion"/>
+            <Classes value="Trinket"/>
+        </Slots>
+        <Slots EmptyFace="10SlotBag" Row="0" Column="2">
+            <Classes value="Armor"/>
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Potion"/>
+            <Classes value="Trinket"/>
+        </Slots>
+        <Slots EmptyFace="10SlotBag" Row="0" Column="3">
+            <Classes value="Armor"/>
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Potion"/>
+            <Classes value="Trinket"/>
+        </Slots>
+        <Slots EmptyFace="10SlotBag" Row="0" Column="4">
+            <Classes value="Armor"/>
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Potion"/>
+            <Classes value="Trinket"/>
+        </Slots>
+    </CItemContainer>
+</Catalog>

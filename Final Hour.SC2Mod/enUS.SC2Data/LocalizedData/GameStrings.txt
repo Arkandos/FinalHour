@@ -1,0 +1,521 @@
+﻿Abil/Name/AngelofLightLearnAbilities=Angel of Light - Learn Abilities
+Abil/Name/AttributeIncrease=AttributeIncrease
+Abil/Name/CelestialRadiance=Celestial Radiance
+Abil/Name/ChangelingLearnAbilities=Changeling - Learn Abilities
+Abil/Name/Charge2=Charge
+Abil/Name/ChargeSelf=Charge Self
+Abil/Name/CombatSuit=Combat Suit
+Abil/Name/DanceofDeath=Dance of Death
+Abil/Name/DivineFire=Divine Fire
+Abil/Name/FearsomeRoar=Fearsome Roar
+Abil/Name/ForgePawn=Forge Pawn
+Abil/Name/ForgeShop=Forge Shop
+Abil/Name/Hailoflead=Hail of lead
+Abil/Name/Hailoflead/Learn=Learn Hail of Lead Level 1
+Abil/Name/Hailoflead/Learn2=Learn Hail of Lead Level 2
+Abil/Name/Hailoflead/Learn3=Learn Hail of Lead Level 3
+Abil/Name/HighPriestFuryoftheTemplar=High Priest - Fury of the Templar
+Abil/Name/HighPriestHeal=High Priest - Heal
+Abil/Name/IceBolt=Ice Bolt
+Abil/Name/KarassInventory=Karass Inventory
+Abil/Name/KarassLearnAbilities=Karass - Learn Abilities
+Abil/Name/LearnAbilitiesTychus=Learn Abilities (Tychus)
+Abil/Name/LightningStorm=Lightning Storm
+Abil/Name/MorphEnergy=Morph Energy
+Abil/Name/MorphLife=Morph Life
+Abil/Name/Multiply=Multiply
+Abil/Name/PhaseShift2=Phase Shift
+Abil/Name/PouncerPounce=Pouncer - Pounce
+Abil/Name/Reshape=Reshape
+Abil/Name/ShopInteract=Shop Interact
+Abil/Name/ShopInventory=Shop Inventory
+Abil/Name/SpeedAbsorbtion=Speed Absorbtion
+Abil/Name/TestyMissileTest=Testy - Missile Test
+Abil/Name/TossGrenade2=Toss Grenade 
+Abil/Name/TossShredderGrenade=Toss Shredder Grenade
+Abil/Name/TouchedbytheGodess=Touched by the Godess
+Abil/Name/TychusLearnActiveSkills=Tychus - Learn Active Skills
+Abil/Name/TychusLearnTossGrenade=Tychus - Learn Toss Grenade
+Abil/Name/TychusSecretStash=Tychus Secret Stash
+Abil/Name/attack2=Attack Copy
+Abil/Name/move2=Move Copy
+Abil/Name/stop2=Stop Copy
+Abil/TargetMessage/attack2=<IMG path="Assets\Textures\tutorialmouseleftbuttondown.dds" height="52" width="32" alignment="absolutemiddle"/>   To Attack<n/><IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" height="52" width="32" alignment="absolutemiddle"/>   Cancel
+Attribute001/Name=Difficulty
+Attribute001/Value001/Name=Normal
+Attribute001/Value002/Desc=No waittimes inbetween waves.
+Attribute001/Value002/Name=Hard
+Behavior/Name/Agility=Agility
+Behavior/Name/AgilityBuff=Agility Buff
+Behavior/Name/BasicVeterancy=Basic Veterancy
+Behavior/Name/BeaconDamagePrevention=Beacon Damage Prevention
+Behavior/Name/BeaconFriendly=Beacon - Friendly
+Behavior/Name/BeaconHostile=Beacon - Hostile
+Behavior/Name/BeaconInvulnerable=Beacon Invulnerable
+Behavior/Name/BruteCrashingChargeAbort=Brute Crashing Charge Abort 
+Behavior/Name/CelestialFlames=Celestial Flames
+Behavior/Name/CelestialFlames2=Celestial Flames 2
+Behavior/Name/CelestialRegeneration=Celestial Regeneration
+Behavior/Name/CelestialRegeneration2=Celestial Regeneration 2
+Behavior/Name/ChangelingIllusion=Changeling - Illusion
+Behavior/Name/Charge=Charge
+Behavior/Name/ChargeSpeed=Charge Speed
+Behavior/Name/CombatSuitLevel1=Combat Suit Level 1
+Behavior/Name/CombatSuitLevel2=Combat Suit Level 2
+Behavior/Name/CombatSuitLevel3=Combat Suit Level 3
+Behavior/Name/CorrosiveSpit=Corrosive Spit
+Behavior/Name/DamageIncreasedby100=Damage Increased by 100%
+Behavior/Name/DamageIncreasedby50=Damage Increased by 50%
+Behavior/Name/DamageReducedto25=Damage Reduced to 25%
+Behavior/Name/DamageReducedto50=Damage Reduced to 50%
+Behavior/Name/DanceofDeath1=Dance of Death 1
+Behavior/Name/DifficultyModifier1P=Difficulty Modifier (1P)
+Behavior/Name/DummyBuff=Dummy Buff
+Behavior/Name/Endurance=Endurance
+Behavior/Name/EnduranceBuff=Endurance Buff
+Behavior/Name/FearsomeRoar=Fearsome Roar
+Behavior/Name/FuryoftheTemplar=Fury of the Templar
+Behavior/Name/HPBuff=HP Buff
+Behavior/Name/HPBuff2=HP Buff 2
+Behavior/Name/HPBuff3=HP Buff 3
+Behavior/Name/HPHalved=HP Halved 
+Behavior/Name/HPRegen=HP Regen
+Behavior/Name/HPRegen2=HP Regen 2
+Behavior/Name/HPRegen3=HP Regen 3
+Behavior/Name/HPdownto25=HP down to 25%
+Behavior/Name/HailofLeadLevel1=Hail of Lead Level 1
+Behavior/Name/HailofLeadLevel2=Hail of Lead Level 2
+Behavior/Name/HailofLeadLevel3=Hail of Lead Level 3
+Behavior/Name/HeroDeathPrevention2=Hero Death Prevention
+Behavior/Name/HeroIncapacitation=Hero Incapacitation
+Behavior/Name/IceBoltLevel1=Ice Bolt Level 1
+Behavior/Name/IceBoltLevel2=Ice Bolt Level 2
+Behavior/Name/IceBoltLevel3=Ice Bolt Level 3
+Behavior/Name/IncreasingFury=Increasing Fury
+Behavior/Name/Intelligence=Intelligence
+Behavior/Name/IntelligenceBuff=Intelligence Buff
+Behavior/Name/Invulnerability=Invulnerability
+Behavior/Name/KraithCrashingChargeKnockback2=Charge Knockback Brute
+Behavior/Name/Levelup=Level up
+Behavior/Name/LightningStorm=Lightning Storm
+Behavior/Name/MajorRegenerationPotion=Major Regeneration Potion
+Behavior/Name/MinorRegenerationPotion=Minor Regeneration Potion
+Behavior/Name/MorphEnergy=Morph Energy
+Behavior/Name/MorphLife=Morph Life
+Behavior/Name/PhaseShiftLevel1=Phase Shift Level 1
+Behavior/Name/PhaseShiftLevel2=Phase Shift Level 2
+Behavior/Name/PhaseShiftLevel3=Phase Shift Level 3
+Behavior/Name/PouncerPounceKnockback=Pouncer - Pounce (Knockback)
+Behavior/Name/ReshapeHealing=Reshape Healing
+Behavior/Name/Shield1=Shield 1
+Behavior/Name/Shield2=Shield 2
+Behavior/Name/Shield3=Shield 3
+Behavior/Name/ShieldRegenBuff=Shield Regen Buff
+Behavior/Name/ShieldRegenBuff2=Shield Regen Buff 2
+Behavior/Name/ShieldRegenBuff3=Shield Regen Buff 3
+Behavior/Name/SlowBuff1=Slow Buff 1
+Behavior/Name/SlowBuff2=Slow Buff 2
+Behavior/Name/SmallSize75=Small Size (75%)
+Behavior/Name/SpeedAbsorbed=Speed Absorbed
+Behavior/Name/SpeedAbsorbed2=Speed Absorbed
+Behavior/Name/SpeedBuff=Speed Buff
+Behavior/Name/SpeedBuff2=Speed Buff 2
+Behavior/Name/SpellImmunity=Spell Immunity
+Behavior/Name/Strength=Strength
+Behavior/Name/StrengthBuff=Strength Buff
+Behavior/Name/Stun=Stun
+Behavior/Name/TestAttribute2=Test Attribute
+Behavior/Name/TinySize50=Tiny Size (50%)
+Behavior/Name/TouchedbytheGodess1=Touched by the Godess 1
+Behavior/Name/TouchedbytheGodess2=Touched by the Godess 2
+Behavior/Name/TouchedbytheGodess3=Touched by the Godess 3
+Behavior/Name/TychusSecretStashLevel1=Tychus Secret Stash Level 1
+Behavior/Name/TychusSecretStashLevel2=Tychus Secret Stash Level 2
+Behavior/Name/TychusSecretStashLevel3=Tychus Secret Stash Level 3
+Behavior/Name/Willpower=Willpower
+Behavior/Name/WillpowerBuff=Willpower Buff
+Behavior/Tooltip/Agility=Each point in Agility gives <c val="FF0000"><d ref="Behavior,Agility,Modification.AttackSpeedMultiplier * 100 - 100"/>%</c> <c val="80FF80">AttackSpeed</c> and <c val="FF0000"><d ref="Behavior,Agility,Modification.MoveSpeedMultiplier* 100 - 100"/>%</c> <c val="80FF80">MovementSpeed</c>
+Behavior/Tooltip/CelestialFlames=Burning
+Behavior/Tooltip/CelestialFlames2=Burning
+Behavior/Tooltip/CelestialRegeneration=Regenerating health
+Behavior/Tooltip/CelestialRegeneration2=Regenerating health
+Behavior/Tooltip/Charge=Moving at <c val="00FFFF"><d ref="Behavior,Charge,Modification.MoveSpeedMultiplier * 100"/>% Movementspeed</c>
+Behavior/Tooltip/Endurance=Each point of endurance gives <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalMaxArray[Life]"/></c> <c val="80FF80">maxHP</c> and <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalRegenArray[Life]"precision="2"/></c> <c val="80FF80">HP</c>  regen.<n/><n/>Currently gives a total of  <c val="D33D2C"> <d ref="10Behavior,Endurance,Modification.VitalMaxFractionArray[Life]"/></c><c val="80FF80"> HP</c> and <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalRegenArray[Life]" precision="2"/> </c> <c val="80FF80">HP</c> regen.
+Behavior/Tooltip/FearsomeRoar=Damage reduced by <d ref="Behavior,FearsomeRoar,Modification.DamageDealtFraction[Melee] * (-1) * 100" precision="4"/>% and  movementspeed increased by <d ref="Behavior,FearsomeRoar,Modification.MoveSpeedMultiplier * 100 - 100" precision="4"/>%
+Behavior/Tooltip/FuryoftheTemplar=Receiving <c val="00FFFF"><d ref="Behavior,FuryoftheTemplar,Modification.AttackSpeedMultiplier -1 * 100"/>% Attackspeed</c> from a High Priest
+Behavior/Tooltip/Intelligence=Each point in Intelligence gives <c val="FF0000"><d ref="Behavior,Intelligence,Modification.DamageDealtFraction[Spell] * 100"/>%</c> <c val="80FF80">SpellDamage</c>
+Behavior/Tooltip/MajorRegenerationPotion=Regenerating <c val="00FF80"><d ref="Behavior,MajorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MajorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MajorRegenerationPotion,Duration"/> seconds
+Behavior/Tooltip/MinorRegenerationPotion=Regenerating <c val="00FF80"><d ref="Behavior,MinorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MinorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MinorRegenerationPotion,Duration"/> seconds
+Behavior/Tooltip/Strength=Each point in Strength gives <c val="FF0000"><d ref="Behavior,Strength,Modification.DamageDealtUnscaled[Ranged]"/></c> <c val="80FF80">Ranged</c> damage and <c val="FF0000"><d ref="Behavior,Strength,Modification.DamageDealtUnscaled[Melee]" precision="1"/></c> <c val="80FF80">Melee</c> damage.
+Behavior/Tooltip/TouchedbytheGodess1=Regenerates <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but loses <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.
+Behavior/Tooltip/TouchedbytheGodess2=Regenerates <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but loses <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.
+Behavior/Tooltip/TouchedbytheGodess3=Regenerates <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but loses <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.
+Behavior/Tooltip/Willpower=Each point in Willpower gives <c val="FF0000"><d ref="Behavior,Willpower,Modification.VitalMaxArray[Energy]"/></c> <c val="80FF80">Max Energy</c> and <c val="FF0000"><d ref="Behavior,Willpower,Modification.VitalRegenArray[Energy] " precision="1"/></c><c val="80FF80">Energy</c> Regen
+Button/Name/AbsorbSpeed=Absorb Speed
+Button/Name/Agility=Agility
+Button/Name/Attack2=Attack Copy
+Button/Name/Cancel2=Cancel Copy
+Button/Name/CancelMorphEnergy=Cancel Morph Energy
+Button/Name/CancelMorphLife=Cancel Morph Life
+Button/Name/CancelTouchedbytheGodess=Cancel Touched by the Godess
+Button/Name/CelestialRadiance=Celestial Radiance
+Button/Name/Charge2=Charge
+Button/Name/ChargeSelf=Charge
+Button/Name/DanceofDeath=Dance of Death
+Button/Name/DivineFire=Divine Fire
+Button/Name/Endurance=Endurance
+Button/Name/FearsomeRoar=Fearsome Roar
+Button/Name/Fireball=Fireball
+Button/Name/FuryoftheTemplar=Fury of the Templar
+Button/Name/HailofLeadLearn=Learn Hail of Lead Level 1
+Button/Name/Hailoflead=Hail of lead
+Button/Name/HighPriestHeal=Heal
+Button/Name/IceBoltLevel1=Ice Bolt Level 1
+Button/Name/Intelligence=Intelligence
+Button/Name/LearnIceBoltLevel1=Learn Ice Bolt Level 1
+Button/Name/LearnMorphLife=Learn Morph Life
+Button/Name/LearnPhaseShiftLevel1=Learn Phase Shift Level 1
+Button/Name/LearnTossGrenade=Learn Toss Grenade
+Button/Name/LearnTouchedbytheGodessLevel2=Learn Touched by the Godess Level 2
+Button/Name/LearnTouchedbytheGodessLevel3=Learn Touched by the Godess Level 3
+Button/Name/LevelUp=Level Up
+Button/Name/LevelUpActiveSkills=Level Up Active Skills
+Button/Name/LevelUpAttributes=Level Up Attributes
+Button/Name/LevelUpPassiveSkills=Level Up Passive Skills
+Button/Name/LightningStorm=Lightning Storm
+Button/Name/MajorEnergyPotion=Major Energy Potion
+Button/Name/MajorRegenerationPotion=Major Regeneration Potion
+Button/Name/MicroReactor=Micro Reactor
+Button/Name/MinorEnergyPotion=Minor Energy Potion
+Button/Name/MinorRegenerationPotion=Minor Regeneration Potion
+Button/Name/MissilleTest=Missille Test
+Button/Name/MorphEnergy=Morph Energy
+Button/Name/MorphLife=Morph Life
+Button/Name/Move2=Move Copy
+Button/Name/MoveHoldPosition2=Hold Position Copy
+Button/Name/MovePatrol2=Patrol Copy
+Button/Name/Multiply=Multiply
+Button/Name/Overclocker=Overclocker
+Button/Name/PhaseShift2=Phase Shift
+Button/Name/PouncerPounce=Pounce
+Button/Name/PowerAmplifier=Power Amplifier
+Button/Name/PoweredCombatSuitLevel1=Powered Combat Suit Level 1
+Button/Name/PoweredCombatSuitLevel1/Learn2=Learn Powered Combat Suit Level 2
+Button/Name/PoweredCombatSuitLevel1/Learn3=Learn Powered Combat Suit Level 3
+Button/Name/PoweredCombatSuitLevel1Learn=Learn Powered Combat Suit Level 1 
+Button/Name/PoweredCombatSuitLevel2=Powered Combat Suit Level 2
+Button/Name/PoweredCombatSuitLevel3=Powered Combat Suit Level 3
+Button/Name/ProtectivePlating=Protective Plating
+Button/Name/PsionicOrb=Psionic Orb
+Button/Name/PurchaseSpiritStaff=Purchase Spirit Staff
+Button/Name/Reshape=Reshape
+Button/Name/Stop2=Stop Copy
+Button/Name/Strength=Strength
+Button/Name/TemplateItem=Template Item
+Button/Name/Test=Test
+Button/Name/TossShredderGrenade=Toss Shredder Grenade
+Button/Name/TossShredderGrenadeLearn=Learn Toss Shredder Grenade Level 1
+Button/Name/TouchedbytheGodessLevel1=Touched by the Godess Level 1
+Button/Name/TurnOffHailofLead=Turn Off Hail of Lead 
+Button/Name/TurnOnHailofLead=Turn On Hail of Lead
+Button/Name/TychusTychusSecretStash=Tychus - Tychus Secret Stash
+Button/Name/TychusTychusSecretStash/Learn1=Learn Tychus Secret Stash
+Button/Name/TychusTychusSecretStashLearn=Learn Tychus Secret Stash Level 1
+Button/Name/TychusTychusSecretStashLearn2=Tychus - Tychus Secret Stash Learn
+Button/Name/Willpower=Willpower
+Button/Tooltip/AbsorbSpeed=Steals <d ref="Behavior,SpeedAbsorbed2,Modification.MoveSpeedBonus" precision="2"/> <c val="22DD39">movement speed</c> / second from the target and adds it to yourself.<n/>Steals every <d ref="Effect,ChangelingSpeedAbsorbtionPersistent,PeriodicPeriodArray[0]" precision="1"/>s for up to <d ref="Effect,ChangelingSpeedAbsorbtionPersistent,PeriodCount * Effect,ChangelingSpeedAbsorbtionPersistent,PeriodicPeriodArray[0]" precision="1"/>s for a maximum of <d ref="Effect,ChangelingSpeedAbsorbtionPersistent,PeriodCount * Behavior,SpeedAbsorbed2,Modification.MoveSpeedBonus" precision="1"/> <c val="22DD39">movement speed.<n/></c><n/><c val="FFFF00">Channeled</c>
+Button/Tooltip/Agility=Increase Agility by 1. Agility increases <c val="80FF80">Attackspeed</c> and <c val="80FF80">Movementspeed</c>
+Button/Tooltip/Attack2=Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.
+Button/Tooltip/Cancel2=Drops the current order without performing it, and allows you to select a different order.
+Button/Tooltip/CancelMorphEnergy=Cancels the current morph
+Button/Tooltip/CancelMorphLife=Drops the current order without performing it, and allows you to select a different order.
+Button/Tooltip/CancelTouchedbytheGodess=Cancels the aura.<n/><n/><c val="FF8000">[Currently On]</c>
+Button/Tooltip/CelestialRadiance=The Angel blazes with glory, restoring health to allies and damaging enemies.<n/><n/>Restores <c val="80FF80"><d ref="Behavior,CelestialRegeneration,Modification.VitalRegenArray[Life]"/> Health</c> / second<n/>Deals <c val="FF0000"><d ref="Effect,CelestialRadianceDoT,Amount * (Behavior,CelestialFlames,Duration / Behavior,CelestialFlames,Period)"/> Damage</c> / second<n/><n/><d ref="Effect,CelestialRadianceCreatePersistent,PeriodCount * Effect,CelestialRadianceCreatePersistent,PeriodicPeriodArray[0]"/> seconds duration
+Button/Tooltip/CelestialRadiance3=The Angel blazes with glory, restoring health to allies and damaging enemies.<n/><n/>Restores <c val="80FF80"><d ref="Behavior,CelestialRegeneration3,Modification.VitalRegenArray[Life]"/> Health</c> / second<n/>Deals <c val="FF0000"><d ref="Effect,CelestialRadianceDoT3,Amount * (Behavior,CelestialFlames,Duration / Behavior,CelestialFlames,Period)"/> Damage</c> / second<n/><n/><d ref="Effect,CelestialRadianceCreatePersisten3,PeriodCount * Effect,CelestialRadianceCreatePersistent3,PeriodicPeriodArray[0]"/> seconds duration
+Button/Tooltip/ChargeSelf=Charge at an Enemy
+Button/Tooltip/DanceofDeath1=The closer the Angel gets to death, the faster she moves.<n/><n/>For every <c val="FF0000">10%</c> of missing <c val="FF0000">Health</c>, she gains <c val="00FFFF"><d ref="Behavior,DanceofDeath1,Modification.MoveSpeedMultiplier - 1 * 100" precision="3"/>% Movementspeed</c>.<n/><n/><n/><c val="FF8000">Passive</c>
+Button/Tooltip/DivineFire=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage1,Amount"/> Damage</c> each.
+Button/Tooltip/DivineFire2=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage2,Amount"/> Damage</c> each.
+Button/Tooltip/DivineFire3=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage3,Amount"/> Damage</c> each.
+Button/Tooltip/Endurance=Increase Endurance by 1. Endurance increases max <c val="80FF80">HP</c> and <c val="80FF80">HP</c> regen
+Button/Tooltip/HailofLeadLearn=Tychus attacks more furiously with <c val="80FF00"><d ref="Behavior,HailofLeadLevel1,Modification.AttackSpeedMultiplier * 100 - 100"/>%</c> higher attackspeed, but moves <c val="FF0000"><d ref="Behavior,HailofLeadLevel1,Modification.MoveSpeedMultiplier * 100 - 100 * (-1)"/>%</c> slower.<n/><n/>Drains energy / second active.
+Button/Tooltip/Hailoflead=Tychus attacks more furiously with <c val="80FF00">25%</c> higher attackspeed, but moves <c val="FF0000">50%</c> slower.<n/><n/>Drains energy / second active.
+Button/Tooltip/HighPriestHeal=Restores <d ref="Effect,HighPriestHealModifyUnit,VitalArray[Life].Change"/> Health to target unit.
+Button/Tooltip/IceBoltLevel1=Launches a bolt of ice that slows <c val="FA3605">movementspeed</c> by <c val="FA3605"><d ref="Behavior,IceBoltLevel1,Modification.MoveSpeedMultiplier * 100 - 100 * (-1)" precision="2"/>%</c> for <d ref="Behavior,IceBoltLevel1,Duration" precision="2"/>s.<n/><n/>Deals <c val="FA3605"><d ref="Effect,IceBoltDamageLevel1,Amount"/></c> damage directly and <c val="FA3605"><d ref="Effect,IceBoltDamageRecurringLevel1,Amount"/></c> damage every second for <d ref="Behavior,IceBoltLevel1,Duration" precision="2"/>s.
+Button/Tooltip/IceBoltLevel1/Learn2=Learn Icebolt Level 2
+Button/Tooltip/IceBoltLevel1/Learn3=Learn Icebolt Level 3
+Button/Tooltip/IceBoltLevel2=Launches a bolt of ice that slows <c val="FA3605">movementspeed</c> by <c val="FA3605"><d ref="Behavior,IceBoltLevel2,Modification.MoveSpeedMultiplier * 100 - 100 * (-1)" precision="2"/>%</c> for <d ref="Behavior,IceBoltLevel2,Duration" precision="2"/>s.<n/><n/>Deals <c val="FA3605"><d ref="Effect,IceBoltDamageLevel2,Amount"/></c> damage directly and <c val="FA3605"><d ref="Effect,IceBoltDamageRecurringLevel2,Amount"/></c> damage every second for <d ref="Behavior,IceBoltLevel2,Duration" precision="2"/>s.
+Button/Tooltip/IceBoltLevel3=Launches a bolt of ice that slows <c val="FA3605">movementspeed</c> by <c val="FA3605"><d ref="Behavior,IceBoltLevel3,Modification.MoveSpeedMultiplier * 100 - 100 * (-1)" precision="2"/>%</c> for <d ref="Behavior,IceBoltLevel3,Duration" precision="2"/>s.<n/><n/>Deals <c val="FA3605"><d ref="Effect,IceBoltDamageLevel3,Amount"/></c> damage directly and <c val="FA3605"><d ref="Effect,IceBoltDamageRecurringLevel3,Amount"/></c> damage every second for <d ref="Behavior,IceBoltLevel3,Duration" precision="2"/>s.
+Button/Tooltip/Intelligence=Increase Intelligence by 1. Intelligence increases <c val="80FF80">Spell</c> damage
+Button/Tooltip/Karass2=Legendary wielder of psionic energies.<n/><n/><c val="ffff8a">Can attack ground and air units.</c><n/>
+Button/Tooltip/LearnIceBoltLevel1=Learn Ice Bolt Level 1
+Button/Tooltip/LearnMorphLife=Changeling sacrifices its own energy to gain life.<n/><n/>Conversion: <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Energy] * (-1)"/> <c val="07E6F8">energy</c> to <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Life]"/> <c val="FA3605">life</c> per second<n/><n/>(This effect will automatically stop if Changelings <c val="FA3605">life</c> reaches maximum, or its <c val="07E6F8">energy</c> reaches 1)<n/><n/><c val="FFFF00">Toggle</c><n/><n/>Leveling up this ability also levels up "Morph Energy"
+Button/Tooltip/LearnTossGrenade=Deals <c val="8080FF"><d ref="Effect,BonesTossGrenadeDamage,Amount"/> Spelldamage </c> in a  <c val="FF0000">AoE</c><n/><c val="80FFFF">Cooldown</c>: <d ref="Abil,TossGrenade2,Cost[0].Cooldown.TimeUse"/>s
+Button/Tooltip/LevelUp=Level up your <c val="00FFFF">abilities</c> and <c val="80FF80">attributes</c>!
+Button/Tooltip/LevelUpActiveSkills=Level up one of your <c val="80FF80">Active Skills</c>
+Button/Tooltip/LevelUpAttributes=Level up your<c val="80FF80"> attributes</c>!
+Button/Tooltip/LevelUpPassiveSkills=Level up one of your <c val="80FFFF">Passive Skills</c>
+Button/Tooltip/LightningStorm=Channel for up to <d ref="Abil,LightningStorm,CastOutroTime[0]" precision="1"/>s, creating a lightning storm that damages <c val="FF0000">ALL</c> units within it.<n/><n/><c val="FFFF00">Channeled</c>
+Button/Tooltip/MajorEnergyPotion=Activate to replenish <c val="6D6DB6"><d ref="Effect,MajorEnergyPotionModifyUnit,VitalArray[Energy].Change"/> Energy</c><n/><n/><c val="FF8000">[Potion]</c>
+Button/Tooltip/MajorRegenerationPotion=Activate to regenerate <c val="00FF80"><d ref="Behavior,MajorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MajorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MajorRegenerationPotion,Duration"/> seconds<n/><n/><c val="FF8000">[Potion]</c>
+Button/Tooltip/MicroReactor=Gives <c val="00FFFF"><d ref="Behavior,MicroReactor,Modification.VitalRegenArray[Energy]"/> Energy</c> regeneration<n/><n/><c val="FF8000">[Armor]</c>
+Button/Tooltip/MinorEnergyPotion=Activate to replenish <c val="6D6DB6"><d ref="Effect,MinorEnergyPotionModifyUnit,VitalArray[Energy].Change"/> Energy</c><n/><n/><c val="FF8000">[Potion]</c>
+Button/Tooltip/MinorRegenerationPotion=Activate to regenerate <c val="00FF80"><d ref="Behavior,MinorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MinorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MinorRegenerationPotion,Duration"/> seconds<n/><n/><c val="FF8000">[Potion]</c>
+Button/Tooltip/MorphEnergy=Changeling sacrifices its own life to gain energy.<n/><n/>Conversion: <d ref="Behavior,MorphEnergy,Modification.VitalRegenArray[Life] * (-1)"/> <c val="FA3605">life</c> to <d ref="Behavior,MorphEnergy,Modification.VitalRegenArray[Energy]"/> <c val="07E6F8">energy</c> per second.<n/><n/>(This effect will automatically stop if Changelings <c val="FA3605">life</c> reaches maximum, or its <c val="07E6F8">energy</c> reaches 1)<n/><n/><c val="FFFF00">Toggle</c>
+Button/Tooltip/MorphLife=Changeling sacrifices its own energy to gain life.<n/><n/>Conversion: <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Energy] * (-1)"/> <c val="07E6F8">energy</c> to <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Life]"/>  <c val="FA3605">life</c> per second<n/><n/>(This effect will automatically stop if Changelings <c val="FA3605">life</c> reaches maximum, or its <c val="07E6F8">energy</c> reaches 1)<n/><n/><c val="FFFF00">Toggle</c>
+Button/Tooltip/Move2=Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.
+Button/Tooltip/MoveHoldPosition2=Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.
+Button/Tooltip/MovePatrol2=Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.
+Button/Tooltip/Multiply=Changeling creates a number of copies of himself.
+Button/Tooltip/Overclocker=Increases <c val="00FFFF">Attackspeed</c> by <c val="00FFFF"><d ref="Behavior,Overclocker,Modification.AttackSpeedMultiplier - 1 * 100"/>%</c><n/><n/><n/><c val="FF8000">[Weapon]</c>
+Button/Tooltip/PhaseShift2=Karass shifts the target unit out of phase, making them <c val="03EFFC">ignore unit collision</c> and move <c val="80FF00"><d ref="Behavior,PhaseShiftLevel1,Modification.MoveSpeedMultiplier - 1 * 100" precision="2"/>%</c> faster for <c val="80FF00"><d ref="Behavior,PhaseShiftLevel1,Duration" precision="2"/>s</c>
+Button/Tooltip/PhaseShift2/Learn2=Karass shifts the target unit out of phase, making them <c val="03EFFC">ignore unit collision</c> and move <c val="80FF00"><d ref="Behavior,PhaseShiftLevel2,Modification.MoveSpeedMultiplier - 1 * 100" precision="2"/>%</c> faster for <c val="80FF00"><d ref="Behavior,PhaseShiftLevel2,Duration" precision="2"/>s</c>
+Button/Tooltip/PhaseShift2/Learn3=Karass shifts the target unit out of phase, making them <c val="03EFFC">ignore unit collision</c> and move <c val="80FF00"><d ref="Behavior,PhaseShiftLevel3,Modification.MoveSpeedMultiplier - 1 * 100" precision="2"/>%</c> faster for <c val="80FF00"><d ref="Behavior,PhaseShiftLevel3,Duration" precision="2"/>s</c>
+Button/Tooltip/Pouncer=Primal Zerg that leaps onto its enemies, stunning them.
+Button/Tooltip/PowerAmplifier=Gives <c val="00FFFF">+<d ref="Behavior,PowerAmplifier,Modification.DamageDealtScaled[Melee]"/> Damage</c><n/><n/><c val="FF8000">[Weapon]</c>
+Button/Tooltip/PoweredCombatSuit3=Charges Tychus powersuit, which increases Armor by <c val="80FF00"><d ref="Behavior,CombatSuitLevel3,Modification.LifeArmorBonus"/></c> and HP/s by <c val="80FF00"><d ref="Behavior,CombatSuitLevel3,Modification.VitalRegenArray[Life]"/></c>.
+Button/Tooltip/PoweredCombatSuitLevel1=Charges Tychus powersuit, which increases Armor by <c val="80FF00"><d ref="Behavior,CombatSuitLevel1,Modification.LifeArmorBonus"/></c> and HP/s by <c val="80FF00"><d ref="Behavior,CombatSuitLevel1,Modification.VitalRegenArray[Life]"/></c>.<n/><n/>Passive
+Button/Tooltip/PoweredCombatSuitLevel1Learn=Charges Tychus powersuit, which increases Armor by <c val="80FF00"><d ref="Behavior,CombatSuitLevel1,Modification.LifeArmorBonus"/></c> and HP/s by <c val="80FF00"><d ref="Behavior,CombatSuitLevel1,Modification.VitalRegenArray[Life]"/></c>.<n/><n/>Passive
+Button/Tooltip/PoweredCombatSuitLevel2=Charges Tychus powersuit, which increases Armor by <c val="80FF00"><d ref="Behavior,CombatSuitLevel2,Modification.LifeArmorBonus"/></c> and HP/s by <c val="80FF00"><d ref="Behavior,CombatSuitLevel2,Modification.VitalRegenArray[Life]"/></c>.<n/><n/>Passive
+Button/Tooltip/PoweredCombatSuitLevel3=Charges Tychus powersuit, which increases Armor by <c val="80FF00"><d ref="Behavior,CombatSuitLevel3,Modification.LifeArmorBonus"/></c> and HP/s by <c val="80FF00"><d ref="Behavior,CombatSuitLevel3,Modification.VitalRegenArray[Life]"/></c>.<n/><n/>Passive
+Button/Tooltip/ProtectivePlating=Increases <c val="00FFFF">Armor</c> by <c val="00FFFF"><d ref="Behavior,ProtectivePlating,Modification.LifeArmorBonus"/></c><n/><n/><n/><c val="FF8000">[Armor]</c>
+Button/Tooltip/PsionicOrb=Increases <c val="00FFFF">Spell Damage</c> by <c val="00FFFF"><d ref="Behavior,PsionicOrb,Modification.DamageDealtFraction[Spell] - 1 * 100"/>%<n/></c><n/><c val="FF8000">[Weapon]</c>
+Button/Tooltip/PurchaseSpiritStaff=Purchase Spirit Staff
+Button/Tooltip/Reshape=Changeling explodes part of his body, dealing 40% of his current health as damage.<n/><n/>Regenerates <d ref="Behavior,ReshapeHealing,Modification.VitalRegenArray[Life]" precision="2"/> life/s over <d ref="Behavior,ReshapeHealing,Duration" precision="2"/>s.
+Button/Tooltip/Stop2=Orders selected units to cancel all orders and stop moving.
+Button/Tooltip/Strength=Increase Strength by 1. Strength increases <c val="80FF80">Ranged</c> and <c val="80FF80">Melee</c> damage
+Button/Tooltip/TemplateItem=A Template Item<n/><n/><c val="FF8000">[Weapon]</c>
+Button/Tooltip/TossShredderGrenade=Tosses a grenade that explodes for<c val="FF0000"> <d ref="Effect,TossShredderGrenadeDamageLevel1,Amount"/> </c>damage.<n/><n/>Radius: <d ref="Effect,TossShredderGrenadeDamageLevel1,AreaArray[0].Radius"/>
+Button/Tooltip/TossShredderGrenade3=Tosses a grenade that explodes for<c val="FF0000"> <d ref="Effect,TossShredderGrenadeDamageLevel3,Amount"/> </c>damage.<n/><n/>Radius: <d ref="Effect,TossShredderGrenadeDamageLevel3,AreaArray[0].Radius"/>
+Button/Tooltip/TossShredderGrenadeLearn=Tosses a grenade that explodes for<c val="FF0000"> <d ref="Effect,TossShredderGrenadeDamageLevel1,Amount"/> </c>damage.<n/><n/>Radius: <d ref="Effect,TossShredderGrenadeDamageLevel1,AreaArray[0].Radius"/>
+Button/Tooltip/TouchedbytheGodessLevel1=All allies within a range of <d ref="Effect,AngelofLightTouchedbytheGodessSearchArea1,AreaArray[0].Radius"/> regenerate <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but lose <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.<n/><n/><n/><c val="FF8000">[Currently Off]</c>
+Button/Tooltip/TouchedbytheGodessLevel2=All allies within a range of <d ref="Effect,AngelofLightTouchedbytheGodessSearchArea2,AreaArray[0].Radius"/> regenerate <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess2,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but lose <c val="FF0000"><d ref="Behavior,TouchedbytheGodess2,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.<n/><n/><n/><c val="FF8000">[Currently Off]</c>
+Button/Tooltip/TouchedbytheGodessLevel3=All allies within a range of <d ref="Effect,AngelofLightTouchedbytheGodessSearchArea3,AreaArray[0].Radius"/> regenerate <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess3,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but lose <c val="FF0000"><d ref="Behavior,TouchedbytheGodess3,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.<n/><n/><n/><c val="FF8000">[Currently Off]</c>
+Button/Tooltip/TurnOffHailofLead=Deactivate Hail of Lead.
+Button/Tooltip/TurnOnHailofLead=Tychus attacks more furiously with <c val="80FF00"><d ref="Behavior,HailofLeadLevel1,Modification.AttackSpeedMultiplier * 100 - 100"/>%</c> higher attackspeed, but moves <c val="FF0000"><d ref="Behavior,HailofLeadLevel1,Modification.MoveSpeedMultiplier * 100 - 100 * (-1)"/>%</c> slower.<n/><n/>Drains energy / second active.<n/><n/><c val="FFFF00">Toggle</c>
+Button/Tooltip/TurnOnHailofLead2=Tychus attacks more furiously with <c val="80FF00"><d ref="Behavior,HailofLeadLevel2,Modification.AttackSpeedMultiplier * 100 - 100"/>%</c> higher attackspeed, but moves <c val="FF0000"><d ref="Behavior,HailofLeadLevel2,Modification.MoveSpeedMultiplier * 100  - 100 * (-1)"/>%</c> slower.<n/><n/>Drains energy / second active.
+Button/Tooltip/TurnOnHailofLead3=Tychus attacks more furiously with <c val="80FF00"><d ref="Behavior,HailofLeadLevel3,Modification.AttackSpeedMultiplier * 100 - 100"/>%</c> higher attackspeed, but moves <c val="FF0000"><d ref="Behavior,HailofLeadLevel3,Modification.MoveSpeedMultiplier * 100  - 100 * (-1)"/>%</c> slower.<n/><n/>Drains energy / second active.
+Button/Tooltip/TychusHero=Tychus can throw explosive grenades in this mission. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/>
+Button/Tooltip/TychusTychusSecretStash=Tychus uses his secret stimpack, sacrificing <c val="FF0000"><d ref="Abil,TychusSecretStash,Cost[0].VitalFraction[Life] * 100" precision="2"/>%</c> of his <c val="80FF00">maxHP</c> to gain <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.DamageDealtFraction[Ranged] * 100" precision="2"/>% Attack Damage</c> and <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.MoveSpeedMultiplier * - 1 * 100" precision="2"/>% Movement Speed</c><n/><n/>Duration: <d ref="Behavior,TychusSecretStashLevel1,Duration" precision="2"/>s
+Button/Tooltip/TychusTychusSecretStash/Learn=Learn Tychus Secret Stash Level 1
+Button/Tooltip/TychusTychusSecretStash/Learn2=Learn Tychus Secret Stash Level 2
+Button/Tooltip/TychusTychusSecretStash/Learn3=Learn Tychus Secret Stash Level 3
+Button/Tooltip/TychusTychusSecretStash2=Tychus uses his secret stimpack, sacrificing <c val="FF0000"><d ref="Abil,TychusSecretStash,Cost[1].VitalFraction[Life] * 100" precision="2"/>%</c> of his <c val="80FF00">maxHP</c> to gain <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel2,Modification.DamageDealtFraction[Ranged] * 100" precision="2"/>% Attack Damage</c> and <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel2,Modification.MoveSpeedMultiplier * - 1 * 100" precision="2"/>% Movement Speed</c><n/><n/>Duration: <d ref="Behavior,TychusSecretStashLevel2,Duration" precision="2"/>s
+Button/Tooltip/TychusTychusSecretStash3=Tychus uses his secret stimpack, sacrificing <c val="FF0000"><d ref="Abil,TychusSecretStash,Cost[2].VitalFraction[Life] * 100" precision="2"/>%</c> of his <c val="80FF00">maxHP</c> to gain <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel3,Modification.DamageDealtFraction[Ranged] * 100" precision="2"/>% Attack Damage</c> and <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel3,Modification.MoveSpeedMultiplier * - 1 * 100" precision="2"/>% Movement Speed</c><n/><n/>Duration: <d ref="Behavior,TychusSecretStashLevel3,Duration" precision="2"/>s
+Button/Tooltip/TychusTychusSecretStashLearn=Tychus uses his secret stimpack, sacrificing <c val="FF0000"><d ref="Abil,TychusSecretStash,Cost[0].VitalFraction[Life] * 100" precision="2"/>%</c> of his <c val="80FF00">maxHP</c> to gain <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.DamageDealtFraction[Ranged] * 100" precision="2"/>% Attack Damage</c> and <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.MoveSpeedMultiplier * - 1 * 100" precision="2"/>% Movement Speed</c><n/><n/>Duration: <d ref="Behavior,TychusSecretStashLevel1,Duration" precision="2"/>s
+Button/Tooltip/TychusTychusSecretStashLearn2=Tychus uses his secret stimpack, sacrificing <c val="FF0000"><d ref="Abil,TychusSecretStash,Cost[0].VitalFraction[Life] * 100" precision="2"/>%</c> of his <c val="80FF00">maxHP</c> to gain <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.DamageDealtFraction[Ranged] * 100" precision="2"/>% Attack Damage</c> and <c val="80FF00"><d ref="Behavior,TychusSecretStashLevel1,Modification.MoveSpeedMultiplier * - 1 * 100" precision="2"/>% Movement Speed</c><n/><n/>Duration: <d ref="Behavior,TychusSecretStashLevel1,Duration" precision="2"/>s
+Button/Tooltip/Willpower=Increase Willpower by 1. Willpower increases max <c val="80FF80">Energy</c> and <c val="80FF80">Energy</c> regen
+DocInfo/DescShort=Any
+DocInfo/Name=Final Hour Dependency
+Effect/Name/AngelofLightDivineFireSet=Angel of Light - Divine Fire (Damage Set)
+Effect/Name/AngelofLightHolySmiteDamage=Angel of Light - Holy Smite (Damage)
+Effect/Name/AngelofLightTouchedbytheGodessApplyRegen1=Angel of Light - Touched by the Godess (Apply Regen 1)
+Effect/Name/AngelofLightTouchedbytheGodessApplyRegen2=Angel of Light - Touched by the Godess (Apply Regen 2)
+Effect/Name/AngelofLightTouchedbytheGodessApplyRegen3=Angel of Light - Touched by the Godess (Apply Regen 3)
+Effect/Name/AngelofLightTouchedbytheGodessSearchArea1=Angel of Light - Touched by the Godess (Search Area 1)
+Effect/Name/AngelofLightTouchedbytheGodessSearchArea2=Angel of Light - Touched by the Godess (Search Area 2)
+Effect/Name/AngelofLightTouchedbytheGodessSearchArea3=Angel of Light - Touched by the Godess (Search Area 3)
+Effect/Name/ApplyNoMovement=Apply No Movement
+Effect/Name/ApplyNoMovementtoCaster=Apply No Movement to Caster
+Effect/Name/ApplyNoTurning=Apply No Turning
+Effect/Name/ApplyNoTurningtoCaster=Apply No Turning to Caster
+Effect/Name/BeaconApplyInvulnerable=Beacon - Apply Invulnerable
+Effect/Name/BeaconHeal=Beacon - Heal
+Effect/Name/BeaconSet=Beacon (Set)
+Effect/Name/CelestialRadianceApplyFlames=Celestial Radiance (Apply Flames)
+Effect/Name/CelestialRadianceApplyFlames2=Celestial Radiance (Apply Flames 2)
+Effect/Name/CelestialRadianceApplyRadianceDuration=Celestial Radiance (Apply Radiance Duration)
+Effect/Name/CelestialRadianceApplyRadianceDuration2=Celestial Radiance (Apply Radiance Duration 2)
+Effect/Name/CelestialRadianceApplyRegen=Celestial Radiance (Apply Regen)
+Effect/Name/CelestialRadianceApplyRegen2=Celestial Radiance (Apply Regen 2)
+Effect/Name/CelestialRadianceCreatePersistent=Celestial Radiance (Create Persistent)
+Effect/Name/CelestialRadianceCreatePersistent2=Celestial Radiance (Create Persistent 2)
+Effect/Name/CelestialRadianceDoT=Celestial Radiance (DoT)
+Effect/Name/CelestialRadianceDoT2=Celestial Radiance (DoT 2)
+Effect/Name/CelestialRadianceSearchAreaAlly=Celestial Radiance (Search Area Ally)
+Effect/Name/CelestialRadianceSearchAreaAlly2=Celestial Radiance (Search Area Ally 2)
+Effect/Name/CelestialRadianceSearchAreaEnemy=Celestial Radiance (Search Area Enemy)
+Effect/Name/CelestialRadianceSearchAreaEnemy2=Celestial Radiance (Search Area Enemy 2)
+Effect/Name/ChangelingSpeedAbsorbtionBuff=Changeling - Speed Absorbtion (Buff)
+Effect/Name/ChangelingSpeedAbsorbtionDrain=Changeling - Speed Absorbtion (Drain)
+Effect/Name/ChangelingSpeedAbsorbtionPersistent=Changeling - Speed Absorbtion (Persistent)
+Effect/Name/ChargeApplyBehavior=Charge (Apply Behavior)
+Effect/Name/ChargeApplyBehaviortoCaster=Charge (Apply Behavior to Caster)
+Effect/Name/ChargeCasterSet=Charge Caster (Set)
+Effect/Name/CorrosiveSpitApplyBehavior=Corrosive Spit (Apply Behavior)
+Effect/Name/CorrosiveSpitDamage=Corrosive Spit (Damage)
+Effect/Name/CorrosiveSpitLaunchMissile=Corrosive Spit (Launch Missile)
+Effect/Name/CorrosiveSpitPeriodicDmg=Corrosive Spit (Periodic Dmg)
+Effect/Name/DanceofDeath1ApplyBehavior10=Dance of Death 1 (Apply Behavior) (10%)
+Effect/Name/DanceofDeath1ApplyBehavior20=Dance of Death 1 (Apply Behavior) (20%)
+Effect/Name/DanceofDeath1ApplyBehavior30=Dance of Death 1 (Apply Behavior) (30%)
+Effect/Name/DanceofDeathApplyBehavior40=Dance of Death 1 (Apply Behavior) (40%)
+Effect/Name/DanceofDeathSet=Dance of Death 1 (Set)
+Effect/Name/DivineFireDamage1=Divine Fire Damage 1
+Effect/Name/DivineFireDamage2=Divine Fire Damage 2
+Effect/Name/DivineFireDamage3=Divine Fire Damage 3
+Effect/Name/DivineFireDestroyPersistent=Divine Fire Destroy Persistent
+Effect/Name/DivineFireImpact=Divine Fire Impact
+Effect/Name/DivineFireInitial=Divine Fire Initial
+Effect/Name/DivineFireLaunchL=Divine Fire Launch L
+Effect/Name/DivineFireLaunchR=Divine Fire Launch R
+Effect/Name/DivineFirePersistent=Divine Fire Persistent
+Effect/Name/DivineFireTargetCheck=Divine Fire Target Check
+Effect/Name/DummySpellDamage=Dummy Spell Damage
+Effect/Name/FearsomeRoarSearch=Fearsome Roar Search
+Effect/Name/FuryoftheTemplarApplyBehavior=Fury of the Templar (Apply Behavior)
+Effect/Name/HeroIncapApplyBehavior=Hero Incap (Apply Behavior)
+Effect/Name/HeroIncapHeal=Hero Incap Heal
+Effect/Name/HighPriestHealModifyUnit=High Priest - Heal (Modify Unit)
+Effect/Name/IceBoltSearchLevel1=Ice Bolt (Search) Level 1
+Effect/Name/IceBoltSearchLevel2=Ice Bolt (Search) Level 2
+Effect/Name/IceBoltSearchLevel3=Ice Bolt (Search) Level 3
+Effect/Name/LightningStormDamage=Lightning Storm (Damage)
+Effect/Name/MajorEnergyPotionModifyUnit=Major Energy Potion (Modify Unit)
+Effect/Name/MajorRegenerationPotionApplyBehavior=Major Regeneration Potion (Apply Behavior)
+Effect/Name/MinorEnergyPotionModifyUnit=Minor Energy Potion (Modify Unit)
+Effect/Name/MinorRegenerationPotionApplyBehavior=Minor Regeneration Potion (Apply Behavior)
+Effect/Name/MultiplyApplyBehavior=Multiply (Apply Behavior)
+Effect/Name/MultiplyCreateUnit=Multiply (Create Unit)
+Effect/Name/MultiplyTimedLife=Multiply (Timed Life)
+Effect/Name/PouncerClawsDamage=Pouncer Claws (Damage)
+Effect/Name/PouncerClawsPersistent=Pouncer Claws (Persistent)
+Effect/Name/PouncerPounceApplyKnockback=Pouncer - Pounce (Apply Knockback)
+Effect/Name/PouncerPounceApplyNoMovingTurning=Pouncer - Pounce (Apply No Moving / Turning)
+Effect/Name/PouncerPounceDamage=Pouncer - Pounce (Damage)
+Effect/Name/PouncerPounceImpactAreaSet=Pouncer - Pounce (Impact Area Set)
+Effect/Name/PouncerPounceImpactSearchArea=Pouncer - Pounce (Impact Search Area)
+Effect/Name/PouncerPounceImpactSet=Pouncer - Pounce (Impact Set)
+Effect/Name/PouncerPounceKnockbackForce=Pouncer - Pounce (Knockback Force)
+Effect/Name/PouncerPounceLaunchMissile=Pouncer - Pounce (Launch Missile)
+Effect/Name/PouncerPounceLaunchPersistent=Pouncer - Pounce (Launch Persistent)
+Effect/Name/PouncerPounceRemoveNoMovingTurning=Pouncer - Pounce (Remove No Moving / Turning)
+Effect/Name/PouncerPounceStun=Pouncer - Pounce (Stun)
+Effect/Name/PouncerPounceTargeter=Pouncer - Pounce (Targeter)
+Effect/Name/PouncerPounceTeleport=Pouncer - Pounce (Teleport)
+Effect/Name/PsionicLinkDamage=Psionic Link (Damage)
+Effect/Name/PsionicLinkInitial=Psionic Link (Initial)
+Effect/Name/PsionicLinkLaunchMissile=Psionic Link (Launch Missile)
+Effect/Name/PsionicLinkModifyCaster=Psionic Link (Modify Caster)
+Effect/Name/PsionicLinkSet=Psionic Link (Set)
+Effect/Name/RemoveNoMovement=Remove No Movement
+Effect/Name/RemoveNoMovementfromCaster=Remove No Movement from Caster
+Effect/Name/RemoveNoTurning=Remove No Turning
+Effect/Name/RemoveNoTurningfromCaster=Remove No Turning from Caster
+Effect/Name/ReshapeApplyBehavior=Reshape (Apply Behavior)
+Effect/Name/ReshapeDamage=Reshape (Damage)
+Effect/Name/ReshapeSearch=Reshape (Search)
+Effect/Name/SpiritStaffDamage=Spirit Staff (Damage)
+Effect/Name/TestBeamWeaponDamage=Test Beam Weapon (Damage)
+Effect/Name/TestMissile=Test Missile
+Effect/Name/TestMissileDamage=Test Missile Damage
+Effect/Name/TossShredderGrenadeDamageLevel1=Toss Shredder Grenade (Damage) Level 1
+Effect/Name/TossShredderGrenadeDamageLevel2=Toss Shredder Grenade (Damage) Level 2
+Effect/Name/TossShredderGrenadeDamageLevel3=Toss Shredder Grenade (Damage) Level 3
+ItemClass/Name/Armor=Armor
+ItemClass/Name/Misc=Misc
+ItemClass/Name/Weapon=Weapon
+Param/Expression/lib_CC322427_C379EDDC=Next Wave:
+Param/Value/lib_47D24EE7_22716FD8=DebugWindow: 
+Param/Value/lib_47D24EE7_46734BB7=BEACON INVULNERABLE CREATED
+Param/Value/lib_47D24EE7_87C550BD=Debugmode: 
+Param/Value/lib_47D24EE7_98CD89C1=DebugChat: 
+Param/Value/lib_47D24EE7_99BC1F4B=BEACON INVULNERABLE CREATED
+Param/Value/lib_8DAF555C_3CACB8E0=RESHAPE WAS USED
+Param/Value/lib_8DAF555C_C75B8D4F=Loaded Data triggers
+Param/Value/lib_8DAF555C_D798521B=RESHAPE WAS USED
+Param/Value/lib_CC322427_09E72DC0=Boss
+Param/Value/lib_CC322427_22B287A0=Starting look for alive enemies
+Param/Value/lib_CC322427_5BBDCA62=Starting look for alive enemies
+Param/Value/lib_CC322427_5D099463=Boss
+Param/Value/lib_CC322427_6615D055=Wohoo! You won!
+Param/Value/lib_CC322427_82010854=DEBUG MODE ENABLED. CANNOT LOSE.
+Param/Value/lib_CC322427_89ABBF19=Enemies alive: 
+Param/Value/lib_CC322427_8C274601=Reviving all
+Param/Value/lib_CC322427_90218FAB=Started Timer
+Param/Value/lib_CC322427_916E7786=Boss
+Param/Value/lib_CC322427_97F08EA0=Enemies Alive: False
+Param/Value/lib_CC322427_9BD1384F=Boss
+Param/Value/lib_CC322427_A42204DF=Enemies not dead yet
+Param/Value/lib_CC322427_DF87324C=Enemies Alive: True
+Param/Value/lib_CC322427_F9A7B1F3=Boss
+Param/Value/lib_E447E23F_10E48782=Next Page
+Param/Value/lib_E447E23F_47F5FCAA=All players ready!
+Param/Value/lib_E447E23F_75F0A916=Prev Page
+Param/Value/lib_E447E23F_AE66B77D=Choose Hero
+SimpleDisplay/Attack2=<s val="@@SimpleCommandRow">%hotkey</c> then</s> <IMG path="Assets\Textures\tutorialmouseleftbuttondown.dds" height="52" width="32" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">ground to Auto-attack</s>
+SimpleDisplay/Move2=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" height="52" width="32" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">to Move</s>
+Unit/LifeArmorName/AngelOfLight=Angelic Protection
+Unit/LifeArmorName/Changeling=Dynamic Skin
+Unit/LifeArmorName/HeroArmor=Heroic Armor
+Unit/LifeArmorName/HighPriest=Ceremonial Clothing
+Unit/LifeArmorName/MysteriousObelisk=Protective Plating
+Unit/LifeArmorName/None=Unnamed Armor
+Unit/LifeArmorName/ResourceBeacon=<c val="00FFFF">Beacon Protection</c>
+Unit/LifeArmorName/ZergArmor=Hardened Shell
+Unit/Name/AngelofLight=Angel of Light
+Unit/Name/BasicShop=Basic Shop
+Unit/Name/Brute=Brute
+Unit/Name/ChangelingHero=Changeling
+Unit/Name/CorrosiveSpit=Corrosive Spit
+Unit/Name/DivineFireMissile=Divine Fire Missile
+Unit/Name/HeroFrame=Hero Frame
+Unit/Name/HighPriest=High Priest
+Unit/Name/IceboltMissile=Icebolt Missile
+Unit/Name/Karass2=Karass
+Unit/Name/MajorEnergyPotion=Major Energy Potion
+Unit/Name/MajorEnergyPotionTooltip=Major Energy Potion
+Unit/Name/MajorRegenerationPotion=Major Regeneration Potion
+Unit/Name/MajorRegenerationPotionTooltip=Major Regeneration Potion
+Unit/Name/MicroReactor=Micro Reactor
+Unit/Name/MicroReactorTooltip=Template
+Unit/Name/MinorEnergyPotion=Minor Energy Potion
+Unit/Name/MinorEnergyPotionTooltip=Minor Energy Potion
+Unit/Name/MinorRegenerationPotion=Minor Regeneration Potion
+Unit/Name/MinorRegenerationPotionTooltip=Minor Regeneration Potion
+Unit/Name/MysteriousObelisk=Mysterious Obelisk
+Unit/Name/Overclocker=Overclocker
+Unit/Name/OverclockerTooltip=Overclocker
+Unit/Name/Pouncer=Pouncer
+Unit/Name/PouncerLeapClone=Pouncer - Leap Clone
+Unit/Name/PowerAmplifier=Power Amplifier
+Unit/Name/PowerAmplifierTooltip=Template
+Unit/Name/ProtectivePlating=Protective Plating
+Unit/Name/PsionicLinkMissile=Psionic Link Missile
+Unit/Name/PsionicOrb=Psionic Orb
+Unit/Name/PsionicOrbTooltip=Psionic Orb
+Unit/Name/ResourceBeacon=Resource Beacon
+Unit/Name/SpirtStaff=Spirt Staff
+Unit/Name/Template=Template
+Unit/Name/TemplateTooltip=Template
+Unit/Name/TossShredderGrenade=Toss Shredder Grenade
+Unit/Name/TychusHero=Tychus
+Unit/Name/UnitTemplate=Unit Template
+Unit/Name/UnitTesty=Unit Testy
+Unit/ShieldArmorName/HighPriest=Shield of Faith
+UnitKillRank/Karass2=Praetor
+Upgrade/Name/DivineFireDamageUpgrade=Divine Fire Damage Upgrade
+Upgrade/Name/TerranInfantryArmorsLevel12=Terran Infantry Armor Level 4
+Upgrade/Name/TerranInfantryArmorsLevel22=Terran Infantry Armor Level 4
+Upgrade/Name/TerranInfantryArmorsLevel32=Terran Infantry Armor Level 4
+Upgrade/Name/TerranInfantryArmorsVanadiumPlatingLevel12=Terran Infantry Armor Vanadium Plating Level 4
+Upgrade/Name/TerranInfantryArmorsVanadiumPlatingLevel22=Terran Infantry Armor Vanadium Plating Level 4
+Upgrade/Name/TerranInfantryArmorsVanadiumPlatingLevel32=Terran Infantry Armor Vanadium Plating Level 4
+Upgrade/Name/TerranInfantryWeaponsLevel12=Terran Infantry Weapons Level 4
+Upgrade/Name/TerranInfantryWeaponsLevel22=Terran Infantry Weapons Level 4
+Upgrade/Name/TerranInfantryWeaponsLevel32=Terran Infantry Weapons Level 4
+Upgrade/Name/TerranInfantryWeaponsUltraCapacitors2=Terran Infantry Weapons Ultra-Capacitors Copy
+Upgrade/Name/TerranInfantryWeaponsUltraCapacitorsLevel12=Terran Infantry Weapons Ultra-Capacitors Level 4
+Upgrade/Name/TerranInfantryWeaponsUltraCapacitorsLevel22=Terran Infantry Weapons Ultra-Capacitors Level 4
+Upgrade/Name/TerranInfantryWeaponsUltraCapacitorsLevel32=Terran Infantry Weapons Ultra-Capacitors Level 4
+Upgrade/Name/TossGrenade1=Toss Grenade 1
+Weapon/Name/AngelofLightHolySmite=Angel of Light - Holy Smite
+Weapon/Name/BruteBlades=Brute Blades
+Weapon/Name/CorrosiveSpit=Corrosive Spit
+Weapon/Name/PouncerClaws=Pouncer Claws
+Weapon/Name/PsiDischarge2=Psi Discharge Copy
+Weapon/Name/PsionicLink=Psionic Link
+Weapon/Name/SpiritStaff=Spirit Staff
+Weapon/Name/TestBeamWeapon=Test Beam Weapon
+Weapon/Name/TychusCommandoChaingun=Chaingun (Splash)
+Weapon/Name/TychusCommandoChaingun2=Chaingun (No Splash)

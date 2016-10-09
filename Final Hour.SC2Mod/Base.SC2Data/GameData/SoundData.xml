@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CSound id="Raven_AutoTurretAttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretAttack0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretAttack1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretAttack2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretAttack3.wav"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-1.000000,0.500000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="TychusTossGrenadeImpact2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="2.000000,3.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Tychus_Attack2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack00.ogg" FacialAnim="Tychus_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack01.ogg" FacialAnim="Tychus_Attack01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack02.ogg" FacialAnim="Tychus_Attack02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack03.ogg" FacialAnim="Tychus_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack04.ogg" FacialAnim="Tychus_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack05.ogg" FacialAnim="Tychus_Attack05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Attack06.ogg" FacialAnim="Tychus_Attack06"/>
+    </CSound>
+    <CSound id="Tychus_Explode2" parent="Zerg_ExplosionMedium">
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+    <CSound id="Tychus_Help2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Help00.ogg" FacialAnim="Tychus_Help00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Help01.ogg" FacialAnim="Tychus_Help01"/>
+        <Category value="Alert"/>
+    </CSound>
+    <CSound id="Tychus_Pissed2" parent="Pissed">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed00.ogg" FacialAnim="Tychus_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed01.ogg" FacialAnim="Tychus_Pissed01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed02.ogg" FacialAnim="Tychus_Pissed02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed03.ogg" FacialAnim="Tychus_Pissed03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed04.ogg" FacialAnim="Tychus_Pissed04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed05.ogg" FacialAnim="Tychus_Pissed05"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed06.ogg" FacialAnim="Tychus_Pissed06"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed07.ogg" FacialAnim="Tychus_Pissed07"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed08.ogg" FacialAnim="Tychus_Pissed08"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Pissed09.ogg" FacialAnim="Tychus_Pissed09"/>
+    </CSound>
+    <CSound id="Tychus_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Ready00.ogg" FacialAnim="Tychus_Ready00"/>
+    </CSound>
+    <CSound id="Tychus_TossGrenadeLaunch2" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing3.wav"/>
+        <DupeDestroyCount value="5"/>
+        <Pitch value="-3.000000,-2.000000"/>
+        <Volume value="-13.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Tychus_TossGrenadeVO2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignVO\TValerian02ATychus00013.ogg" FacialAnim="TValerian02ATychus00013"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignVO\TValerian02ATychus00060.ogg" FacialAnim="TValerian02ATychus00060"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignVO\TValerian02ATychus00061.ogg" FacialAnim="TValerian02ATychus00061"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignVO\TValerian02ATychus00062.ogg" FacialAnim="TValerian02ATychus00062"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignVO\TValerian02ATychus00002.ogg" FacialAnim="TValerian02ATychus00002"/>
+    </CSound>
+    <CSound id="Tychus_What2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_What00.ogg" FacialAnim="Tychus_What00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_What01.ogg" FacialAnim="Tychus_What01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_What02.ogg" FacialAnim="Tychus_What02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_What03.ogg" FacialAnim="Tychus_What03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_What04.ogg" FacialAnim="Tychus_What04"/>
+    </CSound>
+    <CSound id="Tychus_Yes2" parent="TerranAck">
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes00.ogg" FacialAnim="Tychus_Yes00"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes01.ogg" FacialAnim="Tychus_Yes01"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes02.ogg" FacialAnim="Tychus_Yes02"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes03.ogg" FacialAnim="Tychus_Yes03"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes04.ogg" FacialAnim="Tychus_Yes04"/>
+        <AssetArray File="LocalizedData\Sounds\TerranVO\CampaignUnits\Tychus\Tychus_Yes05.ogg" FacialAnim="Tychus_Yes05"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire2" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+</Catalog>

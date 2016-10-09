@@ -1,0 +1,26 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Utilities
+//--------------------------------------------------------------------------------------------------
+// Variable Declarations
+bool lib47D24EE7_gv_utilitiesDebugDebugModeOn;
+bool lib47D24EE7_gv_utilitiesDebugDebugChat;
+bool lib47D24EE7_gv_utilitiesDebugDebugWindow;
+
+// Function Declarations
+void lib47D24EE7_gf_UtilitiesInitCreateRevealers ();
+void lib47D24EE7_gf_UtilitiesInitDisablePlayerOptions ();
+void lib47D24EE7_gf_UtilitiesDebugGodMode (unit lp_unit);
+void lib47D24EE7_gf_UtilitiesDebugDebugMessage (text lp_message);
+bool lib47D24EE7_gf_UtilitiesDebugGetDebugModeOn ();
+
+// Trigger Declarations
+trigger lib47D24EE7_gt_BeaconTest;
+trigger lib47D24EE7_gt_BeaconTakesDmg;
+trigger lib47D24EE7_gt_Init;
+trigger lib47D24EE7_gt_DebugCommands;
+
+// Library Initialization
+void lib47D24EE7_InitVariables ();
+

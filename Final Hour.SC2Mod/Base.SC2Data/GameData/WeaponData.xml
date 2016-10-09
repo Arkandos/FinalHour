@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CWeaponLegacy id="AngelofLightHolySmite">
+        <EditorCategories value=""/>
+        <DisplayEffect value="AngelofLightHolySmiteDamage"/>
+        <Range value="7"/>
+        <Period value="1.5"/>
+        <Effect value="AngelofLightHolySmiteDamage"/>
+        <Icon value="Assets\Textures\btn-ability-spearofadun-reconstructionbeam.dds"/>
+        <TargetFilters value="Visible;Self,Missile,Item,Stasis,Hidden,Invulnerable"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BruteBlades" parent="KaiserBlades">
+        <Name value="Weapon/Name/BruteBlades"/>
+        <Tip value="Weapon/Tip/BruteBlades"/>
+        <DisplayEffect value="BruteBladesDamage"/>
+        <Effect value="BruteBladesSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CorrosiveSpit">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-ability-zerg-corrosiveblast.dds"/>
+        <DisplayEffect value="CorrosiveSpitDamage"/>
+        <Period value="1"/>
+        <Effect value="CorrosiveSpitLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PouncerClaws">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="PouncerClawsDamage"/>
+        <DisplayAttackCount value="2"/>
+        <Range value="0.2"/>
+        <Period value="1.2"/>
+        <Effect value="PouncerClawsPersistent"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsiDischarge2">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="PsiDischargeDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="1.25"/>
+        <Effect value="PsiDischargeLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PsionicLink">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
+        <DisplayEffect value="PsionicLinkDamage"/>
+        <Range value="8"/>
+        <Period value="2"/>
+        <Effect value="PsionicLinkInitial"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpiritStaff">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="SpiritStaffDamage"/>
+        <TargetFilters value="Visible;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="2"/>
+        <Effect value="SpiritStaffLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TestBeamWeapon">
+        <EditorCategories value=""/>
+        <Range value="7"/>
+        <Period value="1.5"/>
+        <Effect value="TestBeamWeaponDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TychusCommandoChaingun2">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="TychusCommandoAttackDamage2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="0.2"/>
+        <Effect value="TychusCommandoAttackDamage2"/>
+    </CWeaponLegacy>
+</Catalog>

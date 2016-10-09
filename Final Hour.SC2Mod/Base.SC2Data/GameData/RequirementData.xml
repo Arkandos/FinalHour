@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirement id="CombatSuitLevel1">
+        <NodeArray index="Show" Link="EqCountAbilCombatSuitCompleteOnlyAtUnitSum1"/>
+    </CRequirement>
+    <CRequirement id="CombatSuitLevel2">
+        <NodeArray index="Show" Link="EqCountAbilCombatSuitCompleteOnlyAtUnitSum2"/>
+    </CRequirement>
+    <CRequirement id="CombatSuitLevel3">
+        <NodeArray index="Show" Link="EqCountAbilCombatSuitCompleteOnlyAtUnitSum3"/>
+    </CRequirement>
+    <CRequirement id="DanceofDeathLevel1">
+        <NodeArray index="Show" Link="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum1"/>
+    </CRequirement>
+    <CRequirement id="DanceofDeathLevel2">
+        <NodeArray index="Show" Link="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum2"/>
+    </CRequirement>
+    <CRequirement id="DanceofDeathLevel3">
+        <NodeArray index="Show" Link="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum3"/>
+    </CRequirement>
+    <CRequirement id="LearnTossGrenade1">
+        <EditorCategories value="TechType:Ability"/>
+    </CRequirement>
+</Catalog>

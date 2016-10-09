@@ -1,0 +1,117 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Wavespawner
+//--------------------------------------------------------------------------------------------------
+// Constants
+const int libCC322427_gv_maxPlayerCount = 4;
+const int libCC322427_gv_spawnerBossBarID = 1;
+const int libCC322427_gv_spawnerMaxWave = 100;
+const int libCC322427_gv_spawnerConstantsCreepPlayerID = 15;
+const int libCC322427_gv_spawnerConstantsMaxUnitsPerWave = 100;
+const int libCC322427_gv_resourceControllerFriendlyPlayerID = 1;
+const int libCC322427_gv_resourceControllerMaxBeacons = 10;
+
+// Structures
+struct libCC322427_gs_BeaconData {
+    unit lv_unit;
+    int lv_owner;
+};
+
+// Variable Declarations
+bool libCC322427_gv_doMineralUpdates;
+int libCC322427_gv_heroesIncapped;
+bool libCC322427_gv_waitForEnemiesToDie;
+timer libCC322427_gv_waveTimer;
+unit libCC322427_gv_spawnerWavesCurrentBoss;
+bool libCC322427_gv_spawnerWavesBossActive;
+text[libCC322427_gv_spawnerMaxWave + 1] libCC322427_gv_spawnerWavesBossName;
+string[libCC322427_gv_spawnerMaxWave + 1] libCC322427_gv_spawnerWavesBossPortrait;
+int[libCC322427_gv_spawnerMaxWave + 1] libCC322427_gv_spawnerWavesBossMaxvalue;
+int libCC322427_gv_spawnerWavesAttackMode;
+unit libCC322427_gv_spawnerWavesTargetUnitForAttack;
+fixed[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1] libCC322427_gv_spawnerWavesUnitSpawnDelay;
+int[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1] libCC322427_gv_spawnerWavesSquadAmount;
+int[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1][2] libCC322427_gv_spawnerWavesUnitSquadSize;
+string[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1][11] libCC322427_gv_spawnerWavesWaveModification;
+int[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1] libCC322427_gv_spawnerWavesWaveExperience;
+string[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1][2] libCC322427_gv_spawnerWavesUnitType;
+point[libCC322427_gv_spawnerMaxWave + 1][libCC322427_gv_spawnerConstantsMaxUnitsPerWave + 1][2] libCC322427_gv_spawnerWavesSpecificSpawnPoint;
+int[2] libCC322427_gv_spawnerWavesTotalWaves;
+int libCC322427_gv_spawnerWavesTempWaveNumber;
+int libCC322427_gv_spawnerWavesCurrentWave;
+int libCC322427_gv_spawnerWavesWaveDelay;
+int libCC322427_gv_spawnerWavesLastCreatedUnitNumber;
+string libCC322427_gv_spawnerWavesLastCreatedUnit;
+bool libCC322427_gv_spawnerWavesAreEnemiesAlive;
+point[16] libCC322427_gv_spawnerPlayersSpawnLocation;
+int libCC322427_gv_spawnerWavesSpawnCreepPointAmount;
+point[libCC322427_gv_maxPlayerCount + 1] libCC322427_gv_spawnerWavesSpawnCreepPoints;
+bool libCC322427_gv_spawnerWavesSpawnAtSpecificPoint;
+int libCC322427_gv_resourceControllerBeaconAmount;
+libCC322427_gs_BeaconData[libCC322427_gv_resourceControllerMaxBeacons + 1] libCC322427_gv_resourceControllerBeacon;
+int libCC322427_gv_resourceControllerMineralIncome;
+int libCC322427_gv_resourceControllerMineralIncomeRate;
+
+// Function Declarations
+void libCC322427_gf_EndGameInDefeat ();
+bool libCC322427_gf_SpawnerAreEnemiesAlive ();
+bool libCC322427_gf_SpawnerGetWaitForEnemiesToDie ();
+string libCC322427_gf_SpawnerGetLastCreatedUnit ();
+int libCC322427_gf_SpawnerGetBossBarID ();
+int libCC322427_gf_SpawnerGetLastCreatedUnitNumber ();
+bool libCC322427_gf_SpawnerIsLastWave ();
+int libCC322427_gf_SpawnerGetWaveDelay ();
+int libCC322427_gf_SpawnerGetFinalLevel ();
+int libCC322427_gf_SpawnerGetCurrentLevel ();
+int libCC322427_gf_SpawnerGetCreepPlayerID ();
+void libCC322427_gf_SpawnerInternalApplyRegenBuff ();
+void libCC322427_gf_SpawnerInternalRemoveRegenBuff ();
+void libCC322427_gf_SpawnerInternalReviveAllHeroes ();
+void libCC322427_gf_SpawnerInternalCreateBossBar (text lp_bossName, string lp_bossPortrait, int lp_bossMaxValue);
+void libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsHero ();
+void libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsUnit ();
+void libCC322427_gf_SpawnerInternalSpawnUnitInWave (int lp_waveNumber, int lp_unitNumber, bool lp_bossWave);
+void libCC322427_gf_SpawnerInternalApplyModification (unit lp_unit, int lp_waveNumber, int lp_unitNumber);
+void libCC322427_gf_SpawnerInternalApplyExperience (unit lp_unit, int lp_waveNumber, int lp_unitNumber);
+void libCC322427_gf_SpawnerInternalSetAttackMode (int lp_attackMode);
+void libCC322427_gf_SpawnerInternalEnableAbilityForUnit ();
+void libCC322427_gf_SpawnerInternalSetSpawnAtSpecificPoint (bool lp_specificPoint);
+void libCC322427_gf_SpawnerInternalSetAttackTargetUnit (unit lp_unit);
+void libCC322427_gf_SpawnerWavesSetWaitForEnemiesToDie (bool lp_mode);
+void libCC322427_gf_SpawnerWavesAddUnitToWave (int lp_squadAmount, string lp_unitType, fixed lp_spawnDelay, int lp_unitSquadSize, int lp_unitExperience);
+void libCC322427_gf_SpawnerWavesAddUnitToWaveSpecificPoint (point lp_spawnPoint, int lp_squadAmount, string lp_unitType, fixed lp_spawnDelay, int lp_unitSquadSize, int lp_unitExperience);
+void libCC322427_gf_SpawnerWavesAddBossToWave (text lp_bossName, int lp_unitExperience, string lp_bossUnit, int lp_bossBarMaxValue, string lp_bossBarPortrait, string lp_behavior1, string lp_behavior2, string lp_behavior3);
+void libCC322427_gf_SpawnerWavesAddBossToWaveSpecificPoint (text lp_bossName, int lp_unitExperience, string lp_bossUnit, int lp_bossBarMaxValue, string lp_bossBarPortrait, string lp_behavior1, string lp_behavior2, string lp_behavior3, point lp_spawnPoint);
+void libCC322427_gf_SpawnerWavesAddWave ();
+void libCC322427_gf_SpawnerWavesSpawnNextWave ();
+void libCC322427_gf_SpawnerWavesIssueAttack ();
+void libCC322427_gf_SpawnerAddSpawnPoint (point lp_point);
+void libCC322427_gf_SpawnerSetWaveDelay (int lp_waveDelay);
+void libCC322427_gf_SpawnerWavesAddModificationToUnit (int lp_unitNumber, string lp_behavior);
+void libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit (string lp_behavior);
+void libCC322427_gf_ResourceControllerUpdateBeaconOwners ();
+void libCC322427_gf_ResourceControllerIncreaseBeaconAmount ();
+void libCC322427_gf_ResourceControllerSetMineralIncomeSettings (int lp_mineralIncome, int lp_mineralIncomeRate);
+void libCC322427_gf_ResourceControllerMineralUpdate (int lp_beacons);
+void libCC322427_gf_ResourceControllerRegisterBeacon (unit lp_unit);
+unit libCC322427_gf_ResourceControllerGetBeaconUnit (int lp_id);
+int libCC322427_gf_ResourceControllerGetBeaconOwner (int lp_id);
+int libCC322427_gf_ResourceControllerGetBeaconAmount ();
+
+// Trigger Declarations
+trigger libCC322427_gt_HeroIsIncapped;
+trigger libCC322427_gt_HeroIsRevived;
+trigger libCC322427_gt_WavespawnerInit;
+trigger libCC322427_gt_UnitIdle;
+trigger libCC322427_gt_PeriodicAttack;
+trigger libCC322427_gt_CheatReviveAll;
+trigger libCC322427_gt_SpawnerCheckEnemiesAvailable;
+trigger libCC322427_gt_SpawnerCheckBoss;
+trigger libCC322427_gt_SpawnerStartWaves;
+trigger libCC322427_gt_BeaconController;
+trigger libCC322427_gt_BeaconChangesOwner;
+
+// Library Initialization
+void libCC322427_InitVariables ();
+

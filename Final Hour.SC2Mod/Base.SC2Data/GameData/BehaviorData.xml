@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CBehaviorAttribute id="Agility">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="1.01" AttackSpeedMultiplier="1.04"/>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="BeaconDamagePrevention">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageTakenMaximum index="Spell" value="1"/>
+            <DamageTakenMaximum index="Melee" value="1"/>
+            <DamageTakenMaximum index="Ranged" value="1"/>
+            <DamageTakenMaximum index="Splash" value="1"/>
+            <DamageTakenMaximum index="NoProc" value="1"/>
+        </Modification>
+        <DamageResponse>
+            <Chance value="1"/>
+            <Fatal value="1"/>
+            <Handled value="BeaconSet"/>
+            <ModifyFraction value="0"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BeaconHostile">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BeaconFriendly">
+        <Cost>
+            <Charge Link="Behavior/BeaconHostile"/>
+            <Cooldown Link="Behavior/BeaconHostile"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="1"/>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/BeaconHostile"/>
+                <Cooldown Link="Behavior/BeaconHostile"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BeaconInvulnerable">
+        <BehaviorCategories index="Invulnerable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="5"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialFlames2">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-waveknockbackdistanceincreased.dds"/>
+        <BehaviorCategories index="User15" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="1"/>
+        <Period value="0.2"/>
+        <PeriodCount value="5"/>
+        <PeriodicEffect value="CelestialRadianceDoT2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialRadianceDuration2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="6"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialRegeneration2">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-regenaura.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="1"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="20"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Charge">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="3.5"/>
+        <Modification MoveSpeedMultiplier="2.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DamageIncreasedby100">
+        <Cost>
+            <Charge Link="Behavior/DamageHalved"/>
+            <Cooldown Link="Behavior/DamageHalved"/>
+        </Cost>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="1"/>
+            <DamageDealtFraction index="Melee" value="1"/>
+            <DamageDealtFraction index="Ranged" value="1"/>
+            <DamageDealtFraction index="Splash" value="1"/>
+            <DamageDealtFraction index="NoProc" value="1"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/DamageHalved"/>
+                <Cooldown Link="Behavior/DamageHalved"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DamageReducedto50">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="-0.5"/>
+            <DamageDealtFraction index="Melee" value="-0.5"/>
+            <DamageDealtFraction index="Ranged" value="-0.5"/>
+            <DamageDealtFraction index="Splash" value="-0.5"/>
+            <DamageDealtFraction index="NoProc" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DamageReducedto25">
+        <Cost>
+            <Charge Link="Behavior/DamageHalved"/>
+            <Cooldown Link="Behavior/DamageHalved"/>
+        </Cost>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="-0.75"/>
+            <DamageDealtFraction index="Melee" value="-0.75"/>
+            <DamageDealtFraction index="Ranged" value="-0.75"/>
+            <DamageDealtFraction index="Splash" value="-0.75"/>
+            <DamageDealtFraction index="NoProc" value="-0.75"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/DamageHalved"/>
+                <Cooldown Link="Behavior/DamageHalved"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DamageIncreasedby50">
+        <Cost>
+            <Charge Link="Behavior/DamageHalved"/>
+            <Cooldown Link="Behavior/DamageHalved"/>
+        </Cost>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="0.5"/>
+            <DamageDealtFraction index="Melee" value="0.5"/>
+            <DamageDealtFraction index="Ranged" value="0.5"/>
+            <DamageDealtFraction index="Splash" value="0.5"/>
+            <DamageDealtFraction index="NoProc" value="0.5"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/DamageHalved"/>
+                <Cooldown Link="Behavior/DamageHalved"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DanceofDeath1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\war3_btndeathcoil.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="10"/>
+        <Duration value="1"/>
+        <Modification MoveSpeedMultiplier="1.05"/>
+        <MaxStackCountPerCaster value="10"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DanceofDeathCheck">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Period value="0.9"/>
+        <PeriodicEffect value="DanceofDeathSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DifficultyModifier1P">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="-0.65"/>
+            <DamageDealtFraction index="Melee" value="-0.65"/>
+            <DamageDealtFraction index="Ranged" value="-0.65"/>
+            <DamageDealtFraction index="Splash" value="-0.65"/>
+            <DamageDealtFraction index="NoProc" value="-0.65"/>
+            <VitalMaxFractionArray index="Life" value="-0.65"/>
+            <VitalMaxFractionArray index="Shields" value="-0.65"/>
+            <VitalMaxFractionArray index="Energy" value="-0.65"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FuryoftheTemplar">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-sacrifice.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="8"/>
+        <Modification AttackSpeedMultiplier="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPHalved">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="Assets\Textures\ui_emoticons_theart.dds"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User12" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="-0.5"/>
+            <VitalMaxFractionArray index="Shields" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPdownto25">
+        <Cost>
+            <Charge Link="Behavior/HPHalved"/>
+            <Cooldown Link="Behavior/HPHalved"/>
+        </Cost>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="Assets\Textures\ui_emoticons_theart.dds"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User12" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="-0.75"/>
+            <VitalMaxFractionArray index="Shields" value="-0.75"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPHalved"/>
+                <Cooldown Link="Behavior/HPHalved"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IncreasingFury">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Invulnerability">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="Invulnerable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+        </Modification>
+        <DamageResponse Chance="1" ModifyFraction="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MicroReactor">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User10" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MinorRegenerationPotion">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Extend" value="1"/>
+        <Duration value="30"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MajorRegenerationPotion">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Extend" value="1"/>
+        <Duration value="15"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="16"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Overclocker">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-timebomb.dds"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User9" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification AttackSpeedMultiplier="1.2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PowerAmplifier">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User10" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification>
+            <DamageDealtScaled index="Melee" value="10"/>
+            <DamageDealtScaled index="Ranged" value="10"/>
+            <DamageDealtScaled index="Splash" value="10"/>
+            <DamageDealtScaled index="NoProc" value="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ProtectivePlating">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User10" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Modification LifeArmorBonus="3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsionicOrb">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="User10" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="1.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TinySize50">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SmallSize75">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TouchedbytheGodess1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-kerrigan-crushinggripwave.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="-2"/>
+            <VitalRegenArray index="Energy" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TouchedbytheGodess2">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-kerrigan-crushinggripwave.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="-4.5"/>
+            <VitalRegenArray index="Energy" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TouchedbytheGodess3">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-kerrigan-crushinggripwave.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="-10"/>
+            <VitalRegenArray index="Energy" value="4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TouchedbytheGodessAura1">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="1"/>
+        <PeriodicEffect value="AngelofLightTouchedbytheGodessSearchArea1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialFlames">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-waveknockbackdistanceincreased.dds"/>
+        <BehaviorCategories index="User15" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="1"/>
+        <Period value="0.2"/>
+        <PeriodCount value="5"/>
+        <PeriodicEffect value="CelestialRadianceDoT"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialRadianceDuration">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="6"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CelestialRegeneration">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-regenaura.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChangelingIllusion">
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="EnableAttack" value="1"/>
+            <ModifyFlags index="EnableMove" value="1"/>
+            <StateFlags index="Hallucination" value="1"/>
+            <DamageDealtFraction index="Spell" value="-0.5"/>
+            <DamageDealtFraction index="Melee" value="-0.5"/>
+            <DamageDealtFraction index="Ranged" value="-0.5"/>
+            <DamageDealtFraction index="Splash" value="-0.5"/>
+            <DamageDealtFraction index="NoProc" value="-0.5"/>
+            <VitalMaxFractionArray index="Life" value="-0.5"/>
+            <BehaviorLinkDisableArray value="HeroDeathPrevention2"/>
+        </Modification>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="30"/>
+        <ExpireEffect value="MultiplyTimedLife"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeSpeed">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CombatSuitLevel1">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification LifeArmorBonus="1">
+            <VitalRegenArray index="Life" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CombatSuitLevel2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/CombatSuitLevel1"/>
+            <Cooldown Link="Behavior/CombatSuitLevel1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification LifeArmorBonus="2.5">
+            <VitalRegenArray index="Life" value="4"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CombatSuitLevel1"/>
+                    <Cooldown Link="Behavior/CombatSuitLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/CombatSuitLevel1"/>
+                <Cooldown Link="Behavior/CombatSuitLevel1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CombatSuitLevel3">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/CombatSuitLevel1"/>
+            <Cooldown Link="Behavior/CombatSuitLevel1"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification LifeArmorBonus="4">
+            <VitalRegenArray index="Life" value="5"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/CombatSuitLevel1"/>
+                    <Cooldown Link="Behavior/CombatSuitLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/CombatSuitLevel1"/>
+                <Cooldown Link="Behavior/CombatSuitLevel1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CorrosiveSpit">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\abilityicon_corrosivespores_square.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="5"/>
+        <Period value="1"/>
+        <InitialEffect value="CorrosiveSpitDamage"/>
+        <RefreshEffect value="CorrosiveSpitDamage"/>
+        <PeriodicEffect value="CorrosiveSpitPeriodicDmg"/>
+        <Modification LifeArmorBonus="-0.5"/>
+        <MaxStackCount value="5"/>
+        <MaxStackCountPerCaster value="5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DummyBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FearsomeRoar">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="10"/>
+        <Modification MoveSpeedMultiplier="1.1">
+            <DamageDealtFraction index="Spell" value="-0.25"/>
+            <DamageDealtFraction index="Melee" value="-0.25"/>
+            <DamageDealtFraction index="Ranged" value="-0.25"/>
+            <DamageDealtFraction index="Splash" value="-0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPBuff">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPBuff2">
+        <Cost>
+            <Charge Link="Behavior/HPBuff"/>
+            <Cooldown Link="Behavior/HPBuff"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="0.5"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HPBuff"/>
+                    <Cooldown Link="Behavior/HPBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPBuff"/>
+                <Cooldown Link="Behavior/HPBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPBuff3">
+        <Cost>
+            <Charge Link="Behavior/HPBuff"/>
+            <Cooldown Link="Behavior/HPBuff"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HPBuff"/>
+                    <Cooldown Link="Behavior/HPBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPBuff"/>
+                <Cooldown Link="Behavior/HPBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPFlat">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Life" value="100"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPFlat2">
+        <Cost>
+            <Charge Link="Behavior/HPFlat"/>
+            <Cooldown Link="Behavior/HPFlat"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Life" value="1000"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HPFlat"/>
+                    <Cooldown Link="Behavior/HPFlat"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPFlat"/>
+                <Cooldown Link="Behavior/HPFlat"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPFlat3">
+        <Cost>
+            <Charge Link="Behavior/HPFlat"/>
+            <Cooldown Link="Behavior/HPFlat"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Life" value="10000"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HPFlat"/>
+                    <Cooldown Link="Behavior/HPFlat"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPFlat"/>
+                <Cooldown Link="Behavior/HPFlat"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HailofLeadLevel1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="0.5" AttackSpeedMultiplier="1.5">
+            <VitalRegenArray index="Energy" value="-1"/>
+            <WeaponArray Link="TychusCommandoChaingun"/>
+        </Modification>
+        <RemoveValidatorArray value="CasterHasEnergy"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPRegen">
+        <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPRegen2">
+        <Cost>
+            <Charge Link="Behavior/HPRegen"/>
+            <Cooldown Link="Behavior/HPRegen"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="5"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HPRegen"/>
+                    <Cooldown Link="Behavior/HPRegen"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HPRegen"/>
+                <Cooldown Link="Behavior/HPRegen"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HPRegen3">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HailofLeadLevel2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/HailofLeadLevel1"/>
+            <Cooldown Link="Behavior/HailofLeadLevel1"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="0.5" AttackSpeedMultiplier="2">
+            <VitalRegenArray index="Energy" value="-2"/>
+            <WeaponArray Link="TychusCommandoChaingun"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HailofLeadLevel1"/>
+                    <Cooldown Link="Behavior/HailofLeadLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HailofLeadLevel1"/>
+                <Cooldown Link="Behavior/HailofLeadLevel1"/>
+            </Cost>
+        </DamageResponse>
+        <RemoveValidatorArray value="CasterHasEnergy"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HailofLeadLevel3">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/HailofLeadLevel1"/>
+            <Cooldown Link="Behavior/HailofLeadLevel1"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="0.65" AttackSpeedMultiplier="2.25">
+            <VitalRegenArray index="Energy" value="-3"/>
+            <WeaponArray Link="TychusCommandoChaingun"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/HailofLeadLevel1"/>
+                    <Cooldown Link="Behavior/HailofLeadLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/HailofLeadLevel1"/>
+                <Cooldown Link="Behavior/HailofLeadLevel1"/>
+            </Cost>
+        </DamageResponse>
+        <RemoveValidatorArray value="CasterHasEnergy"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDeathPrevention2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DamageResponse>
+            <Chance value="1"/>
+            <Fatal value="1"/>
+            <Handled value="HeroIncapApplyBehavior"/>
+            <ModifyFraction value="0"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroIncapacitation">
+        <Alignment value="Negative"/>
+        <BehaviorCategories index="Invulnerable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <FinalEffect value="HeroIncapHeal"/>
+        <Modification Height="2">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IceBoltLevel1">
+        <Alignment value="Negative"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Period value="1"/>
+        <InitialEffect value="IceBoltSearchLevel1"/>
+        <PeriodicEffect value="IceBoltDamageRecurringLevel1"/>
+        <Modification MoveSpeedMultiplier="0.8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IceBoltLevel2">
+        <Alignment value="Negative"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Period value="1"/>
+        <InitialEffect value="IceBoltDamageLevel2"/>
+        <PeriodicEffect value="IceBoltDamageRecurringLevel2"/>
+        <Modification MoveSpeedMultiplier="0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IceBoltLevel3">
+        <Alignment value="Negative"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <Period value="1"/>
+        <InitialEffect value="IceBoltDamageLevel3"/>
+        <PeriodicEffect value="IceBoltDamageRecurringLevel3"/>
+        <Modification MoveSpeedMultiplier="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BruteCrashingChargeAbort">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="0.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="KraithCrashingChargeKnockback2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification Height="2" MoveSpeedMultiplier="1.5">
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <HeightTime index="Start" value="0.312"/>
+            <HeightTime index="Stop" value="0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="Levelup">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <PointGainEffect value="IncreaseCharges"/>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="LightningStorm">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\lightningzap6.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.6"/>
+        <Period value="0.5"/>
+        <InitialEffect value="LightningStormDamage"/>
+        <PeriodicEffect value="LightningStormDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MorphLife">
+        <Alignment value="Positive"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterLifeNotFull"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="CasterHasEnergy"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="10"/>
+            <VitalRegenArray index="Energy" value="-15"/>
+            <AbilLinkDisableArray value="MorphEnergy"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MorphEnergy">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/MorphLife"/>
+            <Cooldown Link="Behavior/MorphLife"/>
+        </Cost>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="EnergyNotFull"/>
+        <RemoveValidatorArray value="CasterHasLife"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="-10"/>
+            <VitalRegenArray index="Energy" value="15"/>
+            <AbilLinkDisableArray value="MorphLife"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/MorphLife"/>
+                    <Cooldown Link="Behavior/MorphLife"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/MorphLife"/>
+                <Cooldown Link="Behavior/MorphLife"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NoMovement">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NoTurning">
+        <InfoIcon value="Assets\Textures\btn-command-returncargo.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PhaseShiftLevel1">
+        <Alignment value="Positive"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedMultiplier="1.3">
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PhaseShiftLevel2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PhaseShiftLevel1"/>
+            <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+        </Cost>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="4"/>
+        <Modification MoveSpeedMultiplier="1.4">
+            <StateFlags index="SuppressCollision" value="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PhaseShiftLevel1"/>
+                    <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PhaseShiftLevel1"/>
+                <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PhaseShiftLevel3">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/PhaseShiftLevel1"/>
+            <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+        </Cost>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="5"/>
+        <Modification MoveSpeedMultiplier="1.5">
+            <StateFlags index="SuppressCollision" value="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/PhaseShiftLevel1"/>
+                    <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/PhaseShiftLevel1"/>
+                <Cooldown Link="Behavior/PhaseShiftLevel1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PouncerPounceKnockback">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
+        <Duration value="0.9"/>
+        <Period value="0.01"/>
+        <PeriodicEffect value="PouncerPounceKnockbackForce"/>
+        <Modification Height="2">
+            <HeightTime index="Start" value="0.45"/>
+            <HeightTime index="Stop" value="0.45"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReshapeHealing">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-zerg-regenerativebile.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="8"/>
+        <InitialEffect value="ReshapeSearch"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Shield1">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel0.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="100"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Shield2">
+        <Cost>
+            <Charge Link="Behavior/Shield"/>
+            <Cooldown Link="Behavior/Shield"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="500"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Shield"/>
+                    <Cooldown Link="Behavior/Shield"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Shield"/>
+                <Cooldown Link="Behavior/Shield"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Shield3">
+        <Cost>
+            <Charge Link="Behavior/Shield"/>
+            <Cooldown Link="Behavior/Shield"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="1000"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Shield"/>
+                    <Cooldown Link="Behavior/Shield"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Shield"/>
+                <Cooldown Link="Behavior/Shield"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ShieldRegenBuff2">
+        <Cost>
+            <Charge Link="Behavior/ShieldRegenBuff"/>
+            <Cooldown Link="Behavior/ShieldRegenBuff"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Shields" value="5"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/ShieldRegenBuff"/>
+                    <Cooldown Link="Behavior/ShieldRegenBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/ShieldRegenBuff"/>
+                <Cooldown Link="Behavior/ShieldRegenBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ShieldRegenBuff3">
+        <Cost>
+            <Charge Link="Behavior/ShieldRegenBuff"/>
+            <Cooldown Link="Behavior/ShieldRegenBuff"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Shields" value="10"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/ShieldRegenBuff"/>
+                    <Cooldown Link="Behavior/ShieldRegenBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/ShieldRegenBuff"/>
+                <Cooldown Link="Behavior/ShieldRegenBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SlowBuff1">
+        <Alignment value="Negative"/>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification MoveSpeedMultiplier="0.8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SlowBuff2">
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/SlowBuff1"/>
+            <Cooldown Link="Behavior/SlowBuff1"/>
+        </Cost>
+        <BehaviorCategories index="Permanent" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMultiplier="0.5">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/SlowBuff1"/>
+                    <Cooldown Link="Behavior/SlowBuff1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/SlowBuff1"/>
+                <Cooldown Link="Behavior/SlowBuff1"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpeedAbsorbed">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="6"/>
+        <Duration value="16"/>
+        <InitialEffect value="ChangelingSpeedAbsorbtionBuff"/>
+        <Modification MoveSpeedBonus="-0.1015"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <RefreshEffect value="ChangelingSpeedAbsorbtionBuff"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpeedAbsorbed2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/SpeedAbsorbed"/>
+            <Cooldown Link="Behavior/SpeedAbsorbed"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="6"/>
+        <Duration value="16"/>
+        <Modification MoveSpeedBonus="0.1015"/>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/SpeedAbsorbed"/>
+                <Cooldown Link="Behavior/SpeedAbsorbed"/>
+            </Cost>
+        </DamageResponse>
+        <DisplayDuration index="Self" value="1"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpeedBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification MoveSpeedMultiplier="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpeedBuff2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/SpeedBuff"/>
+            <Cooldown Link="Behavior/SpeedBuff"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification MoveSpeedMultiplier="2">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/SpeedBuff"/>
+                    <Cooldown Link="Behavior/SpeedBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/SpeedBuff"/>
+                <Cooldown Link="Behavior/SpeedBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ShieldRegenBuff">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <MaxStackCountPerCaster value="255"/>
+        <Modification>
+            <VitalRegenArray index="Shields" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpellImmunity">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Stun">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-stunnonheroicenemies.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Extend" value="1"/>
+        <Duration value="1"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="TestAttribute2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="TouchedbytheGodessAura2">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="1"/>
+        <PeriodicEffect value="AngelofLightTouchedbytheGodessSearchArea2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TouchedbytheGodessAura3">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="1"/>
+        <PeriodicEffect value="AngelofLightTouchedbytheGodessSearchArea3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TychusSecretStashLevel1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="6"/>
+        <Modification MoveSpeedMultiplier="1.3">
+            <DamageDealtFraction index="Ranged" value="0.2"/>
+            <AbilLinkDisableArray value="Hailoflead"/>
+        </Modification>
+        <DisplayDuration index="Self" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TychusSecretStashLevel2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/TychusSecretStashLevel1"/>
+            <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="8"/>
+        <Modification MoveSpeedMultiplier="1.45">
+            <DamageDealtFraction index="Ranged" value="0.3"/>
+            <AbilLinkDisableArray value="Hailoflead"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/TychusSecretStashLevel1"/>
+                    <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/TychusSecretStashLevel1"/>
+                <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+            </Cost>
+        </DamageResponse>
+        <DisplayDuration index="Self" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TychusSecretStashLevel3">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/TychusSecretStashLevel1"/>
+            <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="10"/>
+        <Modification MoveSpeedMultiplier="1.5">
+            <DamageDealtFraction index="Ranged" value="0.5"/>
+            <AbilLinkDisableArray value="Hailoflead"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/TychusSecretStashLevel1"/>
+                    <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/TychusSecretStashLevel1"/>
+                <Cooldown Link="Behavior/TychusSecretStashLevel1"/>
+            </Cost>
+        </DamageResponse>
+        <DisplayDuration index="Self" value="1"/>
+    </CBehaviorBuff>
+    <!--Buff that is applied between waves-->
+    <CBehaviorBuff id="WaveRegeneration">
+        <Alignment value="Positive"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="5"/>
+            <VitalRegenArray index="Energy" value="5"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="WillpowerBuff">
+        <Cost>
+            <Charge Link="Behavior/StrengthBuff"/>
+            <Cooldown Link="Behavior/StrengthBuff"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Willpower" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/StrengthBuff"/>
+                    <Cooldown Link="Behavior/StrengthBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/StrengthBuff"/>
+                <Cooldown Link="Behavior/StrengthBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="IntelligenceBuff">
+        <Cost>
+            <Charge Link="Behavior/StrengthBuff"/>
+            <Cooldown Link="Behavior/StrengthBuff"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Intelligence" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/StrengthBuff"/>
+                    <Cooldown Link="Behavior/StrengthBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/StrengthBuff"/>
+                <Cooldown Link="Behavior/StrengthBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="BasicVeterancy">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <SharedXPRadius index="Kills" value="8"/>
+        <SharedXPFraction index="Kills" value="0.5"/>
+        <VeterancyLevelArray MinVeterancyXP="100">
+            <Modification>
+                <BehaviorLinkEnableArray value="HailofLeadLevel1"/>
+                <AttributeChangeArray Attribute="Levelup" Points="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="250">
+            <Modification>
+                <AttributeChangeArray Attribute="Levelup" Points="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <AttributeChangeArray Attribute="Levelup" Points="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <AttributeChangeArray Attribute="Levelup" Points="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorAttribute id="Endurance">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxArray index="Life" value="50"/>
+            <VitalRegenArray index="Life" value="0.5"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="AgilityBuff">
+        <Cost>
+            <Charge Link="Behavior/StrengthBuff"/>
+            <Cooldown Link="Behavior/StrengthBuff"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Agility" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/StrengthBuff"/>
+                    <Cooldown Link="Behavior/StrengthBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/StrengthBuff"/>
+                <Cooldown Link="Behavior/StrengthBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="Intelligence">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="0.04"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorAttribute id="Strength">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageDealtUnscaled index="Melee" value="1.5"/>
+            <DamageDealtUnscaled index="Ranged" value="1"/>
+        </Modification>
+    </CBehaviorAttribute>
+    <CBehaviorBuff id="StrengthBuff">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Strength" Points="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="EnduranceBuff">
+        <Cost>
+            <Charge Link="Behavior/StrengthBuff"/>
+            <Cooldown Link="Behavior/StrengthBuff"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <MaxStackCount value="255"/>
+        <Modification>
+            <AttributeChangeArray Attribute="Endurance" Points="1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/StrengthBuff"/>
+                    <Cooldown Link="Behavior/StrengthBuff"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/StrengthBuff"/>
+                <Cooldown Link="Behavior/StrengthBuff"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorAttribute id="Willpower">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxArray index="Energy" value="25"/>
+            <VitalRegenArray index="Energy" value="0.1015"/>
+        </Modification>
+    </CBehaviorAttribute>
+</Catalog>

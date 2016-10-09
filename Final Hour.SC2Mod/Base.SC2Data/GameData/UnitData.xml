@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUnit id="AngelofLight">
+        <Race value="Zerg"/>
+        <Gender value="Female"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmorName value="Unit/LifeArmorName/AngelOfLight"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="0.5"/>
+        <Speed value="2.5"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <Sight value="10"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="DivineFire"/>
+        <AbilArray Link="CelestialRadiance"/>
+        <AbilArray Link="TouchedbytheGodess"/>
+        <AbilArray Link="AngelofLightLearnAbilities"/>
+        <AbilArray Link="KarassInventory"/>
+        <AbilArray Link="DanceofDeath"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="DivineFire" Type="AbilCmd" AbilCmd="DivineFire,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="CelestialRadiance" Type="AbilCmd" AbilCmd="CelestialRadiance,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="CancelTouchedbytheGodess" Type="AbilCmd" AbilCmd="TouchedbytheGodess,Off" Row="1" Column="0"/>
+            <LayoutButtons Face="TouchedbytheGodessLevel1" Type="AbilCmd" AbilCmd="TouchedbytheGodess,On" Row="1" Column="0"/>
+            <LayoutButtons Face="LevelUp" Type="Submenu" SubmenuCardId="0002" Row="2" Column="4"/>
+            <LayoutButtons Face="DanceofDeath" Type="Passive" Requirements="DanceofDeathLevel1" Row="1" Column="1"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons>
+                <Face value="LevelUpActiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuAbilState value="AngelofLightLearnAbilities"/>
+                <SubmenuCardId value="0003"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="LevelUpAttributes"/>
+                <Type value="Submenu"/>
+                <SubmenuCardId value="0004"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0003">
+            <LayoutButtons Face="TouchedbytheGodessLevel1" Type="AbilCmd" AbilCmd="AngelofLightLearnAbilities,Learn5" Row="0" Column="0"/>
+            <LayoutButtons Face="DivineFire" Type="AbilCmd" AbilCmd="AngelofLightLearnAbilities,Learn1" Row="1" Column="0"/>
+            <LayoutButtons>
+                <Face value="CelestialRadiance"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="AngelofLightLearnAbilities,Learn2"/>
+                <SubmenuAbilState value="AngelofLightLearnAbilities"/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="DanceofDeath" Type="AbilCmd" AbilCmd="AngelofLightLearnAbilities,Learn6" Row="0" Column="1"/>
+        </CardLayouts>
+        <CardLayouts CardId="0004">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Hero"/>
+        <WeaponArray Link="AngelofLightHolySmite"/>
+        <FlagArray index="Hero" value="1"/>
+        <LifeRegenRate value="0.25"/>
+    </CUnit>
+    <CUnit id="PsionicLinkMissile" parent="MISSILE">
+        <Race value="Prot"/>
+    </CUnit>
+    <CUnit id="ResourceBeacon">
+        <Race value="Prot"/>
+        <Gender value="Neutral"/>
+        <PlaneArray index="Ground" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <Attributes index="User1" value="1"/>
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <LifeArmorName value="Unit/LifeArmorName/ResourceBeacon"/>
+        <BehaviorArray Link="BeaconDamagePrevention"/>
+        <Radius value="6"/>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3Contour"/>
+        <EditorCategories value="ObjectType:Structure"/>
+    </CUnit>
+    <CUnit id="Brute">
+        <Race value="Zerg"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Colossus" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <LifeArmor value="3"/>
+        <LifeRegenDelay value="8"/>
+        <LifeRegenRate value="5"/>
+        <Speed value="2.8984"/>
+        <Acceleration value="1000"/>
+        <TurningRate value="360"/>
+        <Sight value="25"/>
+        <CostCategory value="Army"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="FearsomeRoar"/>
+        <AbilArray Link="Charge2"/>
+        <WeaponArray Link="BruteBlades"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="FearsomeRoar" Type="AbilCmd" AbilCmd="FearsomeRoar,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Charge2" Type="AbilCmd" AbilCmd="Charge2,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <InnerRadius value="0.75"/>
+    </CUnit>
+    <CUnit id="ChangelingHero">
+        <Race value="Zerg"/>
+        <Gender value="Neutral"/>
+        <Collide index="Ground" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/Changeling"/>
+        <EnergyStart value="150"/>
+        <EnergyMax value="300"/>
+        <EnergyRegenRate value="1"/>
+        <Speed value="3"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="HoldFire"/>
+        <AbilArray Link="MorphLife"/>
+        <AbilArray Link="MorphEnergy"/>
+        <AbilArray Link="SpeedAbsorbtion"/>
+        <AbilArray Link="ChangelingLearnAbilities"/>
+        <AbilArray Link="Multiply"/>
+        <AbilArray Link="Reshape"/>
+        <AbilArray Link="KarassInventory"/>
+        <WeaponArray Link="CorrosiveSpit"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="AbsorbSpeed" Type="AbilCmd" AbilCmd="SpeedAbsorbtion,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SpeedAbsorbtion,Cancel" Row="2" Column="0"/>
+            <LayoutButtons Face="MorphEnergy" Type="AbilCmd" AbilCmd="MorphEnergy,On" Row="1" Column="0"/>
+            <LayoutButtons Face="CancelMorphEnergy" Type="AbilCmd" AbilCmd="MorphEnergy,Off" Row="1" Column="0"/>
+            <LayoutButtons Face="MorphLife" Type="AbilCmd" AbilCmd="MorphLife,On" Row="1" Column="1"/>
+            <LayoutButtons Face="CancelMorphLife" Type="AbilCmd" AbilCmd="MorphLife,Off" Row="1" Column="1"/>
+            <LayoutButtons>
+                <Face value="LevelUp"/>
+                <Type value="Submenu"/>
+                <AbilCmd value="ChangelingLearnAbilities,Learn1"/>
+                <SubmenuCardId value="0002"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="Multiply" Type="AbilCmd" AbilCmd="Multiply,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="Reshape" Type="AbilCmd" AbilCmd="Reshape,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons>
+                <Face value="LevelUpActiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuAbilState value="ChangelingLearnAbilities"/>
+                <SubmenuCardId value="0003"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons Face="LevelUpAttributes" Row="2" Column="3"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0003">
+            <LayoutButtons Face="AbsorbSpeed" Type="AbilCmd" AbilCmd="ChangelingLearnAbilities,Learn1" Row="0" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="Multiply" Type="AbilCmd" AbilCmd="ChangelingLearnAbilities,Learn2" Row="0" Column="1"/>
+            <LayoutButtons Face="Reshape" Type="AbilCmd" AbilCmd="ChangelingLearnAbilities,Learn3" Row="0" Column="2"/>
+        </CardLayouts>
+        <EditorCategories value="ObjectType:Hero"/>
+        <FlagArray index="Unhighlightable" value="0"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <Sight value="8"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+    </CUnit>
+    <CUnit id="CorrosiveSpit">
+        <Race value="Zerg"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value=""/>
+    </CUnit>
+    <CUnit id="DivineFireMissile" parent="MISSILE">
+        <Race value="Zerg"/>
+    </CUnit>
+    <CUnit id="HeroFrame">
+        <Race value="Zerg"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmorName value="Unit/LifeArmorName/HeroArmor"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="2"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="AttributeIncrease"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Levelup"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Hero"/>
+    </CUnit>
+    <CUnit id="Karass2">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeRegenRate value="0.25"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <EnergyStart value="200"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="0.5625"/>
+        <ShieldsStart value="200"/>
+        <ShieldsMax value="200"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Speed value="3"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <Food value="-2"/>
+        <AttackTargetPriority value="19"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="40"/>
+        <AbilArray Link="stop2"/>
+        <AbilArray Link="move2"/>
+        <AbilArray Link="attack2"/>
+        <AbilArray Link="PhaseShift2"/>
+        <AbilArray Link="KarassLearnAbilities"/>
+        <AbilArray Link="AttributeIncrease"/>
+        <AbilArray Link="LightningStorm"/>
+        <AbilArray Link="IceBolt"/>
+        <AbilArray Link="KarassInventory"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+        <BehaviorArray Link="Levelup"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move2" Type="AbilCmd" AbilCmd="move2,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop2" Type="AbilCmd" AbilCmd="stop2,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition2" Type="AbilCmd" AbilCmd="move2,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol2" Type="AbilCmd" AbilCmd="move2,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack2" Type="AbilCmd" AbilCmd="attack2,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="LightningStorm,Cancel" Row="2" Column="1"/>
+            <LayoutButtons Face="LightningStorm" Type="AbilCmd" AbilCmd="LightningStorm,Execute" Row="2" Column="1"/>
+            <LayoutButtons>
+                <Face value="LevelUp"/>
+                <Type value="Submenu"/>
+                <AbilCmd value="KarassLearnAbilities,Learn1"/>
+                <SubmenuCardId value="0002"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="IceBoltLevel1" Type="AbilCmd" AbilCmd="IceBolt,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="PhaseShift2" Type="AbilCmd" AbilCmd="PhaseShift2,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons>
+                <Face value="LevelUpActiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuAbilState value="KarassLearnAbilities"/>
+                <SubmenuCardId value="0003"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="LevelUpAttributes" SubmenuCardId="0004" SubmenuIsSticky="1" Row="2" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0003">
+            <LayoutButtons Face="LearnPhaseShiftLevel1" Type="AbilCmd" AbilCmd="KarassLearnAbilities,Learn1" Row="0" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="LightningStorm" Type="AbilCmd" AbilCmd="KarassLearnAbilities,Learn2" Row="0" Column="1"/>
+            <LayoutButtons Face="LearnIceBoltLevel1" Type="AbilCmd" AbilCmd="KarassLearnAbilities,Learn3" Row="0" Column="0"/>
+        </CardLayouts>
+        <CardLayouts CardId="0004">
+            <LayoutButtons Face="Strength" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize1" Row="0" Column="0"/>
+            <LayoutButtons Face="Endurance" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize2" Row="0" Column="1"/>
+            <LayoutButtons Face="Agility" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize3" Row="0" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="Intelligence" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize4" Row="0" Column="3"/>
+            <LayoutButtons Face="Willpower" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize5" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="400"/>
+        <ScoreKill value="800"/>
+        <SubgroupPriority value="30"/>
+        <EditorCategories value="ObjectType:Hero"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="350"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <WeaponArray Link="SpiritStaff"/>
+    </CUnit>
+    <CUnit id="IceboltMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="IceBoltWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="MajorRegenerationPotion">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="25"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="MajorRegenerationPotion"/>
+    </CUnit>
+    <CUnit id="MinorEnergyPotion">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="10"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="MinorEnergyPotion"/>
+    </CUnit>
+    <CUnit id="MajorEnergyPotion">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="10"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="MajorEnergyPotion"/>
+    </CUnit>
+    <CUnit id="Overclocker">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="50"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="Overclocker"/>
+    </CUnit>
+    <CUnit id="Template">
+        <Description value="Button/Tooltip/ItemTemplate"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="10"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="TemplateItem"/>
+    </CUnit>
+    <CUnit id="PouncerLeapClone" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+    </CUnit>
+    <CUnit id="BasicShop">
+        <FlagArray index="Movable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Phased" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <Sight value="6"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="que5"/>
+        <AbilArray Link="ShopInteract"/>
+        <AbilArray Link="ForgeShop"/>
+        <AbilArray Link="ForgePawn"/>
+        <AbilArray Link="ShopInventory"/>
+        <BehaviorArray Link="Invulnerability"/>
+        <CardLayouts>
+            <LayoutButtons Face="MinorRegenerationPotion" Type="AbilCmd" AbilCmd="ForgeShop,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="MinorEnergyPotion" Type="AbilCmd" AbilCmd="ForgeShop,Train3" Row="0" Column="1"/>
+            <LayoutButtons Face="Overclocker" Type="AbilCmd" AbilCmd="ForgeShop,Train5" Row="0" Column="2"/>
+            <LayoutButtons Face="ProtectivePlating" Type="AbilCmd" AbilCmd="ForgeShop,Train6" Row="0" Column="3"/>
+            <LayoutButtons Face="PsionicOrb" Type="AbilCmd" AbilCmd="ForgeShop,Train7" Row="0" Column="4"/>
+            <LayoutButtons Face="MajorRegenerationPotion" Type="AbilCmd" AbilCmd="ForgeShop,Train2" Row="1" Column="0"/>
+            <LayoutButtons Face="MajorEnergyPotion" Type="AbilCmd" AbilCmd="ForgeShop,Train4" Row="1" Column="1"/>
+            <LayoutButtons Face="PowerAmplifier" Type="AbilCmd" AbilCmd="ForgeShop,Train8" Row="1" Column="2"/>
+            <LayoutButtons Face="MicroReactor" Type="AbilCmd" AbilCmd="ForgeShop,Train9" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="1.5"/>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3Contour"/>
+        <EditorCategories value="ObjectType:Structure"/>
+    </CUnit>
+    <CUnit id="SpirtStaff">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="5"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="SpiritStaff"/>
+    </CUnit>
+    <CUnit id="MinorRegenerationPotion">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="10"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="MinorRegenerationPotion"/>
+    </CUnit>
+    <CUnit id="ProtectivePlating">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="35"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="ProtectivePlating"/>
+    </CUnit>
+    <CUnit id="PsionicOrb">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="65"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="PsionicOrb"/>
+    </CUnit>
+    <CUnit id="PowerAmplifier">
+        <Description value="Button/Tooltip/ItemPowerAmplifier"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="40"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="PowerAmplifier"/>
+    </CUnit>
+    <CUnit id="MicroReactor">
+        <Description value="Button/Tooltip/ItemMicroReactor"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <CostResource index="Minerals" value="45"/>
+        <EditorCategories value="ObjectType:Item"/>
+        <Item value="MicroReactor"/>
+    </CUnit>
+    <CUnit id="TychusHero">
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="TychusCommando"/>
+        <Race value="Terr"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="0.5"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="719.2968"/>
+        <Sight value="10"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="15"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="TossGrenade2"/>
+        <AbilArray Link="AttributeIncrease"/>
+        <AbilArray Link="TossShredderGrenade"/>
+        <AbilArray Link="TychusLearnActiveSkills"/>
+        <AbilArray Link="Hailoflead"/>
+        <AbilArray Link="CombatSuit"/>
+        <AbilArray Link="TychusSecretStash"/>
+        <AbilArray Link="KarassInventory"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+        <BehaviorArray Link="Levelup"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <WeaponArray Link="TychusCommandoChaingun"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="TurnOnHailofLead" Type="AbilCmd" AbilCmd="Hailoflead,On" Row="2" Column="1"/>
+            <LayoutButtons Face="TurnOffHailofLead" Type="AbilCmd" AbilCmd="Hailoflead,Off" Row="2" Column="1"/>
+            <LayoutButtons Face="TossGrenadeTychus" Type="AbilCmd" AbilCmd="TossShredderGrenade,Execute" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="LevelUp"/>
+                <Type value="Submenu"/>
+                <SubmenuCardId value="0002"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="PoweredCombatSuitLevel3" Type="Passive" Requirements="CombatSuitLevel3" Row="1" Column="0"/>
+            <LayoutButtons Face="PoweredCombatSuitLevel2" Type="Passive" Requirements="CombatSuitLevel2" Row="1" Column="0"/>
+            <LayoutButtons>
+                <Face value="PoweredCombatSuitLevel1"/>
+                <Type value="Passive"/>
+                <AbilCmd value="CombatSuit,Off"/>
+                <Requirements value="CombatSuitLevel1"/>
+                <Row value="1"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons Face="TychusTychusSecretStash" Type="AbilCmd" AbilCmd="TychusSecretStash,On" Row="2" Column="2"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons Face="LevelUpAttributes" SubmenuCardId="0003" SubmenuIsSticky="1" Row="2" Column="3"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons>
+                <Face value="LevelUpActiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuAbilState value="TychusLearnActiveSkills"/>
+                <SubmenuCardId value="0004"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="2"/>
+            </LayoutButtons>
+        </CardLayouts>
+        <CardLayouts CardId="0003">
+            <LayoutButtons Face="Strength" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize1" Row="0" Column="0"/>
+            <LayoutButtons Face="Endurance" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize2" Row="0" Column="1"/>
+            <LayoutButtons Face="Agility" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize3" Row="0" Column="2"/>
+            <LayoutButtons Face="Intelligence" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize4" Row="0" Column="3"/>
+            <LayoutButtons Face="Willpower" Type="AbilCmd" AbilCmd="AttributeIncrease,Specialize5" Row="0" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0004">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons>
+                <Face value="TossShredderGrenadeLearn"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="TychusLearnActiveSkills,Learn1"/>
+                <SubmenuAbilState value="TychusLearnActiveSkills"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="0"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons Face="HailofLeadLearn" Type="AbilCmd" AbilCmd="TychusLearnActiveSkills,Learn2" Row="0" Column="1"/>
+            <LayoutButtons Face="PoweredCombatSuitLevel1Learn" Type="AbilCmd" AbilCmd="TychusLearnActiveSkills,Learn3" Row="1" Column="0"/>
+            <LayoutButtons Face="TychusTychusSecretStashLearn" Type="AbilCmd" AbilCmd="TychusLearnActiveSkills,Learn4" Row="0" Column="2"/>
+        </CardLayouts>
+        <CardLayouts CardId="0005">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="49"/>
+        <EditorCategories value="ObjectType:Hero"/>
+        <TacticalAI value="TychusCommando"/>
+        <LeaderAlias value="TychusCommando"/>
+        <HotkeyAlias value="TychusCommando"/>
+        <SelectAlias value="TychusCommando"/>
+        <SubgroupAlias value="TychusCommando"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="310"/>
+        <HotkeyCategory value="Unit/Category/TerranStory"/>
+        <AIEvaluateAlias value="TychusCommando"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <ReviveInfoBase>
+            <Charge Link="TychusCommando/Revive"/>
+            <Cooldown Link="TychusCommando/Revive"/>
+        </ReviveInfoBase>
+        <LifeRegenRate value="0.25"/>
+    </CUnit>
+    <CUnit id="TossShredderGrenade" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="TossGrenade2"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value="BonesTossGrenadeWeapon"/>
+    </CUnit>
+    <CUnit id="UnitTemplate">
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="1"/>
+    </CUnit>
+    <CUnit id="Pouncer">
+        <Race value="Zerg"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeRegenRate value="0.5"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergArmor"/>
+        <Speed value="2.5"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AttackTargetPriority value="2"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="PouncerPounce"/>
+        <WeaponArray Link="PouncerClaws"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="PouncerPounce" Type="AbilCmd" AbilCmd="PouncerPounce,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <InnerRadius value="1"/>
+        <MinimapRadius value="1"/>
+    </CUnit>
+    <CUnit id="MysteriousObelisk">
+        <Gender value="Neutral"/>
+        <PlaneArray index="Ground" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Phased" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="5000"/>
+        <LifeMax value="5000"/>
+        <LifeArmor value="5"/>
+        <LifeArmorName value="Unit/LifeArmorName/MysteriousObelisk"/>
+        <Sight value="10"/>
+        <Radius value="1.5"/>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3Contour"/>
+        <MinimapRadius value="3"/>
+        <EditorCategories value="ObjectType:Structure"/>
+    </CUnit>
+    <CUnit id="HighPriest">
+        <Race value="Prot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <LifeArmorName value="Unit/LifeArmorName/HighPriest"/>
+        <EnergyStart value="200"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="1"/>
+        <ShieldsStart value="300"/>
+        <ShieldsMax value="300"/>
+        <ShieldArmor value="4"/>
+        <ShieldRegenDelay value="8"/>
+        <ShieldRegenRate value="5"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/HighPriest"/>
+        <Speed value="1.8984"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <Sight value="12"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="HighPriestHeal"/>
+        <AbilArray Link="HighPriestFuryoftheTemplar"/>
+        <WeaponArray Link="PsionicLink"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="HighPriestHeal" Type="AbilCmd" AbilCmd="HighPriestHeal,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="FuryoftheTemplar" Type="AbilCmd" AbilCmd="HighPriestFuryoftheTemplar,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <InnerRadius value="1"/>
+    </CUnit>
+    <CUnit id="UnitTesty">
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="TestyMissileTest"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MissilleTest" Type="AbilCmd" AbilCmd="TestyMissileTest,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <InnerRadius value="1"/>
+    </CUnit>
+</Catalog>

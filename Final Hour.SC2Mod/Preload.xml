@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Preload>
+<Asset path="assets\textures\changelingportrait_static.dds" Type="Image"/>
+<Asset path="assets\textures\ui_chatbaricons_zerg_individual.dds" Type="Image"/>
+<Asset path="assets\textures\medicportrait_static.dds" Type="Image"/>
+<Asset path="assets\textures\tychusportrait_static.dds" Type="Image"/>
+<Asset path="assets\textures\xelnagakerriganportrait_static.dds" Type="Image"/>
+<Asset path="assets\textures\karassportrait_static.dds" Type="Image"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="BeaconHostile"/>
+<Behavior id="BeaconFriendly"/>
+<Behavior id="WaveRegeneration"/>
+<Effect id="DummySpellDamage"/>
+<Unit id="Medic"/>
+<Unit id="AngelofLight"/>
+<Unit id="ChangelingHero"/>
+<Unit id="Karass2"/>
+<Unit id="TychusHero"/>
+</Preload>

@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CActorUnit id="AngelofLightHero" parent="GenericUnitStandard" unitName="AngelofLight">
+        <EditorCategories value=""/>
+        <PortraitModel value="KerriganEpilogue03Portrait"/>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-kerriganascended.dds"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
+        <SoundArray index="Birth" value="Mission_Epilogue03_Kerrigan_042"/>
+        <SoundArray index="Ready" value="KerriganEpilogue_Ready"/>
+        <SoundArray index="Help" value="KerriganEpilogue_Help"/>
+        <SoundArray index="What" value="KerriganEpilogue_What"/>
+        <SoundArray index="Yes" value="KerriganEpilogue_Yes"/>
+        <SoundArray index="Attack" value="KerriganEpilogue_Attack"/>
+        <SoundArray index="Pissed" value="KerriganEpilogue_Pissed"/>
+        <SoundArray index="Movement" value="KerriganEpilogue_Yes"/>
+        <SoundArray index="Turning" value="KerriganEpilogue_Ready"/>
+        <SoundArray index="Click" value="KerriganEpilogue_Ready"/>
+        <SoundArray index="Highlight" value="Mission_Epilogue03_Kerrigan_033"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-kerriganascended.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-kerriganascended.dds"/>
+        </Wireframe>
+        <Scale value="0.400000"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,240,196,15"/>
+        </StatusColors>
+        <ShieldArmorIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+    </CActorUnit>
+    <CActorAction id="AngelofLightHolySmite" parent="GenericAttack" effectImpact="AngelofLightHolySmiteDamage">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <ImpactModel value="AngelofLightHolyLightImpact"/>
+        <ImpactSound value=""/>
+        <LaunchAssets Sound="Firebat_AttackImpact2"/>
+    </CActorAction>
+    <CActorModel id="AngelofLightHolyLightImpact" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="SetTintColor {244,139,23 3.000000}"/>
+        <On Terms="Effect.AngelofLightHolySmiteDamage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldRotation="1"/>
+        <Model value="HolyLight"/>
+        <AutoScaleFactor value="2.000000"/>
+    </CActorModel>
+    <CActorUnit id="BasicShop" parent="GenericUnitStandard" unitName="BasicShop">
+        <EditorCategories value=""/>
+        <Model value="ForgeTaldarim"/>
+        <BuildModel value="ForgeTaldarim"/>
+        <PlacementModel value="ForgeTaldarim"/>
+        <PortraitModel value="HighTemplarTaldarimPortrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-forge.dds"/>
+    </CActorUnit>
+    <CActorAction id="BruteAttack" parent="GenericAttack" effectAttack="BruteBladesDamage">
+        <EditorCategories value=""/>
+        <ImpactPhysics MatchKeys="Basic" AttackAnimProps="Spell,D" Physics="UltraliskAttackImpact"/>
+    </CActorAction>
+    <CActorSound id="BruteChargeSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.Charge2.TargetPrepStart" Send="Create"/>
+        <Sound value="Ultralisk_What"/>
+    </CActorSound>
+    <CActorSound id="BruteFearsomeRoarSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.FearsomeRoar.SourceCastStart" Send="Create"/>
+        <Sound value="Ultralisk_Roar"/>
+    </CActorSound>
+    <CActorModel id="CelestialRadianceEffect" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Abil.CelestialRadiance.SourceCastStart" Target="::Host" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.200000"/>
+        <On Terms="Behavior.CelestialRadianceDuration.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 242,151,13"/>
+        <On Terms="Behavior.CelestialRadianceDuration2.Off" Send="Destroy"/>
+        <Model value="GenericFire_Medium_Area"/>
+        <Scale value="5.000000,5.000000,0.090000"/>
+        <HostSiteOps Ops="CelestialRadianceOffset" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="CelestialRadianceOffset">
+        <EditorCategories value=""/>
+        <LocalOffset value="0.000000,0.000000,-0.100000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSound id="CelestialRadianceSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.CelestialRadiance.SourceCastStart" Send="Create"/>
+        <Sound value="Mission_Epilogue03_Kerrigan_057"/>
+    </CActorSound>
+    <CActorSound id="ChangelingCorrosiveSpitAttackImpactSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <Sound value="Hydralisk_AttackImpactRanged"/>
+    </CActorSound>
+    <CActorUnit id="ChangelingHero" parent="GenericUnitStandard" unitName="ChangelingHero">
+        <EditorCategories value=""/>
+        <Model value="Changeling"/>
+        <PortraitModel value="ChangelingPortrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-changeling.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-changeling.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-adaptivecarapace.dds"/>
+        <ShieldArmorIcon value="Assets\Textures\btn-upgrade-zerg-swarmfrenzy.dds"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-changeling.dds"/>
+    </CActorUnit>
+    <CActorModel id="ChangelingReshapeFX" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.ReshapeHealing.On" Send="Create"/>
+        <On Terms="Behavior.ReshapeHealing.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+    </CActorModel>
+    <CActorBeamSimple id="ChangelingSpeedBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <Scale value="0.500000"/>
+        <On index="0" Terms="ActorCreation" Send="AnimPlay Beam1 Stand 0 -1.000000 -1.000000 -1.000000 AsDuration"/>
+        <On index="1" Terms="AnimDone; AnimName Beam1" Send="Destroy"/>
+        <On index="2" removed="1"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="ChangelingSpeedBeam2" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On index="0" Terms="ActorCreation" Send="AnimPlay Beam1 Stand 0 -1.000000 -1.000000 -1.000000 AsDuration"/>
+        <On index="1" Terms="AnimDone; AnimName Beam1" Send="Destroy"/>
+        <On index="2" Terms="Effect.ChangelingSpeedAbsorbtionPersistent.Start" Send="Create"/>
+        <Model value="ChangelingSpeedBeam"/>
+        <Scale value="0.500000"/>
+        <HostImpact Subject="_Unit" Scope="Caster" Actor="Find"/>
+    </CActorBeamSimple>
+    <CActorAction id="ChangelingSpeedBeamAttack" parent="GenericAttack">
+        <EditorCategories value=""/>
+        <On index="0" Terms="Effect.ChangelingSpeedAbsorbtionDrain.Start" Send="Create"/>
+        <On index="1" removed="1"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <Beam value="ChangelingSpeedBeam"/>
+    </CActorAction>
+    <CActorAction id="CorrosiveSpitAttack" parent="GenericAttack" effectImpact="CorrosiveSpitApplyBehavior" effectLaunch="CorrosiveSpitLaunchMissile">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterHead"/>
+        <Missile value="CorrosiveSpitMissile"/>
+        <LaunchAssets Sound="Hydralisk_GroundAttackLaunch"/>
+        <ImpactSound value="ChangelingCorrosiveSpitAttackImpactSound"/>
+    </CActorAction>
+    <CActorMissile id="CorrosiveSpitMissile" parent="GenericAttackMissile" unitName="CorrosiveSpit">
+        <EditorCategories value=""/>
+    </CActorMissile>
+    <CActorModel id="DivineFireImpact" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.DivineFireImpact.Start" Send="Create"/>
+        <Model value="330mmBarrageCannonsImpact"/>
+        <Scale value="1.500000"/>
+    </CActorModel>
+    <CActorSound id="DivineFireImpactSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.DivineFireImpact.Start" Send="Create"/>
+        <Sound value="Raven_HunterSeekerAttackImpact"/>
+    </CActorSound>
+    <CActorMissile id="DivineFireMissile" parent="GenericAttackMissile" unitName="DivineFireMissile">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,100 4.000000}"/>
+        <Model value="YamatoWeapon"/>
+    </CActorMissile>
+    <CActorAction id="DivineFireR" parent="GenericAttack" effectImpact="DivineFireImpact" effectLaunch="DivineFireLaunchR">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
+        <LaunchAssets Sound="FirebatAttackLaunch"/>
+        <Missile value="DivineFireMissile"/>
+    </CActorAction>
+    <CActorAction id="DivineFireL" parent="GenericAttack" effectImpact="DivineFireImpact" effectLaunch="DivineFireLaunchL">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <LaunchAssets Model="FireballRLaunch" Sound="FirebatAttackLaunch"/>
+        <Beam value="FireballRBeam"/>
+        <Missile value="DivineFireMissile"/>
+        <ImpactMap index="None" Model="FireballRImpact" Sound="FireballRImpact" ModelReaction="FireballRImpactReaction"/>
+        <ImpactMap index="Shield" Sound="FireballRImpactShield" ModelReaction="FireballRImpactReactionShield"/>
+        <DamageMap index="None" Model="FireballRDamage" Sound="FireballRDamage" ModelReaction="FireballRDamageReaction"/>
+        <DamageMap index="Shield" Sound="FireballRDamageShield" ModelReaction="FireballRDamageReactionShield"/>
+    </CActorAction>
+    <CActorModel id="GenericAttackDamageModel2" parent="GenericAttackModel"/>
+    <CActorModel id="GenericAttackDamageModel3" parent="GenericAttackModel"/>
+    <CActorSound id="GenericAttackDamageSound2" parent="GenericAttackSound"/>
+    <CActorSound id="GenericAttackDamageSound3" parent="GenericAttackSound"/>
+    <CActorModel id="GenericAttackImpactModel2" parent="GenericAttackModel"/>
+    <CActorModel id="GenericAttackImpactModel3" parent="GenericAttackModel"/>
+    <CActorSound id="GenericAttackImpactSound2" parent="GenericAttackSound"/>
+    <CActorSound id="GenericAttackImpactSound3" parent="GenericAttackSound"/>
+    <CActorModel id="GenericAttackLaunchModel2" parent="GenericAttackModel"/>
+    <CActorModel id="GenericAttackLaunchModel3" parent="GenericAttackModel"/>
+    <CActorSound id="GenericAttackLaunchSound2" parent="GenericAttackSound"/>
+    <CActorSound id="GenericAttackLaunchSound3" parent="GenericAttackSound"/>
+    <CActorModel id="HeroIncap2" parent="ModelAnimationStyleContinuous">
+        <AcceptedTransfers index="Position" value="0"/>
+        <AcceptedTransfers index="Rotation" value="0"/>
+        <On Terms="Behavior.HeroIncapacitation.On" Send="Create"/>
+        <On Terms="Behavior.HeroIncapacitation.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="GravitonBeamImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HighPriestFuryoftheTemplarVisual" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.FuryoftheTemplar.Create" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor {187,0,0 0.300000} 2.000000 OneShot FuryOfTheTemplar"/>
+        <On Terms="ActorCreation" Target="::Host" Send="SetTintColor {213,0,0 0.300000} 2.000000 OneShot FuryOfTheTemplar"/>
+        <On Terms="Behavior.FuryoftheTemplar.Destroy" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="::Host" Send="ClearTintColor 2.000000 FuryOfTheTemplar"/>
+        <On Terms="ActorDestruction" Send="ClearTintColor 2.000000 FuryOfTheTemplar"/>
+        <Host Subject="_Unit"/>
+        <Model value="DehakaHealBuffModel"/>
+    </CActorModel>
+    <CActorModel id="HighPriestHealVisual" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.HighPriestHealModifyUnit.Start" Send="Create"/>
+        <Host Subject="_Unit" Scope="Target"/>
+        <HostSiteOps Ops="SOpAttachHead" HoldRotation="1"/>
+        <Model value="RestoreShieldsImpactModel"/>
+    </CActorModel>
+    <CActorAction id="IceBoltAttack" parent="GenericAttack" effectImpact="IceBoltApplyBuffLevel1" effectLaunch="IceBoltLaunchMissle">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterUpgradeWeaponRight"/>
+    </CActorAction>
+    <CActorAction id="IceBoltAttackLevel2" parent="GenericAttack" effectImpact="IceBoltApplyBuffLevel2" effectLaunch="IceBoltLaunchMissleLevel2">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <Missile value="IceBoltAttackMissile"/>
+    </CActorAction>
+    <CActorAction id="IceBoltAttackLevel3" parent="GenericAttack" effectImpact="IceBoltApplyBuffLevel3" effectLaunch="IceBoltLaunchMissleLevel3">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <Missile value="IceBoltAttackMissile"/>
+    </CActorAction>
+    <CActorMissile id="IceBoltAttackMissile" parent="GenericAttackMissile" unitName="IceboltMissile">
+        <EditorCategories value=""/>
+        <Model value="PhotonCannonWeapon"/>
+    </CActorMissile>
+    <CActorModel id="IceBoltSlowvisual" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.IceBoltLevel1.On" Send="Create"/>
+        <On Terms="Behavior.IceBoltLevel1.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="::Host" Send="SetTintColor 107,235,241 1.000000 OneShot {Ice Bolt}"/>
+        <On Terms="ActorDestruction" Target="::Host" Send="ClearTintColor 1.000000 {Ice Bolt}"/>
+        <On Terms="Behavior.IceBoltLevel2.On" Send="Create"/>
+        <On Terms="Behavior.IceBoltLevel2.Off" Send="Destroy"/>
+        <On Terms="Behavior.IceBoltLevel3.On" Send="Create"/>
+        <On Terms="Behavior.IceBoltLevel3.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="ActiveCrystals"/>
+    </CActorModel>
+    <CActorUnit id="Karass2" parent="GenericUnitStandard" unitName="Karass2">
+        <On Terms="Abil.KarassPsiStorm.SourceCastStart" Send="AnimPlay A A"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Spell"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.200000 Shadow"/>
+        <On Terms="TimerExpired; TimerName Shadow; IsStatus ShadowCreate 1; !ModelIsLowQuality" Send="Create KarassShadow"/>
+        <On Terms="TimerExpired; TimerName Shadow" Send="TimerSet 0.200000 Shadow"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Send="StatusSet ShadowCreate 0"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="StatusSet ShadowCreate 1"/>
+        <On Terms="ActorCreation" Send="StatusSet ShadowCreate 0"/>
+        <On Terms="Abil.IceBolt.SourceCastStart" Send="AnimPlay BSD Spell"/>
+        <On Terms="Abil.PhaseShift2.SourceCastStart" Send="AnimPlay BSD Spell,A"/>
+        <On Terms="Abil.LightningStorm.SourceChannelStart" Send="AnimPlay BSD Channel"/>
+        <Model value="Karass"/>
+        <AnimBlendTime value="0.450000"/>
+        <BuildModel value="Karass"/>
+        <DeathArray index="Normal" ModelLink="KarassDeath" SoundLink="Karass_DeathFX"/>
+        <PlacementModel value="Karass"/>
+        <PortraitModel value="KarassPortrait"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="70"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-HighTemplar.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="Birth" value="Karass_Birth"/>
+        <GroupSoundArray index="Ready" value="Karass_Ready"/>
+        <GroupSoundArray index="Help" value="Karass_Help"/>
+        <GroupSoundArray index="What" value="Karass_What"/>
+        <GroupSoundArray index="Yes" value="Karass_Yes"/>
+        <GroupSoundArray index="Attack" value="Karass_Attack"/>
+        <GroupSoundArray index="Pissed" value="Karass_Pissed"/>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-karass.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <SoundArray index="Ready" value="Karass_Ready"/>
+        <SoundArray index="Help" value="Karass_Help"/>
+        <SoundArray index="What" value="Karass_What"/>
+        <SoundArray index="Yes" value="Karass_Yes"/>
+        <SoundArray index="Attack" value="Karass_Attack"/>
+        <SoundArray index="Pissed" value="Karass_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-karass.dds"/>
+        <UnitKillRank Text="UnitKillRank/Karass2"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-HighTemplar.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-HighTemplar-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-HighTemplar-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-HighTemplar-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorSound id="KarassIceBoltSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.IceBolt.SourceFinishStart" Send="Create"/>
+        <Sound value="Karass_PlasmaSurgeLaunch"/>
+    </CActorSound>
+    <CActorSound id="KarassLightningStormCastSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.LightningStorm.SourceCastStart" Send="Create"/>
+        <Sound value="HighTemplar_PsionicStormVO"/>
+    </CActorSound>
+    <CActorPower id="LevelUpIncreaseCharges" effectAttack="Bogus" effectImpact="Bogus" effectLaunch="Bogus">
+        <Aliases value="_ActorAction"/>
+        <EditorCategories value=""/>
+        <On Terms="Effect.Bogus.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.Bogus.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On Terms="Effect.Bogus.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.SplashDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.SplashDamage.Stop; FromEffectTreeDescendant" Send="ActionDamagePhysics"/>
+        <On Terms="BehaviorLevel.BasicVeterancy; EffectParent IncreaseCharges" Send="Create"/>
+    </CActorPower>
+    <CActorSplat id="LightningStormCursorSplat" parent="ProtossCursorSplat" abil="LightningStorm">
+        <VisibleTo index="Self" value="1"/>
+        <EditorCategories value=""/>
+        <On index="0" Terms="Abil.Cursor" Send="Create"/>
+    </CActorSplat>
+    <CActorUnit id="MajorRegenerationPotion" parent="GenericUnitStandard" unitName="MajorRegenerationPotion">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/MajorRegenerationPotionTooltip"/>
+        <UnitIcon value="Assets\Textures\war3_btnpotiongreen.dds"/>
+    </CActorUnit>
+    <CActorUnit id="MinorEnergyPotion" parent="GenericUnitStandard" unitName="MinorEnergyPotion">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/MinorEnergyPotionTooltip"/>
+        <UnitIcon value="Assets\Textures\war3_btnpotionbluesmall.dds"/>
+    </CActorUnit>
+    <CActorUnit id="MajorEnergyPotion" parent="GenericUnitStandard" unitName="MajorEnergyPotion">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/MajorEnergyPotionTooltip"/>
+        <UnitIcon value="Assets\Textures\war3_btnpotionbluebig.dds"/>
+    </CActorUnit>
+    <CActorUnit id="Overclocker" parent="GenericUnitStandard" unitName="Overclocker">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/OverclockerTooltip"/>
+        <UnitIcon value="Assets\Textures\btn-ability-protoss-timebomb.dds"/>
+    </CActorUnit>
+    <CActorModel id="MorphEnergy" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.MorphEnergy.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor 20,250,238"/>
+        <On Terms="ActorDestruction" Send="ClearTintColor"/>
+        <On Terms="Behavior.MorphEnergy.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <Model value="HighYieldActiveCrystals"/>
+    </CActorModel>
+    <CActorModel id="MorphLife" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.MorphLife.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor 217,73,53"/>
+        <On Terms="ActorDestruction" Send="ClearTintColor"/>
+        <On Terms="Behavior.MorphLife.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <Model value="HighYieldActiveCrystals"/>
+    </CActorModel>
+    <CActorAction id="PsionicLinkAttack" parent="GenericAttack" effectImpact="PsionicLinkDamage" effectLaunch="PsionicLinkLaunchMissile">
+        <EditorCategories value=""/>
+        <LaunchAssets Sound="Adept_PsionicTransferEnd"/>
+        <Missile value="PsionicLinkMissile"/>
+    </CActorAction>
+    <CActorMissile id="PsionicLinkMissile" parent="GenericAttackMissile" unitName="PsionicLinkMissile">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="SetTintColor 112,0,223"/>
+        <Model value="AlarakPsiOrbMissile"/>
+        <Scale value="0.400000"/>
+    </CActorMissile>
+    <CActorUnit id="ResourceBeacon" parent="GenericUnitStandard" unitName="ResourceBeacon">
+        <EditorCategories value="DoodadType:Structures"/>
+        <Model value="XelNagaObelisk"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-obelisk.dds"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,0,0 0.400000}"/>
+        <On Terms="Behavior.BeaconHostile.Create" Send="SetTintColor {255,0,0 0.400000}"/>
+        <On Terms="Behavior.BeaconFriendly.Create" Send="SetTintColor {0,255,255 0.400000}"/>
+    </CActorUnit>
+    <CActorUnit id="Template" parent="GenericUnitStandard" unitName="Template">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/TemplateTooltip"/>
+        <UnitIcon value="Assets\Textures\ui_tip_questionmark.dds"/>
+    </CActorUnit>
+    <CActorModel id="PhaseShift" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.PhaseShiftLevel1.On" Send="Create"/>
+        <On Terms="Behavior.PhaseShiftLevel1.Off" Send="Destroy"/>
+        <On Terms="Behavior.PhaseShiftLevel2.On" Send="Create"/>
+        <On Terms="Behavior.PhaseShiftLevel2.Off" Send="Destroy"/>
+        <On Terms="Behavior.PhaseShiftLevel3.On" Send="Create"/>
+        <On Terms="Behavior.PhaseShiftLevel3.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="::Host" Send="SetTintColor 204,126,237 0.000000 OneShot {Phase Shift}"/>
+        <On Terms="ActorDestruction" Target="::Host" Send="ClearTintColor 0.000000 {Phase Shift}"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="TimeWarp"/>
+        <Scale value="0.500000"/>
+    </CActorModel>
+    <CActorSound id="PhaseShiftSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.PhaseShift2.SourceCastStart" Send="Create"/>
+        <Sound value="Obelisk_TimeWarpLaunch"/>
+    </CActorSound>
+    <CActorModel id="LightningStormImpact" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.LightningStorm.On" Send="Create"/>
+        <On Terms="Behavior.LightningStorm.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="KarassPsiStormImpact"/>
+    </CActorModel>
+    <CActorModel id="LightningStormModel" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="Effect.LightningStormPersistent.Start" Send="Create"/>
+        <On Terms="Effect.LightningStormPersistent.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetTintColor 55,192,244 0.000000 OneShot {Lightning Storm}"/>
+        <On Terms="ActorDestruction" Send="ClearTintColor 0.000000 {Lightning Storm}"/>
+        <Model value="KarassPsiStormModel"/>
+        <Host Subject=""/>
+        <HostSiteOps Ops="SOpShadow"/>
+    </CActorModel>
+    <CActorMissile id="PouncerLeapClone" parent="GenericAttackMissile" unitName="PouncerLeapClone">
+        <EditorCategories value=""/>
+        <Model value="Ravasaur"/>
+        <On Terms="ActorCreation" Send="AnimPlay BSD Jump"/>
+    </CActorMissile>
+    <CActorModel id="PouncerPounceIndicator" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Effect.PouncerPounceLaunchPersistent.Start" Send="Create"/>
+        <On Terms="Effect.PouncerPounceLaunchPersistent.Stop" Send="Destroy"/>
+        <On Terms="Abil.PouncerPounce.SourceCancel" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,0,0 4.000000}"/>
+        <On Terms="Abil.PouncerPounce.SourceBailStart" Send="Destroy"/>
+        <On Terms="Abil.PouncerPounce.SourcePrecastCancel" Send="Destroy"/>
+        <Model value="ZergGenericAOECursorRing"/>
+    </CActorModel>
+    <CActorUnit id="SpiritStaff" parent="GenericUnitStandard" unitName="SpirtStaff">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-ability-protoss-energize.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-ability-protoss-energize.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="MinorRegenerationPotion" parent="GenericUnitStandard" unitName="MinorRegenerationPotion">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/MinorRegenerationPotionTooltip"/>
+        <UnitIcon value="Assets\Textures\war3_btnpotiongreensmall.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-ability-protoss-energize.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="SpiritStaffAttack" parent="GenericAttack" effectImpact="SpiritStaffDamage" effectLaunch="SpiritStaffLaunchMissile">
+        <EditorCategories value=""/>
+        <LaunchAssets Sound="Karass_AttackLaunch"/>
+        <Missile value="KarassAttackMissile"/>
+        <ImpactMap index="None" Model="AdeptSoulMissileImpact" Sound="Karass_AttackImpact"/>
+        <LaunchAttachQuery Methods="AMFilterUpgradeWeaponRight"/>
+    </CActorAction>
+    <CActorUnit id="ProtectivePlating" parent="GenericUnitStandard" unitName="ProtectivePlating">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <UnitIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+    </CActorUnit>
+    <CActorUnit id="PsionicOrb" parent="GenericUnitStandard" unitName="PsionicOrb">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/PsionicOrbTooltip"/>
+        <UnitIcon value="Assets\Textures\btn-ability-protoss-psionicorb.dds"/>
+    </CActorUnit>
+    <CActorUnit id="PowerAmplifier" parent="GenericUnitStandard" unitName="PowerAmplifier">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/PowerAmplifierTooltip"/>
+        <UnitIcon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+    </CActorUnit>
+    <CActorUnit id="MicroReactor" parent="GenericUnitStandard" unitName="MicroReactor">
+        <EditorCategories value=""/>
+        <Model value="ShapeTreasureChestClosed"/>
+        <HighlightTooltip value="Unit/Name/MicroReactorTooltip"/>
+        <UnitIcon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+    </CActorUnit>
+    <CActorAction id="TestBeamWeapon" parent="GenericAttack">
+        <EditorCategories value=""/>
+        <On index="0" Terms="Effect.TestBeamWeaponDamage.Start" Send="Create"/>
+        <On index="1" removed="1"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <LaunchSite value="::Target"/>
+        <Beam value="ChangelingSpeedBeam"/>
+        <ImpactSite value="::Caster"/>
+    </CActorAction>
+    <CActorAction id="TinyUnit50Size">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.TinySize50.On" Target="::Host" Send="SetScale 0.500000"/>
+        <On Terms="Behavior.TinySize50.Off" Target="::Host" Send="SetScale"/>
+    </CActorAction>
+    <CActorAction id="TychusCommandoAttack2" parent="GenericAttack" effectAttack="TychusCommandoAttackDamage2">
+        <LaunchAssets Model="TychusCommandoAttackLaunch2" Sound="Raven_AutoTurretAttackLaunch2"/>
+        <LaunchModel value="GenericAttackLaunchModel2"/>
+        <LaunchSound value="GenericAttackLaunchSound2"/>
+        <ContainerModel value="GenericAttackLaunchModel2"/>
+        <ContainerSound value="GenericAttackLaunchSound2"/>
+        <ImpactMap index="None" Model="TychusCommandoAttackImpact2"/>
+        <ImpactModel value="GenericAttackImpactModel2"/>
+        <ImpactSound value="GenericAttackImpactSound2"/>
+        <DamageModel value="GenericAttackDamageModel2"/>
+        <DamageSound value="GenericAttackDamageSound2"/>
+    </CActorAction>
+    <CActorRegionCircle id="TychusGrenadeDoodadKiller2">
+        <On Terms="Effect.BonesTossGrenadeDamage.Start; At Effect" Send="Create"/>
+        <On Terms="ActorCreation" Send="QueryRegion ::Self DoodadKillQuery AgainstCenter"/>
+        <On Terms="Effect.BonesTossGrenadeDamage.Start; At Effect" Send="Destroy"/>
+        <Radius value="2.000000"/>
+    </CActorRegionCircle>
+    <CActorModel id="TychusGrenadeInHand2" parent="ModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <On Terms="Effect.TossShredderGrenadeDelayLevel1.Start" Target="::Creator" Send="Create"/>
+        <On Terms="Effect.TossShredderGrenadeDelayLevel1.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon01"/>
+        <Model value="TychusTossGrenade2"/>
+    </CActorModel>
+    <CActorSound id="TychusHailofLeadSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.Hailoflead.TargetOn" Send="Create"/>
+        <Sound value="Tychus_Attack"/>
+    </CActorSound>
+    <CActorUnit id="TychusHero" parent="GenericUnitStandard" unitName="TychusHero">
+        <On Terms="Abil.BonesTossGrenade.SourceCastStart" Send="$Spell 0 -1.000000 -1.000000 2.000000 AsTimeScale"/>
+        <On Terms="ActorCreation" Send="TextureSelectById Decal_Campaign_Tychus_01"/>
+        <Model value="TychusCommando2"/>
+        <ModelFlags index="SuppressPlayerDecals" value="1"/>
+        <BuildModel value="TychusCommando2"/>
+        <DeathArray index="Normal" ModelLink="TychusCommando2" SoundLink="Tychus_Explode2"/>
+        <DeathArray index="Fire" ModelLink="TychusCommandoDeathFire2" SoundLink="Uni_DeathFXFire2"/>
+        <DeathCustoms index="0" ModelLink="ZergSmallUnitDeathLow2" Name="AntiGravGeneric"/>
+        <DeathCustoms index="1" ModelLink="ProtossSmallUnitDeathLow2" Name="AntiGravProtoss"/>
+        <DeathCustoms index="2" ModelLink="TerranSmallUnitDeathLow2" Name="AntiGravTerran"/>
+        <DeathCustoms index="3" ModelLink="ZergSmallUnitDeathLow2" Name="AntiGravZerg"/>
+        <DeathCustoms index="4" ModelLink="Invisible2" Name="Vortex"/>
+        <PlacementModel value="TychusCommando2"/>
+        <PortraitModel value="TychusPortrait2"/>
+        <StandAnimTurnTime value="5"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <AbilSoundArray AbilCmd="TossGrenade2,Execute" Sound="Tychus_TossGrenadeVO2"/>
+        <BarOffset value="50"/>
+        <BarWidth value="50"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-marine-tychus.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\ui-heroicon-tychus.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SoundArray index="Birth" value="Tychus_Birth"/>
+        <SoundArray index="Ready" value="Tychus_Ready2"/>
+        <SoundArray index="Help" value="Tychus_Help2"/>
+        <SoundArray index="What" value="Tychus_What2"/>
+        <SoundArray index="Yes" value="Tychus_Yes2"/>
+        <SoundArray index="Attack" value="Tychus_Attack2"/>
+        <SoundArray index="Pissed" value="Tychus_Pissed2"/>
+        <SoundArray index="Movement" value="Tychus_Movement"/>
+        <SoundArray index="Turning" value="Tychus_Turning"/>
+        <SoundArray index="Board" value="Tychus_Board"/>
+        <UnitBorderNormalColor value="150,150,150"/>
+        <UnitBorderSubgroupColor value="255,255,255"/>
+        <UnitIcon value="Assets\Textures\BTN-Unit-Terran-MarineTychus.dds"/>
+        <UnitKillRank Text="UnitKillRank/Tychus"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-marine-tychus.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSound id="TychusSecretStashSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.TychusSecretStash.TargetOn" Send="Create"/>
+        <Sound value="TychusOdin_Yes"/>
+    </CActorSound>
+    <CActorSound id="TychusStimPack2" parent="SoundOneShot">
+        <On Terms="Effect.TossShredderGrenadeDelayLevel1.Start" Send="Create"/>
+        <Sound value="Marine_StimPack"/>
+    </CActorSound>
+    <CActorAction id="TychusTossShredderGrenade" parent="GenericAttack" effectImpact="TossShredderGrenadeDamageLevel1" effectLaunch="TossShredderGrenadeLaunchMissileLevel1">
+        <On Terms="Effect.TossShredderGrenadeDamageLevel2.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On Terms="Effect.TossShredderGrenadeLaunchMissileLevel2.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.TossShredderGrenadeDamageLevel3.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On Terms="Effect.TossShredderGrenadeLaunchMissileLevel3.Start; At Caster" Send="Create"/>
+        <LaunchAttachQuery Methods="Weapon 1"/>
+        <LaunchModel value="GenericAttackLaunchModel3"/>
+        <LaunchSound value="GenericAttackLaunchSound3"/>
+        <ContainerModel value="GenericAttackLaunchModel3"/>
+        <ContainerSound value="GenericAttackLaunchSound3"/>
+        <ImpactMap index="None" Model="TychusTossGrenadeImpact2" Sound="TychusTossGrenadeImpact2"/>
+        <ImpactModel value="GenericAttackImpactModel3"/>
+        <ImpactSound value="GenericAttackImpactSound3"/>
+        <DamageModel value="GenericAttackDamageModel3"/>
+        <DamageSound value="GenericAttackDamageSound3"/>
+    </CActorAction>
+    <CActorMissile id="TychusTossShredderGrenadeMissile" parent="GenericAttackMissile" unitName="TossShredderGrenade">
+        <Model value="TychusGrenadeWeapon2"/>
+    </CActorMissile>
+    <CActorSound id="TychusTossShredderGrenadeSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Abil.TossShredderGrenade.SourceCastStart" Send="Create"/>
+        <Sound value="Tychus_TossGrenadeVO"/>
+    </CActorSound>
+    <CActorSound id="Tychus_TossShredderGrenadeLaunch" parent="SoundOneShot">
+        <On Terms="Effect.TossShredderGrenadeDelayLevel1.Stop" Send="Create"/>
+        <On Terms="Effect.TossShredderGrenadeDelayLevel2.Stop" Send="Create"/>
+        <On Terms="Effect.TossShredderGrenadeDelayLevel3.Stop" Send="Create"/>
+        <Sound value="Tychus_TossGrenadeLaunch2"/>
+    </CActorSound>
+    <CActorUnit id="Brute" parent="Ultralisk" unitName="Brute">
+        <On index="0" Terms="UnitBirth.Brute"/>
+        <On index="1" Terms="UnitBirth.Brute"/>
+        <On index="2" Terms="UnitRevive.Brute"/>
+        <On index="3" Terms="UnitRevive.Brute"/>
+        <On index="4" Terms="UnitConstruction.Brute"/>
+        <On index="5" Terms="UnitConstruction.Brute"/>
+        <On Terms="Abil.FearsomeRoar.SourceCastStart" Send="AnimPlay BSD Flail"/>
+        <On Terms="WeaponStart.BruteBlades.AttackStart" Send="AnimPlay BSD Spell,D"/>
+        <On Terms="Abil.Charge2.TargetPrepStart" Send="AnimPlay BSD Stand,Victory"/>
+        <On Terms="Behavior.ChargeSpeed.On" Send="AnimPlay BSD Flail"/>
+        <HighlightTooltip value="Unit/Name/Brute"/>
+    </CActorUnit>
+    <CActorUnit id="UnitTemplate" parent="GenericUnitStandard" unitName="UnitTemplate">
+        <EditorCategories value=""/>
+        <Model value="MarineXPR"/>
+        <BuildModel value="MarineXPR"/>
+        <PlacementModel value="MarineXPR"/>
+        <PortraitModel value="MarineAPortrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-marine.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="Pouncer" parent="GenericUnitStandard" unitName="Pouncer">
+        <EditorCategories value=""/>
+        <Model value="Ravasaur"/>
+        <BuildModel value="Ravasaur"/>
+        <PlacementModel value="Ravasaur"/>
+        <PortraitModel value="PrimalZerg02Portrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-ravasaur.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\btn-unit-zerg-ravasaur.dds"/>
+        </Wireframe>
+        <On Terms="Effect.PouncerPounceLaunchMissile.Launch" Send="SetVisibility"/>
+        <On Terms="Effect.PouncerPounceImpactSearchArea.Stop" Send="SetVisibility 1"/>
+        <On Terms="Abil.PouncerPounce.SourceCastStart" Send="AnimPlay Beam1 Jump,Start DontResetOnUnhide -1.000000 -1.000000 3.000000 AsDuration"/>
+        <On Terms="Effect.PouncerPounceImpactSearchArea.Stop" Send="AnimPlay Beam1 Jump,End DontResetOnUnhide -1.000000 -1.000000 1.000000 AsDuration"/>
+    </CActorUnit>
+    <CActorUnit id="MysteriousObelisk" parent="GenericUnitStandard" unitName="MysteriousObelisk">
+        <EditorCategories value=""/>
+        <Model value="HybridObelisk"/>
+        <Scale value="0.500000"/>
+        <BuildModel value="HybridObelisk"/>
+        <PlacementModel value="HybridObelisk"/>
+        <PortraitModel value="HansonDistressPortrait"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,0,242,255"/>
+        </StatusColors>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-obelisk.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-obelisk.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="HighPriest" parent="GenericUnitStandard" unitName="HighPriest">
+        <EditorCategories value=""/>
+        <On Terms="Abil.HighPriestHeal.SourceCastStart" Send="AnimPlay BSD Spell,A"/>
+        <On Terms="Abil.HighPriestFuryoftheTemplar.SourceCastStart" Send="AnimPlay BSD Spell,B"/>
+        <Model value="HighTemplarStandard"/>
+        <BuildModel value="HighTemplarStandard"/>
+        <PlacementModel value="HighTemplarStandard"/>
+        <PortraitModel value="HighTemplarStandardPortrait"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,128,0,255"/>
+        </StatusColors>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-hightemplar.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="UnitTesty" parent="GenericUnitStandard" unitName="UnitTesty">
+        <EditorCategories value=""/>
+        <Model value="MarineXPR"/>
+        <BuildModel value="MarineXPR"/>
+        <PlacementModel value="MarineXPR"/>
+        <PortraitModel value="MarineAPortrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-marine.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSound id="AngelofLightHolySmiteSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <Sound value="Firebat_AttackImpact2"/>
+    </CActorSound>
+    <CActorModel id="WaveRegenerationEffect" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.WaveRegeneration.On" Target="::Host" Send="Create"/>
+        <On Terms="Behavior.WaveRegeneration.Destroy" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {14,241,94 3.000000}"/>
+        <Model value="ActiveCrystals"/>
+    </CActorModel>
+</Catalog>

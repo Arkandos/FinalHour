@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CUpgrade default="1" id="TerranInfantryWeaponsUltraCapacitors2">
+        <Flags index="UpgradeCheat" value="0"/>
+        <InfoTooltipPriority value="61"/>
+        <Race value="Terr"/>
+        <ScoreCount value="WeaponTechnologyCount"/>
+        <ScoreValue value="WeaponTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Weapon,GuassRifle,Level" Value="1"/>
+        <EffectArray Reference="Effect,GuassRifle,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,P38ScytheGuassPistol,Level" Value="1"/>
+        <EffectArray Reference="Effect,P38ScytheGuassPistol,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,D8Charge,Level" Value="1"/>
+        <EffectArray Reference="Effect,D8ChargeDamage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,PunisherGrenades,Level" Value="1"/>
+        <EffectArray Reference="Effect,PunisherGrenadesU,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,PunisherGrenadesU,AttributeBonus[Armored]" Value="1.000000"/>
+        <EffectArray Reference="Weapon,C10CanisterRifle,Level" Value="1"/>
+        <EffectArray Reference="Effect,C10CanisterRifle,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,C10CanisterRifle,AttributeBonus[Light]" Value="1.000000"/>
+        <EffectArray Reference="Weapon,Firebat,Level" Value="1"/>
+        <EffectArray Reference="Effect,FirebatUFull,Amount" Value="1.000000"/>
+        <EffectArray Reference="Weapon,Specter,Level" Value="1"/>
+        <EffectArray Reference="Effect,SpecterU,Amount" Value="1.000000"/>
+        <EffectArray Reference="Weapon,KelmorianMinerGaussRifle,Level" Value="1"/>
+        <EffectArray Reference="Effect,KelmorianMinerDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,HammerSecurity,Level" Value="1"/>
+        <EffectArray Reference="Effect,HammerSecurityDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,DevilDogFlameThrower,Level" Value="1"/>
+        <EffectArray Reference="Effect,DevilDogDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,CommandoRifle,Level" Value="1"/>
+        <EffectArray Reference="Effect,CommandoRifle,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,RaynorWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,RaynorWeaponU,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray Reference="Effect,TychusCommandoAttackDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TychusChaingun,Level" Value="1"/>
+        <EffectArray Reference="Effect,TychusChaingun,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,DutchConcussiveGrenade,Level" Value="1"/>
+        <EffectArray Reference="Weapon,SwannMelee,Level" Value="1"/>
+        <EffectArray Reference="Effect,DutchConcussiveGrenadeDamage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,Nova,Level" Value="1"/>
+        <EffectArray Reference="Effect,Nova,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,Tosh,Level" Value="1"/>
+        <EffectArray Reference="Effect,ToshU,Amount" Value="4"/>
+        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="RaynorCommando"/>
+        <AffectedUnitArray value="Raynor"/>
+        <AffectedUnitArray value="TychusCommando"/>
+        <AffectedUnitArray value="TychusChaingun"/>
+        <AffectedUnitArray value="Swann"/>
+        <AffectedUnitArray value="Nova"/>
+        <AffectedUnitArray value="Tosh"/>
+        <AffectedUnitArray value="Ghost"/>
+        <AffectedUnitArray value="Marauder"/>
+        <AffectedUnitArray value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="Firebat"/>
+        <AffectedUnitArray value="WarPig"/>
+        <AffectedUnitArray value="Spectre"/>
+        <AffectedUnitArray value="HammerSecurity"/>
+        <AffectedUnitArray value="DevilDog"/>
+    </CUpgrade>
+    <CUpgrade id="DivineFireDamageUpgrade">
+        <EffectArray Reference="Effect,DivineFireDamage1,Amount" Value="10"/>
+        <EditorCategories value="UpgradeType:AttackBonus"/>
+        <MaxLevel value="255"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel12" parent="TerranInfantryArmorsLevel1">
+        <Name value="Upgrade/Name/TerranInfantryArmorsLevel12"/>
+        <EffectArray index="57" Reference="Actor,TychusHero,LifeArmorIcon"/>
+        <EffectArray index="117" Reference="Actor,TychusHero,LifeArmorIcon"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel22" parent="TerranInfantryArmorsLevel2">
+        <Name value="Upgrade/Name/TerranInfantryArmorsLevel22"/>
+        <EffectArray index="57" Reference="Actor,TychusHero,LifeArmorIcon"/>
+        <EffectArray index="117" Reference="Actor,TychusHero,LifeArmorIcon"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel32" parent="TerranInfantryArmorsLevel3">
+        <Name value="Upgrade/Name/TerranInfantryArmorsLevel32"/>
+        <EffectArray index="57" Reference="Actor,TychusHero,LifeArmorIcon"/>
+        <EffectArray index="117" Reference="Actor,TychusHero,LifeArmorIcon"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsVanadiumPlatingLevel12" parent="TerranInfantryArmorsVanadiumPlating">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Firebat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Medic,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,SpecterUnit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,KelmorianMiner,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,HammerSecurity,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DevilDog,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DominionKillTeam,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,RaynorCommando,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Raynor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusHero,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusChaingun,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Dutch,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Bones,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Nova,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Tosh,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsVanadiumPlatingLevel22" parent="TerranInfantryArmorsVanadiumPlating">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <ScoreAmount value="350"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Firebat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Medic,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,SpecterUnit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,KelmorianMiner,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,HammerSecurity,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DevilDog,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DominionKillTeam,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,RaynorCommando,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Raynor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusHero,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusChaingun,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Dutch,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Bones,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Nova,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Tosh,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsVanadiumPlatingLevel32" parent="TerranInfantryArmorsVanadiumPlating">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Firebat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Medic,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,SpecterUnit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,KelmorianMiner,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,HammerSecurity,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DevilDog,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,DominionKillTeam,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,RaynorCommando,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Raynor,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusHero,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,TychusChaingun,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Dutch,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Bones,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Nova,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Tosh,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel12" parent="TerranInfantryWeaponsLevel1">
+        <Name value="Upgrade/Name/TerranInfantryWeaponsLevel12"/>
+        <EffectArray index="34" Reference="Weapon,TychusCommandoChaingun2,Level"/>
+        <EffectArray index="53" Reference="Weapon,TychusCommandoChaingun2,Icon"/>
+        <EffectArray index="77" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray index="114" Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel22" parent="TerranInfantryWeaponsLevel2">
+        <Name value="Upgrade/Name/TerranInfantryWeaponsLevel22"/>
+        <EffectArray index="34" Reference="Weapon,TychusCommandoChaingun2,Level"/>
+        <EffectArray index="53" Reference="Weapon,TychusCommandoChaingun2,Icon"/>
+        <EffectArray index="77" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray index="114" Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel32" parent="TerranInfantryWeaponsLevel3">
+        <Name value="Upgrade/Name/TerranInfantryWeaponsLevel32"/>
+        <EffectArray index="34" Reference="Weapon,TychusCommandoChaingun2,Level"/>
+        <EffectArray index="53" Reference="Weapon,TychusCommandoChaingun2,Icon"/>
+        <EffectArray index="77" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray index="114" Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsUltraCapacitorsLevel12" parent="TerranInfantryWeaponsUltraCapacitors">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray index="26" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Firebat,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Specter,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,KelmorianMinerGaussRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HammerSecurity,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DevilDogFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CommandoRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,RaynorWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusChaingun,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DutchConcussiveGrenade,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,SwannMelee,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Nova,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Tosh,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,GuassRifle,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,P38ScytheGuassPistol,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,D8Charge,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,PunisherGrenades,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,C10CanisterRifle,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Firebat,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Specter,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,KelmorianMinerGaussRifle,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,HammerSecurity,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DevilDogFlameThrower,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,CommandoRifle,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,RaynorWeapon,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusCommandoChaingun2,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusChaingun,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DutchConcussiveGrenade,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,SwannMelee,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Nova,Period" Value="0.950000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Tosh,Period" Value="0.950000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsUltraCapacitorsLevel22" parent="TerranInfantryWeaponsUltraCapacitors">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <ScoreAmount value="350"/>
+        <EffectArray index="26" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Firebat,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Specter,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,KelmorianMinerGaussRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HammerSecurity,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DevilDogFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CommandoRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,RaynorWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusChaingun,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DutchConcussiveGrenade,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,SwannMelee,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Nova,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Tosh,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,GuassRifle,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,P38ScytheGuassPistol,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,D8Charge,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,PunisherGrenades,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,C10CanisterRifle,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Firebat,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Specter,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,KelmorianMinerGaussRifle,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,HammerSecurity,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DevilDogFlameThrower,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,CommandoRifle,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,RaynorWeapon,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusCommandoChaingun2,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusChaingun,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DutchConcussiveGrenade,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,SwannMelee,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Nova,Period" Value="0.947368"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Tosh,Period" Value="0.947368"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsUltraCapacitorsLevel32" parent="TerranInfantryWeaponsUltraCapacitors">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray index="26" Reference="Weapon,TychusCommandoChaingun2,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,GuassRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,D8Charge,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,P38ScytheGuassPistol,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,PunisherGrenades,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,C10CanisterRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Firebat,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Specter,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,KelmorianMinerGaussRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HammerSecurity,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DevilDogFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CommandoRifle,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,RaynorWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusCommandoChaingun2,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TychusChaingun,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,DutchConcussiveGrenade,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,SwannMelee,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Nova,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Tosh,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,GuassRifle,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,P38ScytheGuassPistol,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,D8Charge,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,PunisherGrenades,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,C10CanisterRifle,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Firebat,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Specter,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,KelmorianMinerGaussRifle,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,HammerSecurity,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DevilDogFlameThrower,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,CommandoRifle,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,RaynorWeapon,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusCommandoChaingun2,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,TychusChaingun,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,DutchConcussiveGrenade,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,SwannMelee,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Nova,Period" Value="0.944444"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Tosh,Period" Value="0.944444"/>
+    </CUpgrade>
+    <CUpgrade id="TossGrenade1" parent="Research">
+        <EditorCategories value="UpgradeType:SpellResearch"/>
+    </CUpgrade>
+</Catalog>

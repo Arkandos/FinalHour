@@ -1,0 +1,52 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: HeroUI
+//--------------------------------------------------------------------------------------------------
+// Constants
+const int libE447E23F_gv_maxHeroes = 10;
+
+// Structures
+struct libE447E23F_gs_HeroData {
+    string lv_portrait;
+    string lv_name;
+    string lv_description;
+    string lv_unit;
+};
+
+// Variable Declarations
+libE447E23F_gs_HeroData[libE447E23F_gv_maxHeroes + 1] libE447E23F_gv_hero;
+int libE447E23F_gv_heroAmount;
+bool[16] libE447E23F_gv_heroPickerPlayersReady;
+int libE447E23F_gv_heroPickerCurrentPage;
+int libE447E23F_gv_heroPickerPageDialog;
+int libE447E23F_gv_heroPickerPrevPageButton;
+int libE447E23F_gv_heroPickerNextPageButton;
+int libE447E23F_gv_heroPickerPages;
+point libE447E23F_gv_heroPickerSpawnPoint;
+int[libE447E23F_gv_maxHeroes + 1] libE447E23F_gv_heroPickerHeroButton;
+int[5] libE447E23F_gv_heroPickerChooserDialog;
+int libE447E23F_gv_heroPickerChooseButton;
+
+// Function Declarations
+void libE447E23F_gf_HeroUIInitHeroPicker ();
+void libE447E23F_gf_HeroPickerSetPage (int lp_page, int lp_player);
+void libE447E23F_gf_HeroPickerNextPage (int lp_player);
+void libE447E23F_gf_HeroPickerPrevPage (int lp_player);
+void libE447E23F_gf_HeroPickerSetSpawnPoint (point lp_point);
+void libE447E23F_gf_HeroPickerInitUI ();
+void libE447E23F_gf_HeroPickerAddHero (string lp_heroName, string lp_heroDescription, string lp_heroPortrait, string lp_heroUnit);
+void libE447E23F_gf_HeroPickerSelectHero (int lp_heroID, int lp_player);
+void libE447E23F_gf_HeroPickerQuitHeroPicker (int lp_player, unit lp_unitCreated);
+int libE447E23F_gf_HeroPickerGetCurrentPage ();
+int libE447E23F_gf_HeroPickerGetMaxPage ();
+point libE447E23F_gf_HeroPickerGetSpawnPoint ();
+
+// Trigger Declarations
+trigger libE447E23F_gt_InitPickerUI;
+trigger libE447E23F_gt_HeroPickerDialogClicked;
+trigger libE447E23F_gt_HeroisSelected;
+
+// Library Initialization
+void libE447E23F_InitVariables ();
+

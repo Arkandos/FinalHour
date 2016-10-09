@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CButton id="AbsorbSpeed">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+    </CButton>
+    <CButton id="Agility">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+    </CButton>
+    <CButton id="Attack2">
+        <Icon value="Assets\Textures\btn-command-attack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-attack.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+        <SimpleDisplayText value="SimpleDisplay/Attack2"/>
+    </CButton>
+    <CButton id="Cancel2">
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-cancel.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="CancelMorphLife">
+        <Tooltip value="Button/Tooltip/CancelMorphEnergy"/>
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-cancel.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="Cancel"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="CancelMorphEnergy">
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-cancel.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="Cancel"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="CelestialRadiance">
+        <Icon value="Assets\Textures\btn-upgrade-kerrigan-crushinggripwave.dds"/>
+    </CButton>
+    <CButton id="Charge2">
+        <Icon value="Assets\Textures\btn-ability-zerg-frenzied-color.dds"/>
+    </CButton>
+    <CButton id="ChargeSelf">
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+    </CButton>
+    <CButton id="DanceofDeath">
+        <Tooltip value="Button/Tooltip/DanceofDeath1"/>
+        <Icon value="Assets\Textures\btn-ability-kerrigan-heroicfortitude.dds"/>
+    </CButton>
+    <CButton id="DivineFire">
+        <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
+    </CButton>
+    <CButton id="Endurance">
+        <Icon value="Assets\Textures\icon-health-nobg.dds"/>
+    </CButton>
+    <CButton id="FearsomeRoar">
+        <Icon value="Assets\Textures\btn-ability-zerg-corruption-color.dds"/>
+    </CButton>
+    <CButton id="Fireball">
+        <Icon value="Assets\Textures\war3_btnfirebolt.dds"/>
+    </CButton>
+    <CButton id="FuryoftheTemplar">
+        <Tooltip value="Behavior/Tooltip/FuryoftheTemplar"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-sacrifice.dds"/>
+    </CButton>
+    <CButton id="HighPriestHeal">
+        <Icon value="Assets\Textures\war3_btnhealoff.dds"/>
+    </CButton>
+    <CButton id="IceBoltLevel1">
+        <Icon value="Assets\Textures\btn-ability-protoss-purify.dds"/>
+    </CButton>
+    <CButton id="MicroReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+    </CButton>
+    <CButton id="PowerAmplifier">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+    </CButton>
+    <CButton id="PsionicOrb">
+        <Icon value="Assets\Textures\btn-ability-protoss-psionicorb.dds"/>
+    </CButton>
+    <CButton id="TemplateItem"/>
+    <CButton id="LearnIceBoltLevel1">
+        <Icon value="Assets\Textures\btn-ability-protoss-purify.dds"/>
+        <HotkeyAlias value="IceBoltLevel1"/>
+    </CButton>
+    <CButton id="Intelligence">
+        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+    </CButton>
+    <CButton id="Hailoflead">
+        <Icon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+        <HotkeyAlias value="LearnHailoflead"/>
+    </CButton>
+    <CButton id="LearnTossGrenade">
+        <Icon value="Assets\Textures\btn-ability-terran-tychustossgrenade.dds"/>
+    </CButton>
+    <CButton id="LevelUp">
+        <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
+    </CButton>
+    <CButton id="LevelUpAttributes">
+        <Icon value="Assets\Textures\icon-energy-protoss.dds"/>
+    </CButton>
+    <CButton id="LightningStorm">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\lightningzap6.dds"/>
+    </CButton>
+    <CButton id="MajorEnergyPotion">
+        <Icon value="Assets\Textures\war3_btnpotionbluebig.dds"/>
+    </CButton>
+    <CButton id="MinorRegenerationPotion">
+        <Icon value="Assets\Textures\war3_btnpotiongreensmall.dds"/>
+    </CButton>
+    <CButton id="MajorRegenerationPotion">
+        <Icon value="Assets\Textures\war3_btnpotiongreen.dds"/>
+    </CButton>
+    <CButton id="MinorEnergyPotion">
+        <Icon value="Assets\Textures\war3_btnpotionbluesmall.dds"/>
+    </CButton>
+    <CButton id="MissilleTest">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-devastatormissiles.dds"/>
+    </CButton>
+    <CButton id="MorphLife">
+        <Icon value="Assets\Textures\icon-health-nobg.dds"/>
+    </CButton>
+    <CButton id="LearnMorphLife">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <HotkeyAlias value="MorphLife"/>
+    </CButton>
+    <CButton id="Move2">
+        <Icon value="Assets\Textures\btn-command-move.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-move.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+        <SimpleDisplayText value="SimpleDisplay/Move2"/>
+    </CButton>
+    <CButton id="MoveHoldPosition2">
+        <Icon value="Assets\Textures\btn-command-holdposition.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-holdposition.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="MovePatrol2">
+        <Icon value="Assets\Textures\btn-command-patrol.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-patrol.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="Multiply">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-enduringcorruption.dds"/>
+    </CButton>
+    <CButton id="Overclocker">
+        <Icon value="Assets\Textures\btn-ability-protoss-timebomb.dds"/>
+    </CButton>
+    <CButton id="ProtectivePlating">
+        <Icon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <HotkeyAlias value="Overclocker"/>
+    </CButton>
+    <CButton id="PhaseShift2">
+        <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
+    </CButton>
+    <CButton id="LearnPhaseShiftLevel1">
+        <Tooltip value="Button/Tooltip/PhaseShift2"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
+        <HotkeyAlias value="PhaseShift2"/>
+    </CButton>
+    <CButton id="PouncerPounce">
+        <Icon value="Assets\Textures\btn-ability-zerg-cliffjump-zergling.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="PoweredCombatSuitLevel1">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+    </CButton>
+    <CButton id="PoweredCombatSuitLevel1Learn">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <HotkeyAlias value="PoweredCombatSuitLevel1"/>
+    </CButton>
+    <CButton id="PoweredCombatSuitLevel2">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <HotkeyAlias value="PoweredCombatSuitLevel1"/>
+    </CButton>
+    <CButton id="PoweredCombatSuitLevel3">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <HotkeyAlias value="PoweredCombatSuitLevel1"/>
+    </CButton>
+    <CButton id="PurchaseSpiritStaff">
+        <Icon value="Assets\Textures\btn-ability-protoss-energize.dds"/>
+    </CButton>
+    <CButton id="Reshape">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-regenerativebile.dds"/>
+    </CButton>
+    <CButton id="Stop2">
+        <Icon value="Assets\Textures\btn-command-stop.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-stop.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="Strength">
+        <Icon value="Assets\Textures\btn-research-zerg-cellularreactor.dds"/>
+    </CButton>
+    <CButton id="LevelUpActiveSkills">
+        <Icon value="Assets\Textures\btn-ability-kerrigan_revive.dds"/>
+    </CButton>
+    <CButton id="LevelUpPassiveSkills">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-abilityefficiency.dds"/>
+        <HotkeyAlias value="LevelUpActiveSkills"/>
+    </CButton>
+    <CButton id="Test"/>
+    <CButton id="TossShredderGrenade">
+        <Icon value="Assets\Textures\BTN-Ability-Terran-TychusTossGrenade.dds"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="TossGrenadeTychus"/>
+    </CButton>
+    <CButton id="TossShredderGrenadeLearn">
+        <Icon value="Assets\Textures\BTN-Ability-Terran-TychusTossGrenade.dds"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="TossGrenadeTychus"/>
+    </CButton>
+    <CButton id="TouchedbytheGodessLevel1">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-kineticblast.dds"/>
+    </CButton>
+    <CButton id="CancelTouchedbytheGodess">
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <HotkeyAlias value="TouchedbytheGodessLevel1"/>
+    </CButton>
+    <CButton id="TychusTychusSecretStashLearn">
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <HotkeyAlias value="TychusTychusSecretStash"/>
+    </CButton>
+    <CButton id="TurnOnHailofLead">
+        <Icon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+    </CButton>
+    <CButton id="TurnOffHailofLead">
+        <Icon value="Assets\Textures\btn-command-cancel.dds"/>
+        <HotkeyAlias value="TurnOnHailofLead"/>
+    </CButton>
+    <CButton id="HailofLeadLearn">
+        <Tooltip value="Button/Tooltip/TurnOnHailofLead"/>
+        <Icon value="Assets\Textures\btn-ability-terran-haleoflead.dds"/>
+        <HotkeyAlias value="TurnOnHailofLead"/>
+    </CButton>
+    <CButton id="TychusTychusSecretStash">
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+    </CButton>
+    <CButton id="TychusTychusSecretStashLearn2">
+        <Name value="Button/Name/TychusTychusSecretStash/Learn1"/>
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <HotkeyAlias value="TychusTychusSecretStash"/>
+    </CButton>
+    <CButton id="MorphEnergy">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+    </CButton>
+    <CButton id="Willpower">
+        <Icon value="Assets\Textures\btn-ability-protoss-phaseshift2.dds"/>
+    </CButton>
+</Catalog>

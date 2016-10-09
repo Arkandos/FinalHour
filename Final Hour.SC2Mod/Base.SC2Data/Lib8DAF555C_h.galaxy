@@ -1,0 +1,11 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: DataTriggers
+//--------------------------------------------------------------------------------------------------
+// Trigger Declarations
+trigger lib8DAF555C_gt_DataTriggerInit;
+trigger lib8DAF555C_gt_TinySizeisApplied;
+trigger lib8DAF555C_gt_SmallSizeisApplied;
+trigger lib8DAF555C_gt_ChangelingReshape;
+

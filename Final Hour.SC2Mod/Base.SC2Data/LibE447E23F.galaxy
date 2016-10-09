@@ -1,0 +1,376 @@
+include "TriggerLibs/NativeLib"
+
+include "LibE447E23F_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: HeroUI
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libE447E23F_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool libE447E23F_InitVariables_completed = false;
+
+void libE447E23F_InitVariables () {
+    int init_i;
+
+    if (libE447E23F_InitVariables_completed) {
+        return;
+    }
+
+    libE447E23F_InitVariables_completed = true;
+
+    for (init_i = 0; init_i <= libE447E23F_gv_maxHeroes; init_i += 1) {
+        libE447E23F_gv_hero[init_i].lv_name = "";
+        libE447E23F_gv_hero[init_i].lv_description = "";
+    }
+    libE447E23F_gv_heroPickerCurrentPage = 1;
+    libE447E23F_gv_heroPickerPageDialog = c_invalidDialogId;
+    libE447E23F_gv_heroPickerPrevPageButton = c_invalidDialogControlId;
+    libE447E23F_gv_heroPickerNextPageButton = c_invalidDialogControlId;
+    libE447E23F_gv_heroPickerPages = 1;
+    for (init_i = 0; init_i <= libE447E23F_gv_maxHeroes; init_i += 1) {
+        libE447E23F_gv_heroPickerHeroButton[init_i] = c_invalidDialogControlId;
+    }
+    for (init_i = 0; init_i <= 4; init_i += 1) {
+        libE447E23F_gv_heroPickerChooserDialog[init_i] = c_invalidDialogId;
+    }
+    libE447E23F_gv_heroPickerChooseButton = c_invalidDialogId;
+}
+
+// Functions
+void libE447E23F_gf_HeroUIInitHeroPicker () {
+    // Variable Declarations
+    bool lv_ready;
+    int lv_totalPlayers;
+    int lv_playersReady;
+
+    // Variable Initialization
+
+    // Implementation
+    libE447E23F_gf_HeroPickerInitUI();
+    while ((lv_ready == false)) {
+        lv_playersReady = 0;
+        lv_totalPlayers = 0;
+        PlayerGroupLoopBegin(PlayerGroupActive());
+        for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+            if ((libE447E23F_gv_heroPickerPlayersReady[PlayerGroupLoopCurrent()] == true)) {
+                lv_playersReady += 1;
+            }
+
+            lv_totalPlayers += 1;
+        }
+        PlayerGroupLoopEnd();
+        if ((lv_playersReady == lv_totalPlayers)) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/lib_E447E23F_47F5FCAA"));
+            break;
+        }
+
+        Wait(5.0, c_timeReal);
+    }
+}
+
+void libE447E23F_gf_HeroPickerSetPage (int lp_page, int lp_player) {
+    int auto07A10110_ae;
+    int auto07A10110_ai;
+
+    // Variable Declarations
+    int lv_tmpX;
+    int lv_pageNumber;
+    int lv_maxPage;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_pageNumber = lp_page;
+    lv_maxPage = libE447E23F_gf_HeroPickerGetMaxPage();
+    if ((lv_pageNumber < 1)) {
+        lv_pageNumber = 1;
+    }
+
+    if ((lv_pageNumber > lv_maxPage)) {
+        lv_pageNumber = lv_maxPage;
+    }
+
+    libE447E23F_gv_heroPickerCurrentPage = lv_pageNumber;
+    auto07A10110_ae = lv_maxPage;
+    auto07A10110_ai = 1;
+    lv_tmpX = 1;
+    for ( ; ( (auto07A10110_ai >= 0 && lv_tmpX <= auto07A10110_ae) || (auto07A10110_ai <= 0 && lv_tmpX >= auto07A10110_ae) ) ; lv_tmpX += auto07A10110_ai ) {
+        DialogSetVisible(libE447E23F_gv_heroPickerChooserDialog[lv_tmpX], PlayerGroupSingle(lp_player), false);
+    }
+    DialogSetVisible(libE447E23F_gv_heroPickerChooserDialog[lv_pageNumber], PlayerGroupSingle(lp_player), true);
+    if ((lv_pageNumber == 1)) {
+        DialogControlSetVisible(libE447E23F_gv_heroPickerPrevPageButton, PlayerGroupSingle(lp_player), false);
+    }
+    else {
+        DialogControlSetVisible(libE447E23F_gv_heroPickerPrevPageButton, PlayerGroupSingle(lp_player), true);
+    }
+    if ((lv_pageNumber == lv_maxPage)) {
+        DialogControlSetVisible(libE447E23F_gv_heroPickerNextPageButton, PlayerGroupSingle(lp_player), false);
+    }
+    else {
+        DialogControlSetVisible(libE447E23F_gv_heroPickerNextPageButton, PlayerGroupSingle(lp_player), true);
+    }
+    DialogSetVisible(libE447E23F_gv_heroPickerPageDialog, PlayerGroupSingle(lp_player), true);
+    DialogSetRenderPriority(libE447E23F_gv_heroPickerPageDialog, 513);
+}
+
+void libE447E23F_gf_HeroPickerNextPage (int lp_player) {
+    // Implementation
+    libE447E23F_gf_HeroPickerSetPage((libE447E23F_gf_HeroPickerGetCurrentPage() + 1), lp_player);
+}
+
+void libE447E23F_gf_HeroPickerPrevPage (int lp_player) {
+    // Implementation
+    libE447E23F_gf_HeroPickerSetPage((libE447E23F_gf_HeroPickerGetCurrentPage() - 1), lp_player);
+}
+
+void libE447E23F_gf_HeroPickerSetSpawnPoint (point lp_point) {
+    // Implementation
+    libE447E23F_gv_heroPickerSpawnPoint = lp_point;
+}
+
+void libE447E23F_gf_HeroPickerInitUI () {
+    // Implementation
+    TriggerExecute(libE447E23F_gt_InitPickerUI, false, false);
+}
+
+void libE447E23F_gf_HeroPickerAddHero (string lp_heroName, string lp_heroDescription, string lp_heroPortrait, string lp_heroUnit) {
+    // Variable Declarations
+    int lv_heroID;
+
+    // Variable Initialization
+
+    // Implementation
+    libE447E23F_gv_heroAmount = (libE447E23F_gv_heroAmount + 1);
+    lv_heroID = libE447E23F_gv_heroAmount;
+    libE447E23F_gv_hero[lv_heroID].lv_portrait = lp_heroPortrait;
+    libE447E23F_gv_hero[lv_heroID].lv_name = lp_heroName;
+    libE447E23F_gv_hero[lv_heroID].lv_description = lp_heroDescription;
+    libE447E23F_gv_hero[lv_heroID].lv_unit = lp_heroUnit;
+}
+
+void libE447E23F_gf_HeroPickerSelectHero (int lp_heroID, int lp_player) {
+    // Implementation
+    UnitCreate(1, libE447E23F_gv_hero[lp_heroID].lv_unit, 0, lp_player, libE447E23F_gv_heroPickerSpawnPoint, 270.0);
+    UnitSelect(UnitLastCreated(), lp_player, true);
+    libE447E23F_gf_HeroPickerQuitHeroPicker(lp_player, UnitLastCreated());
+}
+
+void libE447E23F_gf_HeroPickerQuitHeroPicker (int lp_player, unit lp_unitCreated) {
+    int auto3AFB1C70_ae;
+    int auto3AFB1C70_ai;
+
+    // Variable Declarations
+    int lv_tmpX;
+
+    // Variable Initialization
+
+    // Implementation
+    auto3AFB1C70_ae = libE447E23F_gf_HeroPickerGetMaxPage();
+    auto3AFB1C70_ai = 1;
+    lv_tmpX = 1;
+    for ( ; ( (auto3AFB1C70_ai >= 0 && lv_tmpX <= auto3AFB1C70_ae) || (auto3AFB1C70_ai <= 0 && lv_tmpX >= auto3AFB1C70_ae) ) ; lv_tmpX += auto3AFB1C70_ai ) {
+        DialogSetVisible(libE447E23F_gv_heroPickerChooserDialog[lv_tmpX], PlayerGroupSingle(lp_player), false);
+        DialogSetVisible(libE447E23F_gv_heroPickerPageDialog, PlayerGroupSingle(lp_player), false);
+    }
+    libNtve_gf_HideGameUI(true, PlayerGroupSingle(lp_player));
+    CameraLockInput(lp_player, false);
+    CameraPan(lp_player, UnitGetPosition(lp_unitCreated), 2.0, -1, 10.0, false);
+    libE447E23F_gv_heroPickerPlayersReady[lp_player] = true;
+}
+
+int libE447E23F_gf_HeroPickerGetCurrentPage () {
+    // Implementation
+    return libE447E23F_gv_heroPickerCurrentPage;
+}
+
+int libE447E23F_gf_HeroPickerGetMaxPage () {
+    // Implementation
+    return libE447E23F_gv_heroPickerPages;
+}
+
+point libE447E23F_gf_HeroPickerGetSpawnPoint () {
+    // Implementation
+    return libE447E23F_gv_heroPickerSpawnPoint;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Init Picker UI
+//--------------------------------------------------------------------------------------------------
+bool libE447E23F_gt_InitPickerUI_Func (bool testConds, bool runActions) {
+    int auto908C281B_ae;
+    int auto908C281B_ai;
+
+    // Variable Declarations
+    int lv_initialOffsetX;
+    int lv_tmpX;
+    int lv_tmpHero;
+    int lv_tmpPage;
+    int lv_tmpOffsetX;
+    int lv_tmpOffsetY;
+    int lv_portraitWidth;
+    int lv_portraitHeight;
+    int lv_buttonWidth;
+    int lv_buttonHeight;
+
+    // Variable Initialization
+    lv_initialOffsetX = -400;
+    lv_portraitWidth = 304;
+    lv_portraitHeight = 464;
+    lv_buttonWidth = 152;
+    lv_buttonHeight = 50;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_tmpOffsetX = lv_initialOffsetX;
+    libE447E23F_gf_HeroPickerAddHero("Karass", "Caster that uses lightning and ice", "Assets\\Textures\\karassportrait_static.dds", "Karass2");
+    libE447E23F_gf_HeroPickerAddHero("Tychus", "Marine armored with a powersuit and a powerful minigun", "Assets\\Textures\\tychusportrait_static.dds", "TychusHero");
+    libE447E23F_gf_HeroPickerAddHero("Changeling", "Dynamic being that debuffs his enemies and buffs himself", "Assets\\Textures\\changelingportrait_static.dds", "ChangelingHero");
+    libE447E23F_gf_HeroPickerAddHero("Angel of Light", "A powerful supportive hero that restores her allies and burns her enemies", "Assets\\Textures\\xelnagakerriganportrait_static.dds", "AngelofLight");
+    libE447E23F_gf_HeroPickerAddHero("Test Hero", "Dynamic being that debuffs his enemies and buffs himself", "Assets\\Textures\\medicportrait_static.dds", "Medic");
+    libE447E23F_gf_HeroPickerAddHero("Test Hero", "Dynamic being that debuffs his enemies and buffs himself", "Assets\\Textures\\medicportrait_static.dds", "Medic");
+    libE447E23F_gf_HeroPickerAddHero("Test Hero", "Dynamic being that debuffs his enemies and buffs himself", "Assets\\Textures\\medicportrait_static.dds", "Medic");
+    libNtve_gf_HideGameUI(false, PlayerGroupAll());
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+        CameraLockInput(PlayerGroupLoopCurrent(), true);
+    }
+    PlayerGroupLoopEnd();
+    DialogCreate(1500, 1000, c_anchorCenter, 0, 0, false);
+    libE447E23F_gv_heroPickerChooserDialog[libE447E23F_gv_heroPickerPages] = DialogLastCreated();
+    DialogCreate(1500, 1000, c_anchorCenter, 0, 0, false);
+    libE447E23F_gv_heroPickerPageDialog = DialogLastCreated();
+    DialogSetImageVisible(libE447E23F_gv_heroPickerPageDialog, false);
+    libNtve_gf_CreateDialogItemButton(libE447E23F_gv_heroPickerPageDialog, lv_buttonWidth, lv_buttonHeight, c_anchorBottomRight, 50, 50, StringToText(""), StringExternal("Param/Value/lib_E447E23F_10E48782"), "");
+    libE447E23F_gv_heroPickerNextPageButton = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(libE447E23F_gv_heroPickerPageDialog, lv_buttonWidth, lv_buttonHeight, c_anchorBottomLeft, 50, 50, StringToText(""), StringExternal("Param/Value/lib_E447E23F_75F0A916"), "");
+    libE447E23F_gv_heroPickerPrevPageButton = DialogControlLastCreated();
+    auto908C281B_ae = libE447E23F_gv_heroAmount;
+    auto908C281B_ai = 1;
+    lv_tmpX = 1;
+    for ( ; ( (auto908C281B_ai >= 0 && lv_tmpX <= auto908C281B_ae) || (auto908C281B_ai <= 0 && lv_tmpX >= auto908C281B_ae) ) ; lv_tmpX += auto908C281B_ai ) {
+        lv_tmpHero = (lv_tmpHero + 1);
+        if ((lv_tmpHero > 3)) {
+            lv_tmpHero = 1;
+            lv_tmpOffsetX = lv_initialOffsetX;
+            libE447E23F_gv_heroPickerPages = (libE447E23F_gv_heroPickerPages + 1);
+            DialogCreate(1500, 1000, c_anchorCenter, 0, 0, false);
+            libE447E23F_gv_heroPickerChooserDialog[libE447E23F_gv_heroPickerPages] = DialogLastCreated();
+        }
+
+        libNtve_gf_CreateDialogItemImage(libE447E23F_gv_heroPickerChooserDialog[libE447E23F_gv_heroPickerPages], lv_portraitWidth, lv_portraitHeight, c_anchorCenter, lv_tmpOffsetX, -150, StringToText(libE447E23F_gv_hero[lv_tmpX].lv_description), libE447E23F_gv_hero[lv_tmpX].lv_portrait, c_triggerImageTypeNormal, false, Color(100,100,100), c_triggerBlendModeNormal);
+        libNtve_gf_CreateDialogItemLabel(libE447E23F_gv_heroPickerChooserDialog[libE447E23F_gv_heroPickerPages], lv_portraitWidth, lv_buttonHeight, c_anchorTop, (lv_tmpOffsetX + ((lv_portraitWidth / 2) - (StringLength(libE447E23F_gv_hero[lv_tmpX].lv_name) / 2))), 50, StringToText(libE447E23F_gv_hero[lv_tmpX].lv_name), ColorWithAlpha(0,0,0,0), false, 2.0);
+        libNtve_gf_CreateDialogItemButton(libE447E23F_gv_heroPickerChooserDialog[libE447E23F_gv_heroPickerPages], lv_buttonWidth, lv_buttonHeight, c_anchorBottom, lv_tmpOffsetX, 50, StringToText(""), StringToText(libE447E23F_gv_hero[lv_tmpX].lv_name), "");
+        libE447E23F_gv_heroPickerHeroButton[lv_tmpX] = DialogControlLastCreated();
+        lv_tmpOffsetX = (lv_tmpOffsetX + (lv_portraitWidth + 100));
+    }
+    DialogSetVisible(libE447E23F_gv_heroPickerChooserDialog[1], PlayerGroupAll(), true);
+    DialogSetVisible(libE447E23F_gv_heroPickerPageDialog, PlayerGroupAll(), true);
+    DialogControlSetVisible(libE447E23F_gv_heroPickerPrevPageButton, PlayerGroupAll(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE447E23F_gt_InitPickerUI_Init () {
+    libE447E23F_gt_InitPickerUI = TriggerCreate("libE447E23F_gt_InitPickerUI_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: HeroPicker:Dialog Clicked
+//--------------------------------------------------------------------------------------------------
+bool libE447E23F_gt_HeroPickerDialogClicked_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while ((lv_tmpInt < libE447E23F_gv_maxHeroes)) {
+        if ((EventDialogControl() == libE447E23F_gv_heroPickerHeroButton[lv_tmpInt])) {
+            libE447E23F_gf_HeroPickerSelectHero(lv_tmpInt, EventPlayer());
+            break;
+        }
+        else {
+            lv_tmpInt = (lv_tmpInt + 1);
+        }
+    }
+    lv_tmpInt = 0;
+    if ((EventDialogControl() == libE447E23F_gv_heroPickerNextPageButton)) {
+        libE447E23F_gf_HeroPickerNextPage(EventPlayer());
+    }
+
+    if ((EventDialogControl() == libE447E23F_gv_heroPickerPrevPageButton)) {
+        libE447E23F_gf_HeroPickerPrevPage(EventPlayer());
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE447E23F_gt_HeroPickerDialogClicked_Init () {
+    libE447E23F_gt_HeroPickerDialogClicked = TriggerCreate("libE447E23F_gt_HeroPickerDialogClicked_Func");
+    TriggerAddEventDialogControl(libE447E23F_gt_HeroPickerDialogClicked, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero is Selected
+//--------------------------------------------------------------------------------------------------
+bool libE447E23F_gt_HeroisSelected_Func (bool testConds, bool runActions) {
+    // Conditions
+    if (testConds) {
+        if (!((UnitFilterMatch(EventUnit(), EventPlayer(), UnitFilter((1 << c_targetFilterHeroic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitInventoryContainerOpen(PlayerGroupSingle(EventPlayer()), EventUnit(), 1, true);
+    UnitInventoryContainerOpen(PlayerGroupSingle(EventPlayer()), EventUnit(), 2, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libE447E23F_gt_HeroisSelected_Init () {
+    libE447E23F_gt_HeroisSelected = TriggerCreate("libE447E23F_gt_HeroisSelected_Func");
+    TriggerAddEventUnitSelected(libE447E23F_gt_HeroisSelected, null, c_playerAny, true);
+}
+
+void libE447E23F_InitTriggers () {
+    libE447E23F_gt_InitPickerUI_Init();
+    libE447E23F_gt_HeroPickerDialogClicked_Init();
+    libE447E23F_gt_HeroisSelected_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libE447E23F_InitLib_completed = false;
+
+void libE447E23F_InitLib () {
+    if (libE447E23F_InitLib_completed) {
+        return;
+    }
+
+    libE447E23F_InitLib_completed = true;
+
+    libE447E23F_InitLibraries();
+    libE447E23F_InitVariables();
+    libE447E23F_InitTriggers();
+}
+

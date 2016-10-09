@@ -1,0 +1,939 @@
+include "TriggerLibs/NativeLib"
+include "Lib47D24EE7_h"
+
+include "LibCC322427_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Wavespawner
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libCC322427_InitLibraries () {
+    libNtve_InitVariables();
+    lib47D24EE7_InitVariables();
+}
+
+// Variable Initialization
+bool libCC322427_InitVariables_completed = false;
+
+void libCC322427_InitVariables () {
+    int init_i;
+    int init_j;
+    int init_k;
+
+    if (libCC322427_InitVariables_completed) {
+        return;
+    }
+
+    libCC322427_InitVariables_completed = true;
+
+    libCC322427_gv_waitForEnemiesToDie = true;
+    libCC322427_gv_waveTimer = TimerCreate();
+    libCC322427_gv_spawnerWavesAttackMode = 1;
+    for (init_i = 0; init_i <= libCC322427_gv_spawnerMaxWave; init_i += 1) {
+        for (init_j = 0; init_j <= libCC322427_gv_spawnerConstantsMaxUnitsPerWave; init_j += 1) {
+            for (init_k = 0; init_k <= 1; init_k += 1) {
+                libCC322427_gv_spawnerWavesUnitSquadSize[init_i][init_j][init_k] = 1;
+            }
+        }
+    }
+    libCC322427_gv_spawnerWavesWaveDelay = 60;
+    for (init_i = 0; init_i <= libCC322427_gv_resourceControllerMaxBeacons; init_i += 1) {
+        libCC322427_gv_resourceControllerBeacon[init_i].lv_owner = libCC322427_gv_spawnerConstantsCreepPlayerID;
+    }
+    libCC322427_gv_resourceControllerMineralIncome = 2;
+    libCC322427_gv_resourceControllerMineralIncomeRate = 5;
+}
+
+// Functions
+void libCC322427_gf_EndGameInDefeat () {
+    // Implementation
+    if ((lib47D24EE7_gv_utilitiesDebugDebugModeOn == false)) {
+        PlayerGroupLoopBegin(PlayerGroupActive());
+        for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+            GameOver(PlayerGroupLoopCurrent(), c_gameOverDefeat, true, true);
+        }
+        PlayerGroupLoopEnd();
+    }
+    else {
+        lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_82010854"));
+    }
+}
+
+bool libCC322427_gf_SpawnerAreEnemiesAlive () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesAreEnemiesAlive;
+}
+
+bool libCC322427_gf_SpawnerGetWaitForEnemiesToDie () {
+    // Implementation
+    return libCC322427_gv_waitForEnemiesToDie;
+}
+
+string libCC322427_gf_SpawnerGetLastCreatedUnit () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesLastCreatedUnit;
+}
+
+int libCC322427_gf_SpawnerGetBossBarID () {
+    // Implementation
+    return libCC322427_gv_spawnerBossBarID;
+}
+
+int libCC322427_gf_SpawnerGetLastCreatedUnitNumber () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesLastCreatedUnitNumber;
+}
+
+bool libCC322427_gf_SpawnerIsLastWave () {
+    // Implementation
+    if ((libCC322427_gv_spawnerWavesCurrentWave >= libCC322427_gv_spawnerWavesTotalWaves[0])) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+int libCC322427_gf_SpawnerGetWaveDelay () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesWaveDelay;
+}
+
+int libCC322427_gf_SpawnerGetFinalLevel () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesTotalWaves[0];
+}
+
+int libCC322427_gf_SpawnerGetCurrentLevel () {
+    // Implementation
+    return libCC322427_gv_spawnerWavesCurrentWave;
+}
+
+int libCC322427_gf_SpawnerGetCreepPlayerID () {
+    // Implementation
+    return libCC322427_gv_spawnerConstantsCreepPlayerID;
+}
+
+void libCC322427_gf_SpawnerInternalApplyRegenBuff () {
+    // Implementation
+    UnitGroupLoopBegin(UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter((1 << c_targetFilterHeroic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitBehaviorAddPlayer(UnitGroupLoopCurrent(), "WaveRegeneration", libCC322427_gv_spawnerConstantsCreepPlayerID, 1);
+    }
+    UnitGroupLoopEnd();
+}
+
+void libCC322427_gf_SpawnerInternalRemoveRegenBuff () {
+    // Implementation
+    UnitGroupLoopBegin(UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter((1 << c_targetFilterHeroic), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitBehaviorRemove(UnitGroupLoopCurrent(), "WaveRegeneration", 1);
+    }
+    UnitGroupLoopEnd();
+}
+
+void libCC322427_gf_SpawnerInternalReviveAllHeroes () {
+    // Implementation
+    UnitGroupLoopBegin(UnitGroupAlliance(1, c_unitAllianceAlly, RegionEntireMap(), UnitFilter(0, (1 << (c_targetFilterInvulnerable - 32)), (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitBehaviorRemove(UnitGroupLoopCurrent(), "HeroIncapacitation", 1);
+    }
+    UnitGroupLoopEnd();
+}
+
+void libCC322427_gf_SpawnerInternalCreateBossBar (text lp_bossName, string lp_bossPortrait, int lp_bossMaxValue) {
+    // Implementation
+    libNtve_gf_DisplayBossBar(libCC322427_gf_SpawnerGetBossBarID(), "Assets\\Textures\\ui_chatbaricons_zerg_individual.dds", lp_bossName, lp_bossMaxValue, PlayerGroupAll());
+}
+
+void libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsHero () {
+    // Implementation
+    UnitGroupLoopBegin(UnitGroup(null, libCC322427_gv_spawnerConstantsCreepPlayerID, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitIssueOrder(UnitGroupLoopCurrent(), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(UnitGroupClosestToPoint(UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter((1 << c_targetFilterHeroic), 0, (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0), UnitGetPosition(UnitGroupLoopCurrent())))), c_orderQueueReplace);
+    }
+    UnitGroupLoopEnd();
+}
+
+void libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsUnit () {
+    // Implementation
+    UnitGroupLoopBegin(UnitGroup(null, libCC322427_gv_spawnerConstantsCreepPlayerID, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        UnitIssueOrder(UnitGroupLoopCurrent(), OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(libCC322427_gv_spawnerWavesTargetUnitForAttack)), c_orderQueueReplace);
+    }
+    UnitGroupLoopEnd();
+}
+
+trigger auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_Trigger = null;
+int auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_waveNumber;
+int auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_unitNumber;
+bool auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_bossWave;
+
+void libCC322427_gf_SpawnerInternalSpawnUnitInWave (int lp_waveNumber, int lp_unitNumber, bool lp_bossWave) {
+    auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_waveNumber = lp_waveNumber;
+    auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_unitNumber = lp_unitNumber;
+    auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_bossWave = lp_bossWave;
+
+    if (auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_Trigger == null) {
+        auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_Trigger = TriggerCreate("auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_Trigger, false, false);
+}
+
+bool auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_TriggerFunc (bool testConds, bool runActions) {
+    int lp_waveNumber = auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_waveNumber;
+    int lp_unitNumber = auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_unitNumber;
+    bool lp_bossWave = auto_libCC322427_gf_SpawnerInternalSpawnUnitInWave_lp_bossWave;
+
+    int auto9C277572_ae;
+    int auto9C277572_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+    int lv_tmpInt2;
+
+    // Variable Initialization
+
+    // Implementation
+    auto9C277572_ae = libCC322427_gv_spawnerWavesSquadAmount[lp_waveNumber][lp_unitNumber];
+    auto9C277572_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto9C277572_ai >= 0 && lv_tmpInt <= auto9C277572_ae) || (auto9C277572_ai <= 0 && lv_tmpInt >= auto9C277572_ae) ) ; lv_tmpInt += auto9C277572_ai ) {
+        if ((libCC322427_gv_spawnerWavesSpawnAtSpecificPoint == true)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(libCC322427_gv_spawnerWavesUnitSquadSize[lp_waveNumber][lp_unitNumber][0], libCC322427_gv_spawnerWavesUnitType[lp_waveNumber][lp_unitNumber][0], 0, libCC322427_gv_spawnerConstantsCreepPlayerID, libCC322427_gv_spawnerWavesSpecificSpawnPoint[lp_waveNumber][lp_unitNumber][0]);
+        }
+        else {
+            libNtve_gf_CreateUnitsWithDefaultFacing(libCC322427_gv_spawnerWavesUnitSquadSize[lp_waveNumber][lp_unitNumber][0], libCC322427_gv_spawnerWavesUnitType[lp_waveNumber][lp_unitNumber][0], 0, libCC322427_gv_spawnerConstantsCreepPlayerID, libCC322427_gv_spawnerWavesSpawnCreepPoints[RandomInt(1, libCC322427_gv_spawnerWavesSpawnCreepPointAmount)]);
+        }
+        libCC322427_gf_SpawnerInternalApplyModification(UnitLastCreated(), lp_waveNumber, lp_unitNumber);
+        libCC322427_gf_SpawnerInternalApplyExperience(UnitLastCreated(), lp_waveNumber, lp_unitNumber);
+        Wait(libCC322427_gv_spawnerWavesUnitSpawnDelay[lp_waveNumber][lp_unitNumber], c_timeGame);
+    }
+    if ((lp_bossWave == true)) {
+        libNtve_gf_SetBossBarBoss(libCC322427_gv_spawnerBossBarID, UnitLastCreated(), true);
+        libCC322427_gv_spawnerWavesCurrentBoss = UnitLastCreated();
+    }
+
+    return true;
+}
+
+void libCC322427_gf_SpawnerInternalApplyModification (unit lp_unit, int lp_waveNumber, int lp_unitNumber) {
+    int auto911AEB7D_ae;
+    int auto911AEB7D_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    auto911AEB7D_ae = 10;
+    auto911AEB7D_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto911AEB7D_ai >= 0 && lv_tmpInt <= auto911AEB7D_ae) || (auto911AEB7D_ai <= 0 && lv_tmpInt >= auto911AEB7D_ae) ) ; lv_tmpInt += auto911AEB7D_ai ) {
+        if ((libCC322427_gv_spawnerWavesWaveModification[lp_waveNumber][lp_unitNumber][lv_tmpInt] != null)) {
+            UnitBehaviorAddPlayer(lp_unit, libCC322427_gv_spawnerWavesWaveModification[lp_waveNumber][lp_unitNumber][lv_tmpInt], libCC322427_gv_spawnerConstantsCreepPlayerID, 1);
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerInternalApplyExperience (unit lp_unit, int lp_waveNumber, int lp_unitNumber) {
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libCC322427_gv_spawnerWavesWaveExperience[lp_waveNumber][lp_unitNumber] != 0)) {
+        UnitSetPropertyFixed(lp_unit, c_unitPropKillXP, libCC322427_gv_spawnerWavesWaveExperience[lp_waveNumber][lp_unitNumber]);
+    }
+
+}
+
+void libCC322427_gf_SpawnerInternalSetAttackMode (int lp_attackMode) {
+    // Implementation
+    libCC322427_gv_spawnerWavesAttackMode = lp_attackMode;
+}
+
+void libCC322427_gf_SpawnerInternalEnableAbilityForUnit () {
+}
+
+void libCC322427_gf_SpawnerInternalSetSpawnAtSpecificPoint (bool lp_specificPoint) {
+    // Implementation
+    libCC322427_gv_spawnerWavesSpawnAtSpecificPoint = lp_specificPoint;
+}
+
+void libCC322427_gf_SpawnerInternalSetAttackTargetUnit (unit lp_unit) {
+    // Implementation
+    libCC322427_gv_spawnerWavesTargetUnitForAttack = lp_unit;
+}
+
+void libCC322427_gf_SpawnerWavesSetWaitForEnemiesToDie (bool lp_mode) {
+    // Implementation
+    libCC322427_gv_waitForEnemiesToDie = lp_mode;
+}
+
+void libCC322427_gf_SpawnerWavesAddUnitToWave (int lp_squadAmount, string lp_unitType, fixed lp_spawnDelay, int lp_unitSquadSize, int lp_unitExperience) {
+    int auto38C486F3_ae;
+    int auto38C486F3_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    auto38C486F3_ae = libCC322427_gv_spawnerConstantsMaxUnitsPerWave;
+    auto38C486F3_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto38C486F3_ai >= 0 && lv_tmpInt <= auto38C486F3_ae) || (auto38C486F3_ai <= 0 && lv_tmpInt >= auto38C486F3_ae) ) ; lv_tmpInt += auto38C486F3_ai ) {
+        if ((libCC322427_gv_spawnerWavesUnitType[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] == null)) {
+            libCC322427_gv_spawnerWavesUnitType[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] = lp_unitType;
+            libCC322427_gv_spawnerWavesUnitSpawnDelay[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_spawnDelay;
+            libCC322427_gv_spawnerWavesSquadAmount[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_squadAmount;
+            libCC322427_gv_spawnerWavesUnitSquadSize[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] = lp_unitSquadSize;
+            libCC322427_gv_spawnerWavesWaveExperience[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_unitExperience;
+            libCC322427_gv_spawnerWavesLastCreatedUnitNumber = lv_tmpInt;
+            return ;
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerWavesAddUnitToWaveSpecificPoint (point lp_spawnPoint, int lp_squadAmount, string lp_unitType, fixed lp_spawnDelay, int lp_unitSquadSize, int lp_unitExperience) {
+    int autoBDA59EF9_ae;
+    int autoBDA59EF9_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    autoBDA59EF9_ae = libCC322427_gv_spawnerConstantsMaxUnitsPerWave;
+    autoBDA59EF9_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (autoBDA59EF9_ai >= 0 && lv_tmpInt <= autoBDA59EF9_ae) || (autoBDA59EF9_ai <= 0 && lv_tmpInt >= autoBDA59EF9_ae) ) ; lv_tmpInt += autoBDA59EF9_ai ) {
+        if ((libCC322427_gv_spawnerWavesUnitType[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] == null)) {
+            libCC322427_gv_spawnerWavesUnitType[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] = lp_unitType;
+            libCC322427_gv_spawnerWavesUnitSpawnDelay[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_spawnDelay;
+            libCC322427_gv_spawnerWavesSquadAmount[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_squadAmount;
+            libCC322427_gv_spawnerWavesUnitSquadSize[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] = lp_unitSquadSize;
+            libCC322427_gv_spawnerWavesWaveExperience[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt] = lp_unitExperience;
+            libCC322427_gv_spawnerWavesSpecificSpawnPoint[libCC322427_gv_spawnerWavesTempWaveNumber][lv_tmpInt][0] = lp_spawnPoint;
+            libCC322427_gv_spawnerWavesLastCreatedUnitNumber = lv_tmpInt;
+            return ;
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerWavesAddBossToWave (text lp_bossName, int lp_unitExperience, string lp_bossUnit, int lp_bossBarMaxValue, string lp_bossBarPortrait, string lp_behavior1, string lp_behavior2, string lp_behavior3) {
+    // Variable Declarations
+    int lv_behaviorTempInt;
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((!((libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesTempWaveNumber] != null)))) {
+        libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossName;
+        libCC322427_gv_spawnerWavesBossPortrait[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossBarPortrait;
+        libCC322427_gv_spawnerWavesBossMaxvalue[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossBarMaxValue;
+        libCC322427_gf_SpawnerWavesAddUnitToWave(1, lp_bossUnit, 0.0001, 1, lp_unitExperience);
+        if ((lp_behavior1 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior1);
+        }
+        if ((lp_behavior2 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior2);
+        }
+        if ((lp_behavior3 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior3);
+        }
+    }
+
+}
+
+void libCC322427_gf_SpawnerWavesAddBossToWaveSpecificPoint (text lp_bossName, int lp_unitExperience, string lp_bossUnit, int lp_bossBarMaxValue, string lp_bossBarPortrait, string lp_behavior1, string lp_behavior2, string lp_behavior3, point lp_spawnPoint) {
+    // Variable Declarations
+    int lv_behaviorTempInt;
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((!((libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesTempWaveNumber] != null)))) {
+        libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossName;
+        libCC322427_gv_spawnerWavesBossPortrait[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossBarPortrait;
+        libCC322427_gv_spawnerWavesBossMaxvalue[libCC322427_gv_spawnerWavesTempWaveNumber] = lp_bossBarMaxValue;
+        libCC322427_gf_SpawnerWavesAddUnitToWaveSpecificPoint(lp_spawnPoint, 1, lp_bossUnit, 0.0001, 1, lp_unitExperience);
+        if ((lp_behavior1 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior1);
+        }
+        if ((lp_behavior2 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior2);
+        }
+        if ((lp_behavior3 == null)) {
+
+        }
+        else {
+            libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit(lp_behavior3);
+        }
+    }
+
+}
+
+void libCC322427_gf_SpawnerWavesAddWave () {
+    // Implementation
+    libCC322427_gv_spawnerWavesTotalWaves[0] = (libCC322427_gv_spawnerWavesTotalWaves[0] + 1);
+    libCC322427_gv_spawnerWavesTempWaveNumber = libCC322427_gv_spawnerWavesTotalWaves[0];
+}
+
+void libCC322427_gf_SpawnerWavesSpawnNextWave () {
+    int auto5BDB896F_ae;
+    int auto5BDB896F_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+    bool lv_tmpBossWave;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_tmpBossWave = false;
+    libCC322427_gv_spawnerWavesCurrentWave = (libCC322427_gv_spawnerWavesCurrentWave + 1);
+    if ((libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesCurrentWave] != null)) {
+        libCC322427_gf_SpawnerInternalCreateBossBar(libCC322427_gv_spawnerWavesBossName[libCC322427_gv_spawnerWavesCurrentWave], libCC322427_gv_spawnerWavesBossPortrait[libCC322427_gv_spawnerWavesCurrentWave], libCC322427_gv_spawnerWavesBossMaxvalue[libCC322427_gv_spawnerWavesCurrentWave]);
+        libCC322427_gv_spawnerWavesBossActive = true;
+        lv_tmpBossWave = true;
+    }
+
+    auto5BDB896F_ae = libCC322427_gv_spawnerConstantsMaxUnitsPerWave;
+    auto5BDB896F_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto5BDB896F_ai >= 0 && lv_tmpInt <= auto5BDB896F_ae) || (auto5BDB896F_ai <= 0 && lv_tmpInt >= auto5BDB896F_ae) ) ; lv_tmpInt += auto5BDB896F_ai ) {
+        if ((libCC322427_gv_spawnerWavesUnitType[libCC322427_gv_spawnerWavesCurrentWave][lv_tmpInt][0] != null)) {
+            libCC322427_gf_SpawnerInternalSpawnUnitInWave(libCC322427_gv_spawnerWavesCurrentWave, lv_tmpInt, lv_tmpBossWave);
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerWavesIssueAttack () {
+    // Implementation
+    if ((libCC322427_gv_spawnerWavesAttackMode == 1)) {
+        libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsHero();
+    }
+    else {
+        libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsUnit();
+    }
+}
+
+void libCC322427_gf_SpawnerAddSpawnPoint (point lp_point) {
+    int auto009757B8_ae;
+    int auto009757B8_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    auto009757B8_ae = libCC322427_gv_maxPlayerCount;
+    auto009757B8_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto009757B8_ai >= 0 && lv_tmpInt <= auto009757B8_ae) || (auto009757B8_ai <= 0 && lv_tmpInt >= auto009757B8_ae) ) ; lv_tmpInt += auto009757B8_ai ) {
+        if ((libCC322427_gv_spawnerWavesSpawnCreepPoints[lv_tmpInt] == null)) {
+            libCC322427_gv_spawnerWavesSpawnCreepPoints[lv_tmpInt] = lp_point;
+            libCC322427_gv_spawnerWavesSpawnCreepPointAmount += 1;
+            return ;
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerSetWaveDelay (int lp_waveDelay) {
+    // Implementation
+    libCC322427_gv_spawnerWavesWaveDelay = lp_waveDelay;
+}
+
+void libCC322427_gf_SpawnerWavesAddModificationToUnit (int lp_unitNumber, string lp_behavior) {
+    int auto5030F2AC_ae;
+    int auto5030F2AC_ai;
+
+    // Variable Declarations
+    int lv_tmpInt;
+
+    // Variable Initialization
+
+    // Implementation
+    auto5030F2AC_ae = 5;
+    auto5030F2AC_ai = 1;
+    lv_tmpInt = 1;
+    for ( ; ( (auto5030F2AC_ai >= 0 && lv_tmpInt <= auto5030F2AC_ae) || (auto5030F2AC_ai <= 0 && lv_tmpInt >= auto5030F2AC_ae) ) ; lv_tmpInt += auto5030F2AC_ai ) {
+        if ((libCC322427_gv_spawnerWavesWaveModification[libCC322427_gv_spawnerWavesTempWaveNumber][lp_unitNumber][lv_tmpInt] == null)) {
+            libCC322427_gv_spawnerWavesWaveModification[libCC322427_gv_spawnerWavesTempWaveNumber][lp_unitNumber][lv_tmpInt] = lp_behavior;
+            return ;
+        }
+
+    }
+}
+
+void libCC322427_gf_SpawnerWavesAddModificationToLastCreatedUnit (string lp_behavior) {
+    // Implementation
+    libCC322427_gf_SpawnerWavesAddModificationToUnit(libCC322427_gf_SpawnerGetLastCreatedUnitNumber(), lp_behavior);
+}
+
+void libCC322427_gf_ResourceControllerUpdateBeaconOwners () {
+    int autoEED88336_ae;
+    int autoEED88336_ai;
+
+    // Variable Declarations
+    unit lv_tmpUnit;
+    int lv_tmpX;
+
+    // Variable Initialization
+
+    // Implementation
+    autoEED88336_ae = libCC322427_gv_resourceControllerBeaconAmount;
+    autoEED88336_ai = 1;
+    lv_tmpX = 0;
+    for ( ; ( (autoEED88336_ai >= 0 && lv_tmpX <= autoEED88336_ae) || (autoEED88336_ai <= 0 && lv_tmpX >= autoEED88336_ae) ) ; lv_tmpX += autoEED88336_ai ) {
+        lv_tmpUnit = libCC322427_gf_ResourceControllerGetBeaconUnit(lv_tmpX);
+        libCC322427_gv_resourceControllerBeacon[lv_tmpX].lv_owner = UnitGetOwner(lv_tmpUnit);
+    }
+}
+
+void libCC322427_gf_ResourceControllerIncreaseBeaconAmount () {
+    // Implementation
+    libCC322427_gv_resourceControllerBeaconAmount += 1;
+    if ((libCC322427_gv_resourceControllerBeaconAmount > libCC322427_gv_resourceControllerMaxBeacons)) {
+        libCC322427_gv_resourceControllerBeaconAmount = libCC322427_gv_resourceControllerMaxBeacons;
+    }
+
+}
+
+void libCC322427_gf_ResourceControllerSetMineralIncomeSettings (int lp_mineralIncome, int lp_mineralIncomeRate) {
+    // Implementation
+    libCC322427_gv_resourceControllerMineralIncome = lp_mineralIncome;
+    libCC322427_gv_resourceControllerMineralIncomeRate = lp_mineralIncomeRate;
+}
+
+void libCC322427_gf_ResourceControllerMineralUpdate (int lp_beacons) {
+    // Variable Declarations
+    int lv_tmpMinerals;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_tmpMinerals = (libCC322427_gv_resourceControllerMineralIncome * lp_beacons);
+    PlayerGroupLoopBegin(PlayerGroupActive());
+    for ( ; !PlayerGroupLoopDone() ; PlayerGroupLoopStep() ) {
+        PlayerModifyPropertyInt(PlayerGroupLoopCurrent(), c_playerPropMinerals, c_playerPropOperAdd, lv_tmpMinerals);
+    }
+    PlayerGroupLoopEnd();
+}
+
+void libCC322427_gf_ResourceControllerRegisterBeacon (unit lp_unit) {
+    // Implementation
+    libCC322427_gf_ResourceControllerIncreaseBeaconAmount();
+    libCC322427_gv_resourceControllerBeacon[libCC322427_gf_ResourceControllerGetBeaconAmount()].lv_unit = lp_unit;
+}
+
+unit libCC322427_gf_ResourceControllerGetBeaconUnit (int lp_id) {
+    // Implementation
+    return libCC322427_gv_resourceControllerBeacon[lp_id].lv_unit;
+}
+
+int libCC322427_gf_ResourceControllerGetBeaconOwner (int lp_id) {
+    // Implementation
+    return libCC322427_gv_resourceControllerBeacon[lp_id].lv_owner;
+}
+
+int libCC322427_gf_ResourceControllerGetBeaconAmount () {
+    // Implementation
+    return libCC322427_gv_resourceControllerBeaconAmount;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero Is Incapped
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_HeroIsIncapped_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCC322427_gv_heroesIncapped += 1;
+    if ((libCC322427_gv_heroesIncapped == PlayerGroupCount(PlayerGroupActive()))) {
+        libCC322427_gf_EndGameInDefeat();
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_HeroIsIncapped_Init () {
+    libCC322427_gt_HeroIsIncapped = TriggerCreate("libCC322427_gt_HeroIsIncapped_Func");
+    TriggerAddEventUnitBehaviorChange(libCC322427_gt_HeroIsIncapped, null, "HeroIncapacitation", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero Is Revived
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_HeroIsRevived_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCC322427_gv_heroesIncapped -= 1;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_HeroIsRevived_Init () {
+    libCC322427_gt_HeroIsRevived = TriggerCreate("libCC322427_gt_HeroIsRevived_Func");
+    TriggerAddEventUnitBehaviorChange(libCC322427_gt_HeroIsRevived, null, "HeroIncapacitation", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Wavespawner Init
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_WavespawnerInit_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TimerWindowCreate(libCC322427_gv_waveTimer, TextExpressionAssemble("Param/Expression/lib_CC322427_C379EDDC"), true, false);
+    if ((GameAttributeGameValue("1") == "0001")) {
+        libCC322427_gv_waitForEnemiesToDie = true;
+    }
+    else {
+        libCC322427_gv_waitForEnemiesToDie = false;
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_WavespawnerInit_Init () {
+    libCC322427_gt_WavespawnerInit = TriggerCreate("libCC322427_gt_WavespawnerInit_Func");
+    TriggerAddEventMapInit(libCC322427_gt_WavespawnerInit);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit Idle
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_UnitIdle_Func (bool testConds, bool runActions) {
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == libCC322427_gv_spawnerConstantsCreepPlayerID))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupLoopBegin(UnitGroup(null, libCC322427_gv_spawnerConstantsCreepPlayerID, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsHero();
+    }
+    UnitGroupLoopEnd();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_UnitIdle_Init () {
+    libCC322427_gt_UnitIdle = TriggerCreate("libCC322427_gt_UnitIdle_Func");
+    TriggerAddEventUnitBecomesIdle(libCC322427_gt_UnitIdle, null, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: PeriodicAttack
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_PeriodicAttack_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupLoopBegin(UnitGroup(null, libCC322427_gv_spawnerConstantsCreepPlayerID, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+        libCC322427_gf_SpawnerInternalIssueAttackOrderTowardsHero();
+    }
+    UnitGroupLoopEnd();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_PeriodicAttack_Init () {
+    libCC322427_gt_PeriodicAttack = TriggerCreate("libCC322427_gt_PeriodicAttack_Func");
+    TriggerAddEventTimePeriodic(libCC322427_gt_PeriodicAttack, 5.0, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Cheat Revive All
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_CheatReviveAll_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((lib47D24EE7_gv_utilitiesDebugDebugModeOn == true)) {
+        lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_8C274601"));
+        libCC322427_gf_SpawnerInternalReviveAllHeroes();
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_CheatReviveAll_Init () {
+    libCC322427_gt_CheatReviveAll = TriggerCreate("libCC322427_gt_CheatReviveAll_Func");
+    TriggerAddEventChatMessage(libCC322427_gt_CheatReviveAll, c_playerAny, "-revive", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Spawner: Check Enemies Available
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_SpawnerCheckEnemiesAvailable_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_unitsAlive;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((libCC322427_gv_waitForEnemiesToDie == true)) {
+        while ((libCC322427_gv_waitForEnemiesToDie == true)) {
+            lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_22B287A0"));
+            lv_unitsAlive = 0;
+            UnitGroupLoopBegin(UnitGroup(null, libCC322427_gv_spawnerConstantsCreepPlayerID, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+            for ( ; !UnitGroupLoopDone() ; UnitGroupLoopStep() ) {
+                lv_unitsAlive += 1;
+            }
+            UnitGroupLoopEnd();
+            lib47D24EE7_gf_UtilitiesDebugDebugMessage((StringExternal("Param/Value/lib_CC322427_89ABBF19") + IntToText(lv_unitsAlive)));
+            if ((lv_unitsAlive == 0)) {
+                libCC322427_gv_spawnerWavesAreEnemiesAlive = false;
+                lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_97F08EA0"));
+            }
+            else {
+                libCC322427_gv_spawnerWavesAreEnemiesAlive = true;
+                lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_DF87324C"));
+            }
+            Wait(5.0, c_timeGame);
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_SpawnerCheckEnemiesAvailable_Init () {
+    libCC322427_gt_SpawnerCheckEnemiesAvailable = TriggerCreate("libCC322427_gt_SpawnerCheckEnemiesAvailable_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Spawner: Check Boss
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_SpawnerCheckBoss_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_tempTrue;
+
+    // Variable Initialization
+    lv_tempTrue = 1;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while ((lv_tempTrue == 1)) {
+        if ((UnitIsAlive(libCC322427_gv_spawnerWavesCurrentBoss) == false)) {
+            libNtve_gf_ShowHideBossBar(false, libCC322427_gv_spawnerBossBarID);
+        }
+
+        Wait(5.0, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_SpawnerCheckBoss_Init () {
+    libCC322427_gt_SpawnerCheckBoss = TriggerCreate("libCC322427_gt_SpawnerCheckBoss_Func");
+    TriggerAddEventMapInit(libCC322427_gt_SpawnerCheckBoss);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Spawner: Start Waves
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_SpawnerStartWaves_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_x;
+    timer lv_tmpInt;
+
+    // Variable Initialization
+    lv_tmpInt = TimerCreate();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while ((libCC322427_gv_spawnerWavesCurrentWave < libCC322427_gv_spawnerWavesTotalWaves[0])) {
+        TriggerExecute(libCC322427_gt_SpawnerCheckEnemiesAvailable, true, false);
+        if ((libCC322427_gf_SpawnerGetWaitForEnemiesToDie() == true)) {
+            while ((libCC322427_gf_SpawnerAreEnemiesAlive() == true)) {
+                lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_A42204DF"));
+                Wait(1.0, c_timeGame);
+            }
+        }
+
+        TimerStart(libCC322427_gv_waveTimer, libCC322427_gv_spawnerWavesWaveDelay, false, c_timeGame);
+        libCC322427_gv_doMineralUpdates = false;
+        libCC322427_gf_SpawnerInternalReviveAllHeroes();
+        libCC322427_gf_SpawnerInternalApplyRegenBuff();
+        lib47D24EE7_gf_UtilitiesDebugDebugMessage(StringExternal("Param/Value/lib_CC322427_90218FAB"));
+        libNtve_gf_WaitForTimer(libCC322427_gv_waveTimer, 0.0, false);
+        libCC322427_gf_SpawnerInternalRemoveRegenBuff();
+        libCC322427_gf_SpawnerWavesSpawnNextWave();
+        libCC322427_gv_doMineralUpdates = true;
+        TriggerExecute(libCC322427_gt_BeaconController, true, false);
+        libCC322427_gf_SpawnerWavesIssueAttack();
+    }
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_CC322427_6615D055"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_SpawnerStartWaves_Init () {
+    libCC322427_gt_SpawnerStartWaves = TriggerCreate("libCC322427_gt_SpawnerStartWaves_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Beacon Controller
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_BeaconController_Func (bool testConds, bool runActions) {
+    int auto37541E35_ae;
+    int auto37541E35_ai;
+
+    // Variable Declarations
+    int lv_tmpBeaconAmount;
+    int lv_tmpX;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while ((libCC322427_gv_doMineralUpdates == true)) {
+        lv_tmpBeaconAmount = 0;
+        Wait(libCC322427_gv_resourceControllerMineralIncomeRate, c_timeReal);
+        auto37541E35_ae = libCC322427_gf_ResourceControllerGetBeaconAmount();
+        auto37541E35_ai = 1;
+        lv_tmpX = 1;
+        for ( ; ( (auto37541E35_ai >= 0 && lv_tmpX <= auto37541E35_ae) || (auto37541E35_ai <= 0 && lv_tmpX >= auto37541E35_ae) ) ; lv_tmpX += auto37541E35_ai ) {
+            if ((libCC322427_gf_ResourceControllerGetBeaconOwner(lv_tmpX) == libCC322427_gv_resourceControllerFriendlyPlayerID)) {
+                lv_tmpBeaconAmount += 1;
+            }
+
+        }
+        libCC322427_gf_ResourceControllerMineralUpdate(lv_tmpBeaconAmount);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_BeaconController_Init () {
+    libCC322427_gt_BeaconController = TriggerCreate("libCC322427_gt_BeaconController_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Beacon Changes Owner
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_gt_BeaconChangesOwner_Func (bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetOwner(EventUnit()) == libCC322427_gv_spawnerConstantsCreepPlayerID)) {
+        UnitSetOwner(EventUnit(), libCC322427_gv_resourceControllerFriendlyPlayerID, true);
+        UnitBehaviorAdd(EventUnit(), "BeaconFriendly", EventUnit(), 1);
+    }
+    else {
+        UnitSetOwner(EventUnit(), libCC322427_gv_spawnerConstantsCreepPlayerID, true);
+        UnitBehaviorAdd(EventUnit(), "BeaconHostile", EventUnit(), 1);
+    }
+    libCC322427_gf_ResourceControllerUpdateBeaconOwners();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libCC322427_gt_BeaconChangesOwner_Init () {
+    libCC322427_gt_BeaconChangesOwner = TriggerCreate("libCC322427_gt_BeaconChangesOwner_Func");
+    TriggerAddEventUnitBehaviorChange(libCC322427_gt_BeaconChangesOwner, null, "BeaconInvulnerable", c_unitBehaviorChangeCreate);
+}
+
+void libCC322427_InitTriggers () {
+    libCC322427_gt_HeroIsIncapped_Init();
+    libCC322427_gt_HeroIsRevived_Init();
+    libCC322427_gt_WavespawnerInit_Init();
+    libCC322427_gt_UnitIdle_Init();
+    libCC322427_gt_PeriodicAttack_Init();
+    libCC322427_gt_CheatReviveAll_Init();
+    libCC322427_gt_SpawnerCheckEnemiesAvailable_Init();
+    libCC322427_gt_SpawnerCheckBoss_Init();
+    libCC322427_gt_SpawnerStartWaves_Init();
+    libCC322427_gt_BeaconController_Init();
+    libCC322427_gt_BeaconChangesOwner_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libCC322427_InitLib_completed = false;
+
+void libCC322427_InitLib () {
+    if (libCC322427_InitLib_completed) {
+        return;
+    }
+
+    libCC322427_InitLib_completed = true;
+
+    libCC322427_InitLibraries();
+    libCC322427_InitVariables();
+    libCC322427_InitTriggers();
+}
+
+include "Lib47D24EE7"
+

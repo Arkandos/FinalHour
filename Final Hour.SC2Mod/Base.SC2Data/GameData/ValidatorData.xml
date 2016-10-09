@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="BruteCrashingChargeAbort">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <WhichUnit Value="Source"/>
+        <Compare value="LE"/>
+        <Behavior value="BruteCrashingChargeAbort"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="BruteCrashingChargeTargetCloseAndKraithCrashingChargeAbort">
+        <Type value="And"/>
+        <CombineArray value="BruteCrashingChargeTargetClose"/>
+        <CombineArray value="BruteCrashingChargeAbort"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="BruteCrashingChargeTargetClose">
+        <Compare value="GT"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareVital id="CasterHasLife">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareAbilLevel id="DivineFireRequireLevel1">
+        <WhichUnit Value="Caster"/>
+        <AbilLink value="DivineFire"/>
+    </CValidatorUnitCompareAbilLevel>
+    <CValidatorUnitCompareAbilLevel id="DivineFireRequireLevel2">
+        <WhichUnit Value="Caster"/>
+        <AbilLink value="DivineFire"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareAbilLevel>
+    <CValidatorUnitCompareAbilLevel id="DivineFireRequireLevel3">
+        <WhichUnit Value="Caster"/>
+        <AbilLink value="DivineFire"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareAbilLevel>
+    <CValidatorUnitCompareVital id="HostNotAtFullLife">
+        <WhichUnit Value="Source"/>
+        <Compare value="GE"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="NotKnockedBackBrute">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Compare value="LE"/>
+        <Behavior value="KraithCrashingChargeKnockback2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="TargetLifeLE20" parent="CasterLifeGE50">
+        <WhichUnit Value="Target"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="20"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLE60" parent="CasterLifeGE50">
+        <WhichUnit Value="Target"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="60"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLE80" parent="CasterLifeGE50">
+        <WhichUnit Value="Target"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="80"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLE40" parent="CasterLifeGE50">
+        <WhichUnit Value="Target"/>
+        <Compare value="LE"/>
+        <Type value="Fraction"/>
+        <Value value="40"/>
+    </CValidatorUnitCompareVital>
+</Catalog>

@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CAbilLearn id="AngelofLightLearnAbilities">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Learn1" Abil="DivineFire" VeterancyLevelSkip="2">
+            <Charge CountMax="3" CountUse="1"/>
+            <Button DefaultButtonFace="DivineFire"/>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="CelestialRadiance">
+            <Charge CountMax="3" CountUse="1"/>
+            <Button DefaultButtonFace="CelestialRadiance"/>
+        </InfoArray>
+        <InfoArray index="Learn3" Abil="IceBolt" VeterancyLevelSkip="1">
+            <Charge CountMax="3" CountUse="1"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn4">
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn5" Abil="TouchedbytheGodess" VeterancyLevelMin="1" VeterancyLevelSkip="1">
+            <Charge CountMax="3" CountUse="1"/>
+            <Button DefaultButtonFace="TouchedbytheGodessLevel1"/>
+        </InfoArray>
+        <InfoArray index="Learn6" Abil="DanceofDeath">
+            <Charge CountMax="1" CountUse="1"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+            <Button DefaultButtonFace="DanceofDeath"/>
+        </InfoArray>
+        <InfoArray index="Learn7">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn8">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn9">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn10">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn11">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn12">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn13">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn14">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn15">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn16">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn17">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn18">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn19">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <InfoArray index="Learn20">
+            <Charge Link="Abil/KarassLearnAbilities"/>
+            <Cooldown Link="Abil/KarassLearnAbilities"/>
+        </InfoArray>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Points value="1"/>
+        <PointsPerLevel value="1"/>
+    </CAbilLearn>
+    <CAbilEffectTarget id="ChargeSelf">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ChargeApplyBehaviortoCaster"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="-;Self,Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <Range value="10"/>
+        <AutoCastFilters value="Visible;Self,Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <AutoCastRange value="10"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ChargeSelf"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="DanceofDeath">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="DanceofDeath"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="DanceofDeathCheck"/>
+    </CAbilBehavior>
+    <CAbilEffectTarget id="HighPriestFuryoftheTemplar">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="FuryoftheTemplarApplyBehavior"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="40"/>
+            <Cooldown TimeUse="12"/>
+        </Cost>
+        <TargetFilters value="-;Self,Neutral,Enemy,User1,Missile,Item,Stasis,Hidden,Invulnerable,Unstoppable"/>
+        <Range value="10"/>
+        <AutoCastFilters value="Visible;Self,Neutral,Enemy,User1,Missile,Item,Stasis,Dead,Hidden,Hallucination,Invulnerable,Unstoppable"/>
+        <AutoCastRange value="10"/>
+        <AutoCastValidatorArray value="TargetCanAttack"/>
+        <CastIntroTime value="1"/>
+        <UninterruptibleArray index="Wait" value="1"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <UninterruptibleArray index="Bail" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="FuryoftheTemplar"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HighPriestHeal">
+        <Alignment value="Positive"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="HighPriestHealModifyUnit"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="20"/>
+            <Cooldown TimeUse="2"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Enemy,Item,Stasis,Hidden,Unstoppable"/>
+        <Range value="10"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Self,Neutral,Enemy,Missile,Item,Dead,Hidden,Unstoppable"/>
+        <AutoCastRange value="10"/>
+        <AutoCastValidatorArray value="TargetLifeNotFull"/>
+        <CastIntroTime value="0.7"/>
+        <UninterruptibleArray index="Wait" value="1"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <UninterruptibleArray index="Bail" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HighPriestHeal"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="TouchedbytheGodess">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="TouchedbytheGodessLevel1"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="CancelTouchedbytheGodess"/>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="TouchedbytheGodessAura1"/>
+        <BehaviorArray value="TouchedbytheGodessAura2"/>
+        <BehaviorArray value="TouchedbytheGodessAura3"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TouchedbytheGodessLevel2"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TouchedbytheGodessLevel3"/>
+        <LearnButtonName value="Button/Name/LearnTouchedbytheGodessLevel1"/>
+        <LearnButtonName value="Button/Name/LearnTouchedbytheGodessLevel2"/>
+        <LearnButtonName value="Button/Name/LearnTouchedbytheGodessLevel3"/>
+        <LearnButtonTooltip value="Button/Tooltip/TouchedbytheGodessLevel2"/>
+        <LearnButtonTooltip value="Button/Tooltip/TouchedbytheGodessLevel3"/>
+    </CAbilBehavior>
+    <CAbilSpecialize id="AttributeIncrease">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Specialize1" Effect="AddStrength">
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Link value="Statpoints"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Button DefaultButtonFace="Strength"/>
+        </InfoArray>
+        <InfoArray index="Specialize2" Effect="AddEndurance">
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Link value="Statpoints"/>
+            </Charge>
+            <Button DefaultButtonFace="Endurance"/>
+        </InfoArray>
+        <InfoArray index="Specialize3" Effect="AddAgility">
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Link value="Statpoints"/>
+            </Charge>
+            <Button DefaultButtonFace="Agility"/>
+        </InfoArray>
+        <InfoArray index="Specialize4" Effect="AddIntelligence">
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Link value="Statpoints"/>
+            </Charge>
+            <Button DefaultButtonFace="Intelligence"/>
+        </InfoArray>
+        <InfoArray index="Specialize5" Effect="AddWillpower">
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Link value="Statpoints"/>
+            </Charge>
+            <Button DefaultButtonFace="Willpower"/>
+        </InfoArray>
+        <Flags index="Transient" value="1"/>
+    </CAbilSpecialize>
+    <CAbilLearn id="ChangelingLearnAbilities">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Learn1" Abil="SpeedAbsorbtion">
+            <Charge CountMax="1"/>
+            <Button DefaultButtonFace="AbsorbSpeed"/>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="Multiply">
+            <Charge CountMax="1"/>
+            <Button DefaultButtonFace="Multiply"/>
+        </InfoArray>
+        <InfoArray index="Learn3" Abil="Reshape">
+            <Charge CountMax="1"/>
+            <Button DefaultButtonFace="Reshape"/>
+        </InfoArray>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Points value="1"/>
+        <PointsPerLevel value="1"/>
+    </CAbilLearn>
+    <CAbilEffectTarget id="Charge2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ChargePersistent"/>
+        <Cost>
+            <Cooldown TimeUse="22"/>
+        </Cost>
+        <Range value="30"/>
+        <PrepTime value="2.5"/>
+        <ShowProgressArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Charge2"/>
+        <FinishTime value="0.3"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <TargetFilters value="Heroic,Visible;Self,Player,Ally,Missile,Stasis,Invulnerable,Unstoppable"/>
+        <AutoCastFilters value="Heroic,Visible;Player,Ally,Missile,Stasis,Invulnerable,Unstoppable"/>
+        <AutoCastRange value="25"/>
+        <AutoCastValidatorArray value="TargetIsEnemy"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="CombatSuit">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="PoweredCombatSuitLevel1" Requirements="LearnTossGrenade1"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="PoweredCombatSuitLevel1"/>
+        <Flags index="ToggledOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="CombatSuitLevel1"/>
+        <BehaviorArray value="CombatSuitLevel2"/>
+        <BehaviorArray value="CombatSuitLevel3"/>
+        <LearnButtonName value="Button/Name/PoweredCombatSuitLevel1/Learn2"/>
+        <LearnButtonName value="Button/Name/PoweredCombatSuitLevel1/Learn3"/>
+    </CAbilBehavior>
+    <CAbilEffectInstant id="CelestialRadiance">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="CelestialRadianceCreatePersistent"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="50"/>
+            <Cooldown TimeUse="25"/>
+        </Cost>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="50"/>
+            <Cooldown TimeUse="23"/>
+        </Cost>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="55"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <AINotifyEffect value="CelestialRadianceCreatePersistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CelestialRadiance"/>
+        <LevelButtonTooltip value="Button/Tooltip/CelestialRadiance2"/>
+        <LevelButtonTooltip value="Button/Tooltip/CelestialRadiance3"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="FearsomeRoar">
+        <Alignment value="Negative"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="FearsomeRoarSearch"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <AutoCastFilters value="Heroic,Visible;Player,Ally,Stasis,Invulnerable"/>
+        <AutoCastRange value="10"/>
+        <AutoCastValidatorArray value="CasterNotDeadAndCasterNotStunned"/>
+        <AutoCastValidatorArray value="TargetIsEnemy"/>
+        <CastIntroTime value="2"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="FearsomeRoarApplyBehavior"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="FearsomeRoar"/>
+        <ShowProgressArray index="Cast" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="DivineFire">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="DivineFireInitial"/>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="35"/>
+            <Charge Link="Abil/Fireball"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="35"/>
+            <Charge Link="Abil/Fireball"/>
+            <Cooldown TimeUse="18"/>
+        </Cost>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="35"/>
+            <Charge Link="Abil/Fireball"/>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <Range value="7"/>
+        <Range value="7"/>
+        <Range value="8"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DivineFire"/>
+        <LevelButtonTooltip value="Button/Tooltip/DivineFire2"/>
+        <LevelButtonTooltip value="Button/Tooltip/DivineFire3"/>
+    </CAbilEffectTarget>
+    <CAbilPawn id="ForgePawn">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Pawn1">
+            <RefundFraction index="Minerals" value="0.5"/>
+            <RefundFraction index="Vespene" value="0.5"/>
+            <RefundFraction index="Terrazine" value="0.5"/>
+            <RefundFraction index="Custom" value="0.5"/>
+        </InfoArray>
+        <Flags index="Smart" value="1"/>
+        <Range value="500"/>
+    </CAbilPawn>
+    <CAbilTrain id="ForgeShop">
+        <InfoArray index="Train1">
+            <Display index="Minerals" value="1"/>
+            <Charge CountMax="5" CountStart="5" CountUse="1"/>
+            <Cooldown TimeUse="20"/>
+            <Button DefaultButtonFace="MinorRegenerationPotion"/>
+            <Unit value="MinorRegenerationPotion"/>
+        </InfoArray>
+        <InfoArray index="Train2">
+            <Display index="Minerals" value="1"/>
+            <Charge>
+                <CountMax value="5"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <TimeUse value="60"/>
+            </Charge>
+            <Button DefaultButtonFace="MajorRegenerationPotion"/>
+            <Unit value="MajorRegenerationPotion"/>
+        </InfoArray>
+        <InfoArray index="Train3">
+            <Display index="Minerals" value="1"/>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <TimeUse value="60"/>
+            </Charge>
+            <Button DefaultButtonFace="MinorEnergyPotion"/>
+            <Unit value="MinorEnergyPotion"/>
+        </InfoArray>
+        <InfoArray index="Train4">
+            <Display index="Minerals" value="1"/>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <TimeUse value="60"/>
+            </Charge>
+            <Button DefaultButtonFace="MajorEnergyPotion"/>
+            <Unit value="MajorEnergyPotion"/>
+        </InfoArray>
+        <InfoArray index="Train5">
+            <Display index="Minerals" value="1"/>
+            <Charge CountMax="2" CountStart="2" CountUse="1"/>
+            <Button DefaultButtonFace="Overclocker"/>
+            <Unit value="Overclocker"/>
+        </InfoArray>
+        <InfoArray index="Train6">
+            <Display index="Minerals" value="1"/>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <TimeUse value="360"/>
+            </Charge>
+            <Button DefaultButtonFace="ProtectivePlating"/>
+            <Unit value="ProtectivePlating"/>
+        </InfoArray>
+        <InfoArray index="Train7">
+            <Display index="Minerals" value="1"/>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <TimeUse value="360"/>
+            </Charge>
+            <Button DefaultButtonFace="PsionicOrb"/>
+            <Unit value="PsionicOrb"/>
+        </InfoArray>
+        <InfoArray index="Train8">
+            <Charge CountMax="3" CountStart="3" CountUse="1"/>
+            <Cooldown TimeUse="100"/>
+            <Button DefaultButtonFace="PowerAmplifier"/>
+            <Unit value="PowerAmplifier"/>
+        </InfoArray>
+        <InfoArray index="Train9">
+            <Charge CountMax="3" CountStart="3" CountUse="1"/>
+            <Cooldown TimeUse="360"/>
+            <Button DefaultButtonFace="MicroReactor"/>
+            <Unit value="MicroReactor"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilBehavior id="Hailoflead">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="TurnOnHailofLead"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="TurnOffHailofLead"/>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="HailofLeadLevel1"/>
+        <BehaviorArray value="HailofLeadLevel2"/>
+        <BehaviorArray value="HailofLeadLevel3"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TurnOnHailofLead2"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TurnOnHailofLead3"/>
+        <LearnButtonTooltip value="Button/Tooltip/TurnOnHailofLead2"/>
+        <LearnButtonTooltip value="Button/Tooltip/TurnOnHailofLead3"/>
+        <LearnButtonName value="Abil/Name/Hailoflead/Learn2"/>
+        <LearnButtonName value="Abil/Name/Hailoflead/Learn3"/>
+    </CAbilBehavior>
+    <CAbilEffectTarget id="IceBolt">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="IceBoltLaunchMissle"/>
+        <Effect value="IceBoltLaunchMissleLevel2"/>
+        <Effect value="IceBoltLaunchMissleLevel3"/>
+        <Cost>
+            <Vital index="Energy" value="20"/>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Cooldown TimeUse="12"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="-;Self,Missile,Stasis,Hidden,Invulnerable,Unstoppable"/>
+        <Range value="8"/>
+        <CastIntroTime value="0.5"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <CancelableArray index="Cast" value="1"/>
+        <ProgressButtonArray index="Cast" value="IceBoltLevel1"/>
+        <LevelButtonTooltip value="Button/Tooltip/IceBoltLevel2"/>
+        <LevelButtonTooltip value="Button/Tooltip/IceBoltLevel3"/>
+        <LearnButtonName value="Button/Tooltip/IceBoltLevel1/Learn2"/>
+        <LearnButtonName value="Button/Tooltip/IceBoltLevel1/Learn3"/>
+        <LearnButtonTooltip value="Button/Tooltip/IceBoltLevel2"/>
+        <LearnButtonTooltip value="Button/Tooltip/IceBoltLevel3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LearnIceBoltLevel1"/>
+    </CAbilEffectTarget>
+    <CAbilInventory id="KarassInventory">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Range value="2"/>
+        <MaxDropRange value="2"/>
+        <InfoArray Alignment="Left" Container="WeaponContainer" EmptyFace="10SlotBag">
+            <Classes value="Weapon"/>
+            <Classes value="Armor"/>
+            <Classes value="Trinket"/>
+            <Classes value="Trinket"/>
+        </InfoArray>
+        <InfoArray Container="GeneralBag" EmptyFace="10SlotBag">
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Armor"/>
+            <Classes value="Potion"/>
+        </InfoArray>
+    </CAbilInventory>
+    <CAbilLearn id="KarassLearnAbilities">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Learn1" Abil="PhaseShift2" VeterancyLevelSkip="1">
+            <Charge CountMax="3"/>
+            <Button DefaultButtonFace="LearnPhaseShiftLevel1"/>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="LightningStorm">
+            <Charge CountMax="1"/>
+            <Button DefaultButtonFace="LightningStorm"/>
+        </InfoArray>
+        <InfoArray index="Learn3" Abil="IceBolt" VeterancyLevelSkip="1">
+            <Charge CountMax="3"/>
+            <Button DefaultButtonFace="IceBoltLevel1"/>
+        </InfoArray>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Points value="1"/>
+        <PointsPerLevel value="1"/>
+    </CAbilLearn>
+    <CAbilLearn id="LearnAbilitiesTychus">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <PointsPerLevel value="1"/>
+    </CAbilLearn>
+    <CAbilEffectTarget id="LightningStorm">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="LightningStormPersistent"/>
+        <Cost>
+            <Vital index="Energy" value="30"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Range value="10"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LightningStorm"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <CursorEffect value="LightningStormSearch"/>
+        <CastOutroTime value="4.6"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <CancelableArray index="Channel" value="1"/>
+        <ProgressButtonArray index="Channel" value="LightningStorm"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="MorphLife">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="MorphLife"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="Cancel"/>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="MorphLife"/>
+    </CAbilBehavior>
+    <CAbilBehavior id="MorphEnergy">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="MorphEnergy"/>
+        <CmdButtonArray index="Off" DefaultButtonFace="Cancel"/>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="MorphEnergy"/>
+    </CAbilBehavior>
+    <CAbilEffectInstant id="Multiply">
+        <Alignment value="Positive"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="MultiplyCreateUnit"/>
+        <Cost>
+            <Display index="Life" value="1"/>
+            <Display index="Energy" value="1"/>
+            <VitalFraction index="Life" value="0.2"/>
+            <VitalFraction index="Energy" value="0.2"/>
+            <Cooldown TimeUse="45"/>
+        </Cost>
+        <CastIntroTime value="1"/>
+        <AINotifyEffect value="MultiplyCreateUnit"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Multiply"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PhaseShift2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Vital index="Energy" value="30"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Charge Link=""/>
+            <Cooldown Link=""/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="55"/>
+            <Charge Link=""/>
+            <Cooldown Link=""/>
+        </Cost>
+        <TargetFilters value="Heroic;Neutral,Enemy,Buried,Stasis,Dead,Hidden"/>
+        <Range value="5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PhaseShift2">
+            <Flags index="AllowSelfCast" value="1"/>
+        </CmdButtonArray>
+        <Effect index="0" value="PhaseShiftLevel1ApplyBehavior"/>
+        <Effect value="PhaseShiftLevel2ApplyBehavior"/>
+        <Effect value="PhaseShiftLevel3ApplyBehavior"/>
+        <AINotifyEffect value="PhaseShiftLevel1ApplyBehavior"/>
+        <LevelButtonTooltip value="Button/Tooltip/PhaseShift2/Learn2"/>
+        <LevelButtonTooltip value="Button/Tooltip/PhaseShift2/Learn3"/>
+        <LearnButtonTooltip value="Button/Tooltip/PhaseShift2/Learn2"/>
+        <LearnButtonTooltip value="Button/Tooltip/PhaseShift2/Learn3"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PouncerPounce">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReApproachable" value="0"/>
+        <TargetFilters value="Heroic,Visible;Player,Ally,Neutral"/>
+        <Range value="8"/>
+        <AutoCastFilters value="Visible;Player,Ally,Neutral"/>
+        <AutoCastRange value="8"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PouncerPounce"/>
+        <Effect index="0" value="PouncerPounceLaunchPersistent"/>
+        <PrepEffect value="PouncerPounceTargeter"/>
+        <Cost>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <RangeSlop value="10"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="Reshape">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ReshapeApplyBehavior"/>
+        <Cost>
+            <Display index="Life" value="1"/>
+            <VitalFraction index="Life" value="0.2"/>
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Reshape"/>
+    </CAbilEffectInstant>
+    <CAbilInteract id="ShopInteract">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="ShareControl" value="1"/>
+        <Range value="3"/>
+        <TargetFilters value="Heroic;-"/>
+        <AutoCastFilters value="Heroic;-"/>
+        <AutoCastRange value="3"/>
+    </CAbilInteract>
+    <CAbilInventory id="ShopInventory">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray Container="ShopSlot">
+            <Classes value="Weapon"/>
+            <Classes value="Misc"/>
+            <Classes value="Armor"/>
+            <Classes value="Trinket"/>
+            <Classes value="Potion"/>
+        </InfoArray>
+    </CAbilInventory>
+    <CAbilEffectTarget id="SpeedAbsorbtion">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ChangelingSpeedAbsorbtionPersistent"/>
+        <Cost>
+            <Display index="Life" value="1"/>
+            <Display index="Energy" value="1"/>
+            <Vital index="Life" value="30"/>
+            <Vital index="Energy" value="30"/>
+            <VitalFraction index="Life" value="0.1"/>
+            <VitalFraction index="Energy" value="0.1"/>
+            <Cooldown TimeUse="25"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <RangeSlop value="6"/>
+        <CastOutroTime value="3"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <CancelableArray index="Channel" value="1"/>
+        <ProgressButtonArray index="Channel" value="AbsorbSpeed"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AbsorbSpeed"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TestyMissileTest">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="2"/>
+        </Cost>
+        <Range value="6"/>
+        <AutoCastRange value="6"/>
+        <CastIntroTime value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MissilleTest"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TossGrenade2">
+        <Alignment value="Negative"/>
+        <OrderArray index="0" DisplayType="Confirm" Model="Assets\UI\Cursors\WayPointConfirmSwarm\WayPointConfirmSwarm.m3"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="BonesTossGrenadeDelay"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Link="Abil/BonesTossGrenade"/>
+            <Cooldown Link="Abil/BonesTossGrenade" TimeUse="20"/>
+        </Cost>
+        <Range value="7"/>
+        <CastOutroTime value="0.6875"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <CursorEffect value="BonesTossGrenadeDamage"/>
+        <AINotifyEffect value="TossGrenade"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TossGrenadeTychus"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TossShredderGrenade">
+        <Alignment value="Negative"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="TossShredderGrenadeDelayLevel1"/>
+        <Effect value="TossShredderGrenadeDelayLevel2"/>
+        <Effect value="TossShredderGrenadeDelayLevel3"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="35"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Cost>
+            <Vital index="Energy" value="45"/>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Neutral"/>
+        <Range value="5"/>
+        <Range value="6"/>
+        <Range value="7"/>
+        <PrepTime value="0"/>
+        <ShowProgressArray index="Prep" value="1"/>
+        <CursorEffect value="TossShredderGrenadeDamageLevel1"/>
+        <CursorEffect value="TossShredderGrenadeDamageLevel2"/>
+        <CursorEffect value="TossShredderGrenadeDamageLevel3"/>
+        <ProgressButtonArray index="Approach" value="TossShredderGrenade"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TossShredderGrenade" Requirements="LearnTossGrenade1"/>
+        <LevelButtonTooltip value="Button/Tooltip/TossShredderGrenade2"/>
+        <LevelButtonTooltip value="Button/Tooltip/TossShredderGrenade3"/>
+        <CastOutroTime value="0.5"/>
+    </CAbilEffectTarget>
+    <CAbilLearn id="TychusLearnActiveSkills">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoArray index="Learn1" Abil="TossShredderGrenade" VeterancyLevelSkip="1">
+            <Charge CountMax="3" HideCount="1" Link="ActiveSkills"/>
+            <Button DefaultButtonFace="LearnTossGrenade"/>
+        </InfoArray>
+        <InfoArray index="Learn2" Abil="Hailoflead" VeterancyLevelSkip="1">
+            <Charge CountMax="3"/>
+            <Button DefaultButtonFace="HailofLeadLearn"/>
+        </InfoArray>
+        <InfoArray index="Learn3" Abil="CombatSuit" VeterancyLevelSkip="1">
+            <Charge CountMax="3"/>
+            <Button DefaultButtonFace="PoweredCombatSuitLevel1"/>
+        </InfoArray>
+        <InfoArray index="Learn4" Abil="TychusSecretStash" VeterancyLevelSkip="1">
+            <Charge CountMax="3"/>
+            <Button DefaultButtonFace="TychusTychusSecretStash"/>
+        </InfoArray>
+        <PointsPerLevel value="1"/>
+        <Points value="1"/>
+        <Flags index="HideOnMaxLevel" value="1"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilLearn>
+    <CAbilResearch id="TychusLearnTossGrenade">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CAbilResearch>
+    <CAbilBehavior id="TychusSecretStash">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Cost>
+            <Display index="Life" value="1"/>
+            <VitalFraction index="Life" value="0.1"/>
+            <Cooldown TimeUse="40"/>
+        </Cost>
+        <Cost>
+            <VitalFraction index="Life" value="0.14"/>
+            <Charge Link=""/>
+            <Cooldown Link="" TimeUse="35"/>
+        </Cost>
+        <Cost>
+            <VitalFraction index="Life" value="0.2"/>
+            <Charge Link=""/>
+            <Cooldown Link="" TimeUse="35"/>
+        </Cost>
+        <CmdButtonArray index="On" DefaultButtonFace="TychusTychusSecretStash"/>
+        <BehaviorArray value="TychusSecretStashLevel1"/>
+        <BehaviorArray value="TychusSecretStashLevel2"/>
+        <BehaviorArray value="TychusSecretStashLevel3"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TychusTychusSecretStash2"/>
+        <LevelButtonOnTooltip value="Button/Tooltip/TychusTychusSecretStash3"/>
+        <LearnButtonName value="Button/Tooltip/TychusTychusSecretStash/Learn2"/>
+        <LearnButtonName value="Button/Tooltip/TychusTychusSecretStash/Learn3"/>
+        <LearnButtonTooltip value="Button/Tooltip/TychusTychusSecretStash2"/>
+        <LearnButtonTooltip value="Button/Tooltip/TychusTychusSecretStash3"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilBehavior>
+    <CAbilAttack id="attack2" parent="attack">
+        <Name value="Abil/Name/attack2"/>
+        <TargetMessage value="Abil/TargetMessage/attack2"/>
+    </CAbilAttack>
+    <CAbilMove id="move2">
+        <OrderArray index="0">
+            <DisplayType value="Move"/>
+            <Color value="255,0,255,0"/>
+            <Model value="Assets\UI\Cursors\WayPointMoveSwarm\WayPointMoveSwarm.m3"/>
+            <LineTexture value="Assets\Textures\WayPointLine.dds"/>
+        </OrderArray>
+        <OrderArray index="1">
+            <DisplayType value="Move"/>
+            <Color value="255,35,125,255"/>
+            <Model value="Assets\UI\Cursors\WayPointConfirmSwarm\WayPointConfirmSwarm.m3"/>
+            <LineTexture value="Assets\Textures\WayPointLine.dds"/>
+        </OrderArray>
+        <FleeRange value="5"/>
+        <FleeTime value="5"/>
+        <FollowRangeSlop value="1"/>
+        <FollowAcquireRange value="6"/>
+        <MinPatrolDistance value="1"/>
+    </CAbilMove>
+    <CAbilStop id="stop2">
+        <OrderArray index="0" Color="255,0,255,0" Model="Assets\UI\Cursors\WayPointConfirmSwarm\WayPointConfirmSwarm.m3" LineTexture="Assets\Textures\WayPointLine.dds"/>
+        <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>
+    </CAbilStop>
+</Catalog>

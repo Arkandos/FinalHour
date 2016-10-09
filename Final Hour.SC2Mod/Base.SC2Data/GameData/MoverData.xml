@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CMoverMissile id="IceBoltWeapon" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="5"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="719.2968"/>
+            <Overlays/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="PsionicLinkMissile">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3000"/>
+            <MaxSpeed value="5"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="719.2968"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="TossGrenade2">
+        <MotionPhases Driver="Ballistic" Gravity="12" FlightTime="0.5"/>
+    </CMoverMissile>
+    <CMoverMissile id="PouncerLeapClone">
+        <HeightMap value="Air"/>
+        <PathMode value="Flying"/>
+        <PlacementArray index="Prevent">
+            <Bits index="Fogged" value="1"/>
+        </PlacementArray>
+        <MotionPhases>
+            <Driver value="AdaptableParabola"/>
+            <MinSpeed value="2"/>
+            <MaxSpeed value="30"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <AdaptableParabolaClearance value="5,-1"/>
+            <AdaptableParabolaDistances index="Launch" value="0.1"/>
+            <AdaptableParabolaDistances index="PreApex" value="0.1"/>
+            <AdaptableParabolaDistances index="PostApex" value="0.1"/>
+            <AdaptableParabolaDistances index="Land" value="0.1"/>
+            <AdaptableParabolaAccels index="Launch" value="1000"/>
+            <AdaptableParabolaAccels index="Ascent" value="-30"/>
+            <AdaptableParabolaAccels index="Apex" value="0"/>
+            <AdaptableParabolaAccels index="Descent" value="50"/>
+            <AdaptableParabolaAccels index="Land" value="0"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>
