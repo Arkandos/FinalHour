@@ -43,6 +43,7 @@
         <EditorCategories value=""/>
         <Kind value="Ranged"/>
         <Amount value="30"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AngelofLightTouchedbytheGodessApplyRegen1">
         <EditorCategories value=""/>
@@ -77,6 +78,11 @@
         <Marker Link="Effect/ApplyNoTurning"/>
         <Behavior value="NoMovement"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="ApplyNoMovementAndNoTurningToCaster">
+        <EditorCategories value=""/>
+        <EffectArray value="ApplyNoMovementtoCaster"/>
+        <EffectArray value="ApplyNoTurningtoCaster"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="ApplyNoTurning">
         <EditorCategories value=""/>
         <Behavior value="NoTurning"/>
@@ -204,11 +210,13 @@
         <EditorCategories value=""/>
         <Amount value="2"/>
         <Death value="Fire"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="CelestialRadianceDoT2">
         <EditorCategories value=""/>
         <Amount value="4"/>
         <Death value="Fire"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectEnumArea id="CelestialRadianceSearchAreaAlly">
         <EditorCategories value=""/>
@@ -260,7 +268,8 @@
         <Flags index="Notification" value="1"/>
         <Kind value="Ranged"/>
         <KindSplash value="Ranged"/>
-        <Amount value="3"/>
+        <Amount value="5"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="ChangelingSpeedAbsorbtionDrain">
         <EditorCategories value=""/>
@@ -325,6 +334,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <Flags index="Notification" value="1"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="ChargeKnockback">
         <ValidatorArray value="IsNotBuried"/>
@@ -390,6 +400,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Ranged"/>
         <Amount value="15"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="DanceofDeath1ApplyBehavior20">
         <ValidatorArray index="0" value="CasterLifeLT20Percent"/>
@@ -435,6 +446,7 @@
         <AreaArray Radius="0.5" Fraction="1"/>
         <AreaArray Radius="1.5" Fraction="0.5"/>
         <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="DivineFireDamage3">
         <ValidatorArray value="DivineFireRequireLevel3"/>
@@ -446,9 +458,11 @@
         <AreaArray Radius="0.5" Fraction="1"/>
         <AreaArray Radius="1.5" Fraction="0.5"/>
         <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="DummySpellDamage">
         <EditorCategories value=""/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="FearsomeRoarApplyBehavior">
         <EditorCategories value=""/>
@@ -468,6 +482,7 @@
         <AreaArray Radius="0.5" Fraction="1"/>
         <AreaArray Radius="1.5" Fraction="0.5"/>
         <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDestroyPersistent id="DivineFireDestroyPersistent">
         <EditorCategories value=""/>
@@ -547,21 +562,25 @@
         <EditorCategories value=""/>
         <Amount value="90"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="IceBoltDamageRecurringLevel1">
         <EditorCategories value=""/>
         <Amount value="10"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="IceBoltDamageLevel2">
         <EditorCategories value=""/>
         <Amount value="60"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="IceBoltDamageLevel1">
         <EditorCategories value=""/>
         <Amount value="50"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="IceBoltApplyBuffLevel2">
         <EditorCategories value=""/>
@@ -571,11 +590,13 @@
         <EditorCategories value=""/>
         <Amount value="20"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="IceBoltDamageRecurringLevel2">
         <EditorCategories value=""/>
         <Amount value="15"/>
         <Death value="Freeze"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="IceBoltLaunchMissle">
         <EditorCategories value=""/>
@@ -625,6 +646,7 @@
         <EditorCategories value=""/>
         <Amount value="30"/>
         <Death value="Electrocute"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectEnumArea id="LightningStormSearch">
         <EditorCategories value=""/>
@@ -692,6 +714,7 @@
         <Kind value="Melee"/>
         <Amount value="10"/>
         <Death value="Eviscerate"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="PouncerClawsPersistent">
         <EditorCategories value=""/>
@@ -723,6 +746,7 @@
         <EditorCategories value=""/>
         <Amount value="50"/>
         <Death value="Squish"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectSet id="PouncerPounceImpactAreaSet">
         <EditorCategories value=""/>
@@ -780,6 +804,7 @@
         <EditorCategories value=""/>
         <Kind value="Ranged"/>
         <Amount value="10"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectSet id="PsionicLinkInitial">
         <EditorCategories value="Race:Protoss"/>
@@ -802,12 +827,89 @@
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="PsionicLinkModifyCaster"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="ReclaimerEyeBeamsForwardPersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="ReclaimerEyeBeamsLineDamage"/>
+        <PeriodCount value="5"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <PeriodicEffectArray value="ReclaimerEyeBeamsLineSearch"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ReclaimerEyeBeamsLineSearchReverse">
+        <EditorCategories value="Race:Protoss"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="0.3" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="ReclaimerEyeBeamsReversePersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="ReclaimerEyeBeamsLineDamage"/>
+        <PeriodCount value="5"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <PeriodicEffectArray value="ReclaimerEyeBeamsLineSearchReverse"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="ReclaimerEyeBeamsLineDamage">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="20"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ReclaimerEyeBeamsLineDamageDelay">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.25"/>
+        <FinalEffect value="ReclaimerEyeBeamsLineDamage"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ReclaimerEyeBeamsLineSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="0.3" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="ReclaimerEyeBeamsSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ReclaimerEyeBeamsForwardPersistent"/>
+        <EffectArray value="ReclaimerEyeBeamsReversePersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
     <CEffectRemoveBehavior id="RemoveNoMovement">
         <ValidatorArray index="0" value="RemoveNoTurningTargetFilters"/>
         <EditorCategories value=""/>
         <Marker Link="Effect/RemoveNoTurning"/>
         <BehaviorLink value="NoMovement"/>
     </CEffectRemoveBehavior>
+    <CEffectSet id="RemoveNoMovementAndNoTurningFromCaster">
+        <EditorCategories value=""/>
+        <EffectArray value="RemoveNoTurningfromCaster"/>
+        <EffectArray value="RemoveNoMovementfromCaster"/>
+    </CEffectSet>
     <CEffectRemoveBehavior id="RemoveNoTurning">
         <EditorCategories value=""/>
         <BehaviorLink value="NoTurning"/>
@@ -846,6 +948,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Ranged"/>
         <Death value="Electrocute"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="SpiritStaffLaunchMissile">
         <EditorCategories value=""/>
@@ -855,6 +958,7 @@
     <CEffectDamage id="TestBeamWeaponDamage">
         <EditorCategories value=""/>
         <Amount value="20"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="TestMissile">
         <EditorCategories value=""/>
@@ -866,6 +970,7 @@
         <EditorCategories value=""/>
         <Kind value="Ranged"/>
         <Amount value="50"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectModifyUnit id="TissueAssimilation2">
         <ValidatorArray value="HaveHotSTissueAssimilation"/>
@@ -887,6 +992,7 @@
         <AreaArray Radius="2" Fraction="1"/>
         <SearchFilters value="Visible;Self,Player,Ally,Air,Missile,Stasis,Dead,Invulnerable"/>
         <SearchFlags index="SameCliff" value="0"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectDamage id="TossShredderGrenadeDamageLevel3">
         <EditorCategories value=""/>
@@ -896,6 +1002,7 @@
         <AreaArray Radius="2" Fraction="1"/>
         <SearchFilters value="Visible;Self,Player,Ally,Air,Missile,Stasis,Dead,Invulnerable"/>
         <SearchFlags index="SameCliff" value="0"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="TossShredderGrenadeDelayLevel1">
         <EditorCategories value="Race:Terran"/>
@@ -911,6 +1018,7 @@
         <AreaArray Radius="2" Fraction="1"/>
         <SearchFilters value="Visible;Self,Player,Ally,Air,Missile,Stasis,Dead,Invulnerable"/>
         <SearchFlags index="SameCliff" value="0"/>
+        <ArmorReduction value="1"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="TossShredderGrenadeDelayLevel2">
         <EditorCategories value="Race:Terran"/>

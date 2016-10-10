@@ -379,6 +379,99 @@
         <Model value="AlarakPsiOrbMissile"/>
         <Scale value="0.400000"/>
     </CActorMissile>
+    <CActorBeamSimple id="ReclaimerEyeBeam">
+        <Terms value="Cap 1"/>
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="Create ReclaimerEyeBeamImpact"/>
+        <On Terms="ActorCreation" Send="Create ReclaimerEyeBeamLaunchSound"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="ReclaimerEyeBeamImpactSite" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearch.Impact" Send="Create"/>
+        <On Terms="Effect.ReclaimerEyeBeamsForwardPersistent.Expire" Send="Destroy"/>
+        <Model value="StoneZealotEyeBeam"/>
+        <HostLaunch Subject="ReclaimerEyeBeamLaunchSite" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="ReclaimerEyeBeamImpactSite"/>
+    </CActorBeamSimple>
+    <CActorModel id="ReclaimerEyeBeamImpactReverse">
+        <EditorCategories value=""/>
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="ReclaimerEyeBeamImpactSiteReversed"/>
+        <Model value="StoneZealotEyeBeamImpact"/>
+    </CActorModel>
+    <CActorSiteMover id="ReclaimerEyeBeamImpactSiteReversed">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <EditorCategories value=""/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearchReverse.Impact" Send="Create"/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearchReverse.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="ReclaimerEyeBeamReverse" Send="Signal Arrival"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="2.000000"/>
+        <SpeedMax value="4.100000"/>
+    </CActorSiteMover>
+    <CActorSite id="ReclaimerEyeBeamLaunchSiteReversed" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <EditorCategories value=""/>
+        <HostSiteOps Ops="SOpAttachWeaponLeft"/>
+    </CActorSite>
+    <CActorBeamSimple id="ReclaimerEyeBeamReverse">
+        <Terms value="Cap 1"/>
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="Create ReclaimerEyeBeamImpactReverse"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="ReclaimerEyeBeamImpactSiteReversed" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearchReverse" Send="Create"/>
+        <Model value="StoneZealotEyeBeam"/>
+        <HostLaunch Subject="ReclaimerEyeBeamLaunchSiteReversed" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="ReclaimerEyeBeamImpactSiteReversed"/>
+    </CActorBeamSimple>
+    <CActorModel id="ReclaimerEyeBeamImpact">
+        <EditorCategories value=""/>
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="Create ReclaimerEyeBeamImpactSound"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="ReclaimerEyeBeamImpactSite"/>
+        <Model value="StoneZealotEyeBeamImpact"/>
+    </CActorModel>
+    <CActorSiteMover id="ReclaimerEyeBeamImpactSite">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <EditorCategories value=""/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearch.Impact" Send="Create"/>
+        <On Terms="Effect.ReclaimerEyeBeamsLineSearch.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="ReclaimerEyeBeam" Send="Signal Arrival"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="2.000000"/>
+        <SpeedMax value="4.100000"/>
+    </CActorSiteMover>
+    <CActorSound id="ReclaimerEyeBeamImpactSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <Host Subject="::Creator"/>
+        <Sound value="ColossusTaldarim_Missile_AttackImpact"/>
+    </CActorSound>
+    <CActorSite id="ReclaimerEyeBeamLaunchSite" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <EditorCategories value=""/>
+        <HostSiteOps Ops="SOpAttachWeaponRight"/>
+    </CActorSite>
+    <CActorSound id="ReclaimerEyeBeamLaunchSound" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <Host Subject="::Creator"/>
+        <Sound value="ColossusTaldarim_Missile_AttackLaunch"/>
+    </CActorSound>
     <CActorUnit id="ResourceBeacon" parent="GenericUnitStandard" unitName="ResourceBeacon">
         <EditorCategories value="DoodadType:Structures"/>
         <Model value="XelNagaObelisk"/>
@@ -696,6 +789,37 @@
         <UnitIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-hightemplar.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="Reclaimer" parent="GenericUnitStandard" unitName="Reclaimer">
+        <EditorCategories value=""/>
+        <Model value="StoneZealot"/>
+        <BuildModel value="StoneZealot"/>
+        <PlacementModel value="StoneZealot"/>
+        <PortraitModel value="Zealot_NoNerveCordsPortrait"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <SoundArray index="Birth" value="StoneZealot_Birth"/>
+        <SoundArray index="Ready" value="StoneZealot_Ready"/>
+        <SoundArray index="Help" value="StoneZealot_Help"/>
+        <SoundArray index="What" value="StoneZealot_What"/>
+        <SoundArray index="Yes" value="StoneZealot_Yes"/>
+        <SoundArray index="Attack" value="StoneZealot_Attack"/>
+        <SoundArray index="Pissed" value="StoneZealot_Pissed"/>
+        <SoundArray index="Movement" value="StoneZealot_Movement"/>
+        <SoundArray index="Turning" value="StoneZealot_Turning"/>
+        <SoundArray index="Board" value="StoneZealot_Board"/>
+        <SoundArray index="Click" value="StoneZealot_Click"/>
+        <SoundArray index="ClickError" value="StoneZealot_ClickError"/>
+        <SoundArray index="Highlight" value="StoneZealot_Highlight"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,139,230,245"/>
+        </StatusColors>
+        <StatusColors index="Energy">
+            <ColorArray index="0" value="255,221,0,111"/>
+        </StatusColors>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-stonezealot.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-stonezealot.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorUnit id="UnitTesty" parent="GenericUnitStandard" unitName="UnitTesty">

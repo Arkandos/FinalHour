@@ -49,6 +49,16 @@
         <Period value="2"/>
         <Effect value="PsionicLinkInitial"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="ReclaimerEyeBeams">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="ReclaimerEyeBeamsLineDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="ReclaimerEyeBeamsSet"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="SpiritStaff">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>

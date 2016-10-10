@@ -791,6 +791,34 @@
         </CardLayouts>
         <InnerRadius value="1"/>
     </CUnit>
+    <CUnit id="Reclaimer">
+        <Race value="Prot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="1"/>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <LifeArmor value="5"/>
+        <LifeArmorName value="Unit/LifeArmorName/Reclaimer"/>
+        <ShieldsStart value="250"/>
+        <ShieldsMax value="250"/>
+        <ShieldArmor value="1"/>
+        <ShieldRegenRate value="2"/>
+        <WeaponArray Link="ReclaimerEyeBeams"/>
+    </CUnit>
     <CUnit id="UnitTesty">
         <PlaneArray index="Ground" value="1"/>
         <Collide index="Ground" value="1"/>
