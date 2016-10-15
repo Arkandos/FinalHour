@@ -91,6 +91,10 @@
     <CUnit id="PsionicLinkMissile" parent="MISSILE">
         <Race value="Prot"/>
     </CUnit>
+    <CUnit id="ReclaimerOverpowerMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="PhotonCannonWeapon"/>
+    </CUnit>
     <CUnit id="ResourceBeacon">
         <Race value="Prot"/>
         <Gender value="Neutral"/>
@@ -801,12 +805,16 @@
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
+        <AbilArray Link="ReclaimerPurify"/>
+        <AbilArray Link="ReclaimerOverpower"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="2"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Purify" Type="AbilCmd" AbilCmd="ReclaimerPurify,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="ReclaimerOverpower" Type="AbilCmd" AbilCmd="ReclaimerOverpower,Execute" Row="2" Column="1"/>
         </CardLayouts>
         <InnerRadius value="1"/>
         <LifeStart value="1000"/>
@@ -818,6 +826,7 @@
         <ShieldArmor value="1"/>
         <ShieldRegenRate value="2"/>
         <WeaponArray Link="ReclaimerEyeBeams"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/GenericShield"/>
     </CUnit>
     <CUnit id="UnitTesty">
         <PlaneArray index="Ground" value="1"/>

@@ -845,11 +845,82 @@
         <PeriodicPeriodArray value="0.0625"/>
         <PeriodicEffectArray value="ReclaimerEyeBeamsLineSearch"/>
     </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="ReclaimerOverpowerApplyBehavior">
+        <EditorCategories value=""/>
+        <Behavior value="ReclaimerOverpowered"/>
+    </CEffectApplyBehavior>
+    <!--Note: Is applied by both missiles-->
+    <CEffectDamage id="ReclaimerOverpowerDamage">
+        <EditorCategories value=""/>
+        <ArmorReduction value="1"/>
+        <Amount value="15"/>
+    </CEffectDamage>
+    <CEffectSet id="ReclaimerOverpowerImpactSet">
+        <EditorCategories value=""/>
+        <EffectArray value="ReclaimerOverpowerApplyBehavior"/>
+        <EffectArray value="ReclaimerOverpowerDamage"/>
+    </CEffectSet>
+    <CEffectSet id="ReclaimerOverpowerInitial">
+        <EditorCategories value=""/>
+        <EffectArray value="ReclaimerOverpowerLeftLaunchMissile"/>
+        <EffectArray value="ReclaimerOverpowerRightLaunchMissile"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="ReclaimerOverpowerLeftLaunchMissile">
+        <EditorCategories value=""/>
+        <ImpactEffect value="ReclaimerOverpowerImpactSet"/>
+        <AmmoUnit value="ReclaimerOverpowerMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="ReclaimerOverpowerRightLaunchMissile">
+        <ValidatorArray index="0" value="ReclaimerOverpowerLeftLaunchMissileTargetFilters"/>
+        <EditorCategories value=""/>
+        <Marker Link="Effect/ReclaimerOverpowerLeftLaunchMissile"/>
+        <ImpactEffect value="ReclaimerOverpowerDamage"/>
+        <AmmoUnit value="ReclaimerOverpowerMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="ReclaimerOverpowerModifyUnit">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy" Change="-20"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="ReclaimerPurifyApplyBehavior">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ReclaimerPurified"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="ReclaimerPurifyInitial">
+        <EditorCategories value=""/>
+        <EffectArray value="ReclaimerPurifyApplyBehavior"/>
+        <EffectArray value="ReclaimerPurifyLeftPersistent"/>
+        <EffectArray value="ReclaimerPurifyRightPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="ReclaimerPurifyRightPersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="ReclaimerEyeBeamsLineDamage"/>
+        <PeriodCount value="10"/>
+        <PeriodicEffectArray value="ReclaimerEyeBeamsLineSearch"/>
+        <PeriodicOffsetArray value="-0.5,2,0"/>
+        <PeriodicOffsetArray value="-0.5,1.5,0"/>
+        <PeriodicOffsetArray value="-0.5,1,0"/>
+        <PeriodicOffsetArray value="-0.5,0.5,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-1,0"/>
+        <PeriodicOffsetArray value="-0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-2,0"/>
+        <PeriodicOffsetArray value="-0.5,-2.5,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
     <CEffectEnumArea id="ReclaimerEyeBeamsLineSearchReverse">
         <EditorCategories value="Race:Protoss"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Invulnerable"/>
-        <AreaArray Radius="0.3" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
+        <AreaArray Radius="0.5" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="ReclaimerEyeBeamsReversePersistent">
@@ -877,7 +948,7 @@
         <Visibility value="Visible"/>
         <Kind value="Splash"/>
         <KindSplash value="Splash"/>
-        <Amount value="20"/>
+        <Amount value="10"/>
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="ReclaimerEyeBeamsLineDamageDelay">
@@ -890,7 +961,7 @@
         <EditorCategories value="Race:Protoss"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="-;Player,Ally,Missile,Item,Stasis,Dead,Invulnerable"/>
-        <AreaArray Radius="0.3" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
+        <AreaArray Radius="0.5" Effect="ReclaimerEyeBeamsLineDamageDelay"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
     <CEffectSet id="ReclaimerEyeBeamsSet">
@@ -899,6 +970,29 @@
         <EffectArray value="ReclaimerEyeBeamsReversePersistent"/>
         <TargetLocationType value="Point"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="ReclaimerPurifyLeftPersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="ReclaimerEyeBeamsLineDamage"/>
+        <PeriodCount value="10"/>
+        <PeriodicEffectArray value="ReclaimerEyeBeamsLineSearchReverse"/>
+        <PeriodicOffsetArray value="0.5,2,0"/>
+        <PeriodicOffsetArray value="0.5,1.5,0"/>
+        <PeriodicOffsetArray value="0.5,1,0"/>
+        <PeriodicOffsetArray value="0.5,0.5,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="0.5,-1,0"/>
+        <PeriodicOffsetArray value="0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="0.5,-2,0"/>
+        <PeriodicOffsetArray value="0.5,-2.5,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
     <CEffectRemoveBehavior id="RemoveNoMovement">
         <ValidatorArray index="0" value="RemoveNoTurningTargetFilters"/>
         <EditorCategories value=""/>

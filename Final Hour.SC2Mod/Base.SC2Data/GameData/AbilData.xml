@@ -160,6 +160,33 @@
         <UninterruptibleArray index="Bail" value="1"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="HighPriestHeal"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="ReclaimerOverpower">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ReclaimerOverpowerInitial"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Cooldown TimeStart="15" TimeUse="2"/>
+        </Cost>
+        <Range value="8"/>
+        <AutoCastFilters value="Heroic,Visible;Player,Ally"/>
+        <AutoCastRange value="8"/>
+        <CastIntroTime value="1.5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ReclaimerOverpower"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ReclaimerPurify">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="ReclaimerPurifyInitial"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Charge Link="Abil/ReclaimerPurifyCircle"/>
+            <Cooldown Link="Abil/ReclaimerPurifyCircle" TimeUse="8"/>
+        </Cost>
+        <Range value="10"/>
+        <AutoCastRange value="10"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Purify"/>
+    </CAbilEffectTarget>
     <CAbilBehavior id="TouchedbytheGodess">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <CmdButtonArray index="On" DefaultButtonFace="TouchedbytheGodessLevel1"/>

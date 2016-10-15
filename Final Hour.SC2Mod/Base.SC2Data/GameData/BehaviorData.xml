@@ -343,6 +343,30 @@
             <DamageDealtFraction index="Spell" value="1.2"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ReclaimerPurified">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="1.5"/>
+        <Modification>
+            <DamageDealtScaled index="Splash" value="20"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReclaimerOverpowered">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-stunnonheroicenemies.dds"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="Extend" value="1"/>
+        <Duration value="3"/>
+        <Period value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffect value="ReclaimerOverpowerModifyUnit"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="TinySize50">
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorCategories index="Permanent" value="1"/>

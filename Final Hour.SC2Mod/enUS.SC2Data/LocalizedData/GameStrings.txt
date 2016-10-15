@@ -26,6 +26,8 @@ Abil/Name/MorphLife=Morph Life
 Abil/Name/Multiply=Multiply
 Abil/Name/PhaseShift2=Phase Shift
 Abil/Name/PouncerPounce=Pouncer - Pounce
+Abil/Name/ReclaimerOverpower=Reclaimer - Overpower
+Abil/Name/ReclaimerPurify=Reclaimer - Purify
 Abil/Name/Reshape=Reshape
 Abil/Name/ShopInteract=Shop Interact
 Abil/Name/ShopInventory=Shop Inventory
@@ -106,6 +108,7 @@ Behavior/Name/PhaseShiftLevel1=Phase Shift Level 1
 Behavior/Name/PhaseShiftLevel2=Phase Shift Level 2
 Behavior/Name/PhaseShiftLevel3=Phase Shift Level 3
 Behavior/Name/PouncerPounceKnockback=Pouncer - Pounce (Knockback)
+Behavior/Name/ReclaimerOverpowered=Overpowered
 Behavior/Name/ReshapeHealing=Reshape Healing
 Behavior/Name/Shield1=Shield 1
 Behavior/Name/Shield2=Shield 2
@@ -146,6 +149,7 @@ Behavior/Tooltip/FuryoftheTemplar=Receiving <c val="00FFFF"><d ref="Behavior,Fur
 Behavior/Tooltip/Intelligence=Each point in Intelligence gives <c val="FF0000"><d ref="Behavior,Intelligence,Modification.DamageDealtFraction[Spell] * 100"/>%</c> <c val="80FF80">SpellDamage</c>
 Behavior/Tooltip/MajorRegenerationPotion=Regenerating <c val="00FF80"><d ref="Behavior,MajorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MajorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MajorRegenerationPotion,Duration"/> seconds
 Behavior/Tooltip/MinorRegenerationPotion=Regenerating <c val="00FF80"><d ref="Behavior,MinorRegenerationPotion,Modification.VitalRegenArray[Life] * Behavior,MinorRegenerationPotion,Duration"/> Health</c> over <d ref="Behavior,MinorRegenerationPotion,Duration"/> seconds
+Behavior/Tooltip/ReclaimerOverpowered=Stunned and losing energy
 Behavior/Tooltip/Strength=Each point in Strength gives <c val="FF0000"><d ref="Behavior,Strength,Modification.DamageDealtUnscaled[Ranged]"/></c> <c val="80FF80">Ranged</c> damage and <c val="FF0000"><d ref="Behavior,Strength,Modification.DamageDealtUnscaled[Melee]" precision="1"/></c> <c val="80FF80">Melee</c> damage.
 Behavior/Tooltip/TouchedbytheGodess1=Regenerates <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but loses <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.
 Behavior/Tooltip/TouchedbytheGodess2=Regenerates <c val="6D6DB6"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Energy]"/> Energy</c> / second, but loses <c val="FF0000"><d ref="Behavior,TouchedbytheGodess1,Modification.VitalRegenArray[Life] * (-1)"/> Health</c> / second.
@@ -208,6 +212,8 @@ Button/Name/PoweredCombatSuitLevel3=Powered Combat Suit Level 3
 Button/Name/ProtectivePlating=Protective Plating
 Button/Name/PsionicOrb=Psionic Orb
 Button/Name/PurchaseSpiritStaff=Purchase Spirit Staff
+Button/Name/Purify=Purify 
+Button/Name/ReclaimerOverpower=Reclaimer - Overpower
 Button/Name/Reshape=Reshape
 Button/Name/Stop2=Stop Copy
 Button/Name/Strength=Strength
@@ -413,6 +419,17 @@ Effect/Name/ReclaimerEyeBeamsLineSearch=Reclaimer - Eye Beams (Line Search)
 Effect/Name/ReclaimerEyeBeamsLineSearchReverse=Reclaimer - Eye Beams (Line Search Reverse)
 Effect/Name/ReclaimerEyeBeamsReversePersistent=Reclaimer - Eye Beams Reverse (Persistent)
 Effect/Name/ReclaimerEyeBeamsSet=Reclaimer - Eye Beams (Set)
+Effect/Name/ReclaimerOverpowerApplyBehavior=Reclaimer - Overpower (Apply Behavior)
+Effect/Name/ReclaimerOverpowerDamage=Reclaimer - Overpower (Damage)
+Effect/Name/ReclaimerOverpowerImpactSet=Reclaimer - Overpower (Impact Set)
+Effect/Name/ReclaimerOverpowerInitial=Reclaimer - Overpower (Initial)
+Effect/Name/ReclaimerOverpowerLeftLaunchMissile=Reclaimer - Overpower Left (Launch Missile)
+Effect/Name/ReclaimerOverpowerModifyUnit=Reclaimer - Overpower (Modify Unit)
+Effect/Name/ReclaimerOverpowerRightLaunchMissile=Reclaimer - Overpower Right (Launch Missile)
+Effect/Name/ReclaimerPurifyApplyBehavior=Reclaimer - Purify (Apply Behavior)
+Effect/Name/ReclaimerPurifyInitial=Reclaimer - Purify (Initial)
+Effect/Name/ReclaimerPurifyLeftPersistent=Reclaimer - Purify Left (Persistent)
+Effect/Name/ReclaimerPurifyRightPersistent=Reclaimer - Purify Right (Persistent)
 Effect/Name/RemoveNoMovement=Remove No Movement
 Effect/Name/RemoveNoMovementAndNoTurningFromCaster=Remove No Movement And No Turning From Caster
 Effect/Name/RemoveNoMovementfromCaster=Remove No Movement from Caster
@@ -502,6 +519,7 @@ Unit/Name/PsionicLinkMissile=Psionic Link Missile
 Unit/Name/PsionicOrb=Psionic Orb
 Unit/Name/PsionicOrbTooltip=Psionic Orb
 Unit/Name/Reclaimer=Reclaimer
+Unit/Name/ReclaimerOverpowerMissile=Reclaimer - Overpower Missile
 Unit/Name/ResourceBeacon=Resource Beacon
 Unit/Name/SpirtStaff=Spirt Staff
 Unit/Name/Template=Template
@@ -510,6 +528,7 @@ Unit/Name/TossShredderGrenade=Toss Shredder Grenade
 Unit/Name/TychusHero=Tychus
 Unit/Name/UnitTemplate=Unit Template
 Unit/Name/UnitTesty=Unit Testy
+Unit/ShieldArmorName/GenericShield=Shield
 Unit/ShieldArmorName/HighPriest=Shield of Faith
 UnitKillRank/Karass2=Praetor
 Upgrade/Name/DivineFireDamageUpgrade=Divine Fire Damage Upgrade

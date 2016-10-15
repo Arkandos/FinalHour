@@ -82,6 +82,12 @@
     <CButton id="PsionicOrb">
         <Icon value="Assets\Textures\btn-ability-protoss-psionicorb.dds"/>
     </CButton>
+    <CButton id="Purify">
+        <Icon value="Assets\Textures\btn-ability-protoss-firebeam.dds"/>
+    </CButton>
+    <CButton id="ReclaimerOverpower">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-structureovercharge.dds"/>
+    </CButton>
     <CButton id="TemplateItem"/>
     <CButton id="LearnIceBoltLevel1">
         <Icon value="Assets\Textures\btn-ability-protoss-purify.dds"/>

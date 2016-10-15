@@ -224,12 +224,12 @@
     </CActorAction>
     <CActorAction id="IceBoltAttackLevel2" parent="GenericAttack" effectImpact="IceBoltApplyBuffLevel2" effectLaunch="IceBoltLaunchMissleLevel2">
         <EditorCategories value=""/>
-        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <LaunchAttachQuery Methods="AMFilterUpgradeWeaponRight"/>
         <Missile value="IceBoltAttackMissile"/>
     </CActorAction>
     <CActorAction id="IceBoltAttackLevel3" parent="GenericAttack" effectImpact="IceBoltApplyBuffLevel3" effectLaunch="IceBoltLaunchMissleLevel3">
         <EditorCategories value=""/>
-        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <LaunchAttachQuery Methods="AMFilterUpgradeWeaponRight"/>
         <Missile value="IceBoltAttackMissile"/>
     </CActorAction>
     <CActorMissile id="IceBoltAttackMissile" parent="GenericAttackMissile" unitName="IceboltMissile">
@@ -389,7 +389,6 @@
         <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="ReclaimerEyeBeamImpactSite" Send="MoverMove"/>
         <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
         <On Terms="Effect.ReclaimerEyeBeamsLineSearch.Impact" Send="Create"/>
-        <On Terms="Effect.ReclaimerEyeBeamsForwardPersistent.Expire" Send="Destroy"/>
         <Model value="StoneZealotEyeBeam"/>
         <HostLaunch Subject="ReclaimerEyeBeamLaunchSite" Scope="Caster" Actor="Create"/>
         <HostImpact Subject="ReclaimerEyeBeamImpactSite"/>
@@ -472,6 +471,41 @@
         <Host Subject="::Creator"/>
         <Sound value="ColossusTaldarim_Missile_AttackLaunch"/>
     </CActorSound>
+    <CActorModel id="ReclaimerOverpowerCastEffectLeft" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Abil.ReclaimerOverpower.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.ReclaimerOverpower.SourceCastStop" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation" Send="Create BattlecruiserYamatoAttackChargeSound"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeaponLeft"/>
+        <Model value="HyperionYamatoSpecialAttackChargeModel"/>
+        <Scale value="1.000000,0.100000,1.000000"/>
+    </CActorModel>
+    <CActorModel id="ReclaimerOverpowerCastEffectRight" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Abil.ReclaimerOverpower.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.ReclaimerOverpower.SourceCastStop" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeaponRight"/>
+        <Model value="HyperionYamatoSpecialAttackChargeModel"/>
+        <Scale value="1.000000,0.100000,1.000000"/>
+    </CActorModel>
+    <CActorAction id="ReclaimerOverpowerLaunchLeft" parent="GenericAttack" effectImpact="ReclaimerOverpowerDamage" effectLaunch="ReclaimerOverpowerLeftLaunchMissile">
+        <EditorCategories value=""/>
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <Missile value="ReclaimerOverpowerMissile"/>
+    </CActorAction>
+    <CActorAction id="ReclaimerOverpowerLaunchRight" parent="GenericAttack" effectImpact="ReclaimerOverpowerDamage" effectLaunch="ReclaimerOverpowerRightLaunchMissile">
+        <EditorCategories value=""/>
+        <LaunchSiteOps Ops="SOpAttachWeaponRight"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
+        <Missile value="ReclaimerOverpowerMissile"/>
+    </CActorAction>
+    <CActorMissile id="ReclaimerOverpowerMissile" parent="GenericAttackMissile" unitName="ReclaimerOverpowerMissile">
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="SetTintColor 225,0,0"/>
+        <Model value="PhotonCannonWeapon"/>
+    </CActorMissile>
     <CActorUnit id="ResourceBeacon" parent="GenericUnitStandard" unitName="ResourceBeacon">
         <EditorCategories value="DoodadType:Structures"/>
         <Model value="XelNagaObelisk"/>
@@ -821,6 +855,7 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-stonezealot.dds"/>
         </Wireframe>
+        <On Terms="Abil.ReclaimerOverpower.SourceCastStart" Send="AnimPlay BSD Attack,Five"/>
     </CActorUnit>
     <CActorUnit id="UnitTesty" parent="GenericUnitStandard" unitName="UnitTesty">
         <EditorCategories value=""/>
