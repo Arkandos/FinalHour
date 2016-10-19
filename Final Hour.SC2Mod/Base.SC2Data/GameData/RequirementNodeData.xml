@@ -7,8 +7,12 @@
     </CRequirementCountAbil>
     <CRequirementCountAbil id="CountAbilDanceofDeathCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="DanceofDeath" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountAbil>
+    <CRequirementCountAbil id="CountAbilDefenderSpellShieldCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="DefenderSpellShield" State="CompleteOnlyAtUnit"/>
     </CRequirementCountAbil>
     <CRequirementEq id="EqCountAbilCombatSuitCompleteOnlyAtUnitSum1">
         <Tooltip value=""/>
@@ -26,20 +30,37 @@
         <OperandArray index="1" value="Sum3"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum1">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="Sum1"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum2">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="Sum2"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum3">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountAbilDanceofDeathCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="Sum3"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDefenderSpellShieldCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum2">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDefenderSpellShieldCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum2"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum3">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDefenderSpellShieldCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum3"/>
+    </CRequirementEq>
+    <CRequirementGTE id="GTECountAbilDefenderSpellShieldCompleteOnlyAtUnitSum1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountAbilDefenderSpellShieldCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="Sum1"/>
+    </CRequirementGTE>
     <CRequirementSum id="Sum1">
         <Tooltip value=""/>
         <OperandArray value="1"/>

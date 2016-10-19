@@ -110,6 +110,53 @@
         <Flags index="Transient" value="1"/>
         <BehaviorArray value="DanceofDeathCheck"/>
     </CAbilBehavior>
+    <CAbilResearch id="DefenderAbilityUpgrades">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Upgrade="DefenderSpellShieldQuicken">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="DefenderSpellShieldUpgrades"/>
+            </Charge>
+            <Button DefaultButtonFace="DefenderSpellShieldQuicken" Requirements="SpellShieldAtleastLevel1"/>
+        </InfoArray>
+        <InfoArray index="Research2" Upgrade="DefenderSpellShieldStrengthen">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="DefenderSpellShieldUpgrades"/>
+            </Charge>
+            <Button DefaultButtonFace="SpellShieldStrengthen" Requirements="SpellShieldAtleastLevel1"/>
+        </InfoArray>
+        <Flags index="Transient" value="1"/>
+    </CAbilResearch>
+    <CAbilEffectTarget id="DefenderShieldBash">
+        <OrderArray index="0" DisplayType="Legacy"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="DefenderShieldBashInitial"/>
+        <Flags index="BestUnit" value="0"/>
+        <Cost>
+            <Display index="Energy" value="1"/>
+            <Vital index="Energy" value="1"/>
+            <Cooldown TimeUse="3"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Massive,Structure,Destructible,Item,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <Range value="0.4"/>
+        <CastIntroTime value="0.4"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DefenderShieldBash"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="DefenderSpellShield">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="DefenderSpellShieldApplyBehavior"/>
+        <Cost>
+            <Vital index="Energy" value="20"/>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <PrepTime value="0.3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SpellShield"/>
+    </CAbilEffectInstant>
     <CAbilEffectTarget id="HighPriestFuryoftheTemplar">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="FuryoftheTemplarApplyBehavior"/>
@@ -166,7 +213,7 @@
         <Flags index="AutoCast" value="1"/>
         <Flags index="AutoCastOn" value="1"/>
         <Cost>
-            <Cooldown TimeStart="15" TimeUse="2"/>
+            <Cooldown TimeStart="8" TimeUse="15"/>
         </Cost>
         <Range value="8"/>
         <AutoCastFilters value="Heroic,Visible;Player,Ally"/>

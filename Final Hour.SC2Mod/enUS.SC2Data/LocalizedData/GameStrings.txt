@@ -6,6 +6,9 @@ Abil/Name/Charge2=Charge
 Abil/Name/ChargeSelf=Charge Self
 Abil/Name/CombatSuit=Combat Suit
 Abil/Name/DanceofDeath=Dance of Death
+Abil/Name/DefenderAbilityUpgrades=Defender - Ability Upgrades
+Abil/Name/DefenderShieldBash=Defender - Shield Bash
+Abil/Name/DefenderSpellShield=Defender - Spell Shield
 Abil/Name/DivineFire=Divine Fire
 Abil/Name/FearsomeRoar=Fearsome Roar
 Abil/Name/ForgePawn=Forge Pawn
@@ -71,6 +74,9 @@ Behavior/Name/DamageIncreasedby50=Damage Increased by 50%
 Behavior/Name/DamageReducedto25=Damage Reduced to 25%
 Behavior/Name/DamageReducedto50=Damage Reduced to 50%
 Behavior/Name/DanceofDeath1=Dance of Death 1
+Behavior/Name/DefenderShieldBashKnockback=Shield Bash Knockback
+Behavior/Name/DefenderShieldsUp1=Shields Up! 1
+Behavior/Name/DefenderSpellShield1=Spell Shield 1
 Behavior/Name/DifficultyModifier1P=Difficulty Modifier (1P)
 Behavior/Name/DummyBuff=Dummy Buff
 Behavior/Name/Endurance=Endurance
@@ -143,6 +149,7 @@ Behavior/Tooltip/CelestialFlames2=Burning
 Behavior/Tooltip/CelestialRegeneration=Regenerating health
 Behavior/Tooltip/CelestialRegeneration2=Regenerating health
 Behavior/Tooltip/Charge=Moving at <c val="00FFFF"><d ref="Behavior,Charge,Modification.MoveSpeedMultiplier * 100"/>% Movementspeed</c>
+Behavior/Tooltip/DefenderShieldsUp1=Taking <d ref="Behavior,DefenderShieldsUp1,Modification.DamageTakenFraction[Melee] * (-1) * 100"/>% less Melee, Ranged and Splash Damage.
 Behavior/Tooltip/Endurance=Each point of endurance gives <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalMaxArray[Life]"/></c> <c val="80FF80">maxHP</c> and <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalRegenArray[Life]"precision="2"/></c> <c val="80FF80">HP</c>  regen.<n/><n/>Currently gives a total of  <c val="D33D2C"> <d ref="10Behavior,Endurance,Modification.VitalMaxFractionArray[Life]"/></c><c val="80FF80"> HP</c> and <c val="D33D2C"><d ref="Behavior,Endurance,Modification.VitalRegenArray[Life]" precision="2"/> </c> <c val="80FF80">HP</c> regen.
 Behavior/Tooltip/FearsomeRoar=Damage reduced by <d ref="Behavior,FearsomeRoar,Modification.DamageDealtFraction[Melee] * (-1) * 100" precision="4"/>% and  movementspeed increased by <d ref="Behavior,FearsomeRoar,Modification.MoveSpeedMultiplier * 100 - 100" precision="4"/>%
 Behavior/Tooltip/FuryoftheTemplar=Receiving <c val="00FFFF"><d ref="Behavior,FuryoftheTemplar,Modification.AttackSpeedMultiplier -1 * 100"/>% Attackspeed</c> from a High Priest
@@ -166,6 +173,8 @@ Button/Name/CelestialRadiance=Celestial Radiance
 Button/Name/Charge2=Charge
 Button/Name/ChargeSelf=Charge
 Button/Name/DanceofDeath=Dance of Death
+Button/Name/DefenderShieldBash=Shield Bash
+Button/Name/DefenderSpellShieldQuicken=Spell Shield (Quicken)
 Button/Name/DivineFire=Divine Fire
 Button/Name/Endurance=Endurance
 Button/Name/FearsomeRoar=Fearsome Roar
@@ -183,7 +192,7 @@ Button/Name/LearnTossGrenade=Learn Toss Grenade
 Button/Name/LearnTouchedbytheGodessLevel2=Learn Touched by the Godess Level 2
 Button/Name/LearnTouchedbytheGodessLevel3=Learn Touched by the Godess Level 3
 Button/Name/LevelUp=Level Up
-Button/Name/LevelUpActiveSkills=Level Up Active Skills
+Button/Name/LevelUpActiveSkills=Level Up Skills
 Button/Name/LevelUpAttributes=Level Up Attributes
 Button/Name/LevelUpPassiveSkills=Level Up Passive Skills
 Button/Name/LightningStorm=Lightning Storm
@@ -215,6 +224,8 @@ Button/Name/PurchaseSpiritStaff=Purchase Spirit Staff
 Button/Name/Purify=Purify 
 Button/Name/ReclaimerOverpower=Reclaimer - Overpower
 Button/Name/Reshape=Reshape
+Button/Name/SpellShield=Spell Shield
+Button/Name/SpellShieldStrengthen=Spell Shield (Strengthen)
 Button/Name/Stop2=Stop Copy
 Button/Name/Strength=Strength
 Button/Name/TemplateItem=Template Item
@@ -240,6 +251,8 @@ Button/Tooltip/CelestialRadiance=The Angel blazes with glory, restoring health t
 Button/Tooltip/CelestialRadiance3=The Angel blazes with glory, restoring health to allies and damaging enemies.<n/><n/>Restores <c val="80FF80"><d ref="Behavior,CelestialRegeneration3,Modification.VitalRegenArray[Life]"/> Health</c> / second<n/>Deals <c val="FF0000"><d ref="Effect,CelestialRadianceDoT3,Amount * (Behavior,CelestialFlames,Duration / Behavior,CelestialFlames,Period)"/> Damage</c> / second<n/><n/><d ref="Effect,CelestialRadianceCreatePersisten3,PeriodCount * Effect,CelestialRadianceCreatePersistent3,PeriodicPeriodArray[0]"/> seconds duration
 Button/Tooltip/ChargeSelf=Charge at an Enemy
 Button/Tooltip/DanceofDeath1=The closer the Angel gets to death, the faster she moves.<n/><n/>For every <c val="FF0000">10%</c> of missing <c val="FF0000">Health</c>, she gains <c val="00FFFF"><d ref="Behavior,DanceofDeath1,Modification.MoveSpeedMultiplier - 1 * 100" precision="3"/>% Movementspeed</c>.<n/><n/><n/><c val="FF8000">Passive</c>
+Button/Tooltip/DefenderShieldBash=Push nearby enemies back and become resistant for a short duration.
+Button/Tooltip/DefenderSpellShieldQuicken=Makes the Spell Shield quicker, but weaker.<n/><n/>Reduces cooldown by 6s but also decreases duration by 1.5s and protection by 20%
 Button/Tooltip/DivineFire=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage1,Amount"/> Damage</c> each.
 Button/Tooltip/DivineFire2=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage2,Amount"/> Damage</c> each.
 Button/Tooltip/DivineFire3=Two spheres of pure fire shoot forth from the Angels hands, dealing<n/><n/><c val="FF0000"><d ref="Effect,DivineFireDamage3,Amount"/> Damage</c> each.
@@ -258,7 +271,7 @@ Button/Tooltip/LearnIceBoltLevel1=Learn Ice Bolt Level 1
 Button/Tooltip/LearnMorphLife=Changeling sacrifices its own energy to gain life.<n/><n/>Conversion: <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Energy] * (-1)"/> <c val="07E6F8">energy</c> to <d ref="Behavior,MorphLife,Modification.VitalRegenArray[Life]"/> <c val="FA3605">life</c> per second<n/><n/>(This effect will automatically stop if Changelings <c val="FA3605">life</c> reaches maximum, or its <c val="07E6F8">energy</c> reaches 1)<n/><n/><c val="FFFF00">Toggle</c><n/><n/>Leveling up this ability also levels up "Morph Energy"
 Button/Tooltip/LearnTossGrenade=Deals <c val="8080FF"><d ref="Effect,BonesTossGrenadeDamage,Amount"/> Spelldamage </c> in a  <c val="FF0000">AoE</c><n/><c val="80FFFF">Cooldown</c>: <d ref="Abil,TossGrenade2,Cost[0].Cooldown.TimeUse"/>s
 Button/Tooltip/LevelUp=Level up your <c val="00FFFF">abilities</c> and <c val="80FF80">attributes</c>!
-Button/Tooltip/LevelUpActiveSkills=Level up one of your <c val="80FF80">Active Skills</c>
+Button/Tooltip/LevelUpActiveSkills=Level up your <c val="80FF80">Passives</c> and <c val="80FF80">Abilities</c>
 Button/Tooltip/LevelUpAttributes=Level up your<c val="80FF80"> attributes</c>!
 Button/Tooltip/LevelUpPassiveSkills=Level up one of your <c val="80FFFF">Passive Skills</c>
 Button/Tooltip/LightningStorm=Channel for up to <d ref="Abil,LightningStorm,CastOutroTime[0]" precision="1"/>s, creating a lightning storm that damages <c val="FF0000">ALL</c> units within it.<n/><n/><c val="FFFF00">Channeled</c>
@@ -288,6 +301,7 @@ Button/Tooltip/ProtectivePlating=Increases <c val="00FFFF">Armor</c> by <c val="
 Button/Tooltip/PsionicOrb=Increases <c val="00FFFF">Spell Damage</c> by <c val="00FFFF"><d ref="Behavior,PsionicOrb,Modification.DamageDealtFraction[Spell] - 1 * 100"/>%<n/></c><n/><c val="FF8000">[Weapon]</c>
 Button/Tooltip/PurchaseSpiritStaff=Purchase Spirit Staff
 Button/Tooltip/Reshape=Changeling explodes part of his body, dealing 40% of his current health as damage.<n/><n/>Regenerates <d ref="Behavior,ReshapeHealing,Modification.VitalRegenArray[Life]" precision="2"/> life/s over <d ref="Behavior,ReshapeHealing,Duration" precision="2"/>s.
+Button/Tooltip/SpellShieldStrengthen=Makes the Spell Shield stronger, but slower.<n/><n/>Increases protection by 15% and duration by 0.5s, but also increases the cooldown by 3s.
 Button/Tooltip/Stop2=Orders selected units to cancel all orders and stop moving.
 Button/Tooltip/Strength=Increase Strength by 1. Strength increases <c val="80FF80">Ranged</c> and <c val="80FF80">Melee</c> damage
 Button/Tooltip/TemplateItem=A Template Item<n/><n/><c val="FF8000">[Weapon]</c>
@@ -359,6 +373,16 @@ Effect/Name/DanceofDeath1ApplyBehavior20=Dance of Death 1 (Apply Behavior) (20%)
 Effect/Name/DanceofDeath1ApplyBehavior30=Dance of Death 1 (Apply Behavior) (30%)
 Effect/Name/DanceofDeathApplyBehavior40=Dance of Death 1 (Apply Behavior) (40%)
 Effect/Name/DanceofDeathSet=Dance of Death 1 (Set)
+Effect/Name/DefenderShieldBashApplyKnockbackBehavior=Defender - Shield Bash (Apply Knockback Behavior)
+Effect/Name/DefenderShieldBashApplyResistance=Defender - Shield Bash (Apply Resistance)
+Effect/Name/DefenderShieldBashDamage=Defender - Shield Bash (Damage)
+Effect/Name/DefenderShieldBashInitial=Defender - Shield Bash (Initial)
+Effect/Name/DefenderShieldBashKnockback=Defender - Shield Bash (Knockback)
+Effect/Name/DefenderShieldBashSearchArea=Defender - Shield Bash (Search Area)
+Effect/Name/DefenderShieldBashSearchSet=Defender - Shield Bash (Search Set)
+Effect/Name/DefenderSpellShieldApplyBehavior=Defender - Spell Shield (Apply Behavior)
+Effect/Name/DefenderStrengthinNumbersModifyUnit=Defender - Strength in Numbers (Modify Unit)
+Effect/Name/DefenderStrengthinNumbersSearchArea=Defender - Strength in Numbers (Search Area)
 Effect/Name/DivineFireDamage1=Divine Fire Damage 1
 Effect/Name/DivineFireDamage2=Divine Fire Damage 2
 Effect/Name/DivineFireDamage3=Divine Fire Damage 3
@@ -480,6 +504,7 @@ SimpleDisplay/Attack2=<s val="@@SimpleCommandRow">%hotkey</c> then</s> <IMG path
 SimpleDisplay/Move2=<IMG path="Assets\Textures\tutorialmouserightbuttondown.dds" height="52" width="32" alignment="absolutemiddle"/> <s val="@@SimpleCommandRow">to Move</s>
 Unit/LifeArmorName/AngelOfLight=Angelic Protection
 Unit/LifeArmorName/Changeling=Dynamic Skin
+Unit/LifeArmorName/Defender=Shield of Hope
 Unit/LifeArmorName/HeroArmor=Heroic Armor
 Unit/LifeArmorName/HighPriest=Ceremonial Clothing
 Unit/LifeArmorName/MysteriousObelisk=Protective Plating
@@ -492,6 +517,7 @@ Unit/Name/BasicShop=Basic Shop
 Unit/Name/Brute=Brute
 Unit/Name/ChangelingHero=Changeling
 Unit/Name/CorrosiveSpit=Corrosive Spit
+Unit/Name/Defender=Defender
 Unit/Name/DivineFireMissile=Divine Fire Missile
 Unit/Name/HeroFrame=Hero Frame
 Unit/Name/HighPriest=High Priest
@@ -531,6 +557,8 @@ Unit/Name/UnitTesty=Unit Testy
 Unit/ShieldArmorName/GenericShield=Shield
 Unit/ShieldArmorName/HighPriest=Shield of Faith
 UnitKillRank/Karass2=Praetor
+Upgrade/Name/DefenderSpellShieldQuicken=Defender - Spell Shield Quicken
+Upgrade/Name/DefenderSpellShieldStrengthen=Defender - Spell Shield Strengthen
 Upgrade/Name/DivineFireDamageUpgrade=Divine Fire Damage Upgrade
 Upgrade/Name/TerranInfantryArmorsLevel12=Terran Infantry Armor Level 4
 Upgrade/Name/TerranInfantryArmorsLevel22=Terran Infantry Armor Level 4

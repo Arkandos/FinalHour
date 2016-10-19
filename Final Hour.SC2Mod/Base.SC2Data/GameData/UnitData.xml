@@ -88,6 +88,71 @@
         <FlagArray index="Hero" value="1"/>
         <LifeRegenRate value="0.25"/>
     </CUnit>
+    <CUnit id="Defender">
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/Defender"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="0.1992"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <Deceleration value="1000"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="AttributeIncrease"/>
+        <AbilArray Link="DefenderShieldBash"/>
+        <AbilArray Link="DefenderSpellShield"/>
+        <AbilArray Link="DefenderAbilityUpgrades"/>
+        <BehaviorArray Link="BasicVeterancy"/>
+        <BehaviorArray Link="Agility"/>
+        <BehaviorArray Link="Endurance"/>
+        <BehaviorArray Link="Intelligence"/>
+        <BehaviorArray Link="Levelup"/>
+        <BehaviorArray Link="Strength"/>
+        <BehaviorArray Link="Willpower"/>
+        <BehaviorArray Link="HeroDeathPrevention2"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons>
+                <Face value="LevelUpPassiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuCardId value="0003"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="DefenderShieldBash" Type="AbilCmd" AbilCmd="DefenderShieldBash,Execute" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="LevelUpActiveSkills"/>
+                <Type value="Submenu"/>
+                <SubmenuCardId value="0002"/>
+                <SubmenuIsSticky value="1"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons Face="SpellShield" Type="AbilCmd" AbilCmd="DefenderSpellShield,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="0003">
+            <LayoutButtons Face="DefenderSpellShieldQuicken" Type="AbilCmd" AbilCmd="DefenderAbilityUpgrades,Research1" Row="1" Column="0"/>
+            <LayoutButtons Face="SpellShieldStrengthen" Type="AbilCmd" AbilCmd="DefenderAbilityUpgrades,Research2" Row="1" Column="1"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Hero"/>
+    </CUnit>
     <CUnit id="PsionicLinkMissile" parent="MISSILE">
         <Race value="Prot"/>
     </CUnit>

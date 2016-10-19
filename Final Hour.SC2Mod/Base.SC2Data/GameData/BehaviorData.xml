@@ -190,6 +190,43 @@
         <Period value="0.9"/>
         <PeriodicEffect value="DanceofDeathSet"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="DefenderShieldBashKnockback">
+        <Alignment value="Negative"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="1"/>
+        <Period value="0.01"/>
+        <PeriodicEffect value="DefenderShieldBashKnockback"/>
+        <Modification Height="1">
+            <HeightTime index="Start" value="0.45"/>
+            <HeightTime index="Stop" value="0.45"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DefenderShieldsUp1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\war3_btnlightningshield.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="8"/>
+        <Modification>
+            <DamageTakenFraction index="Melee" value="-0.15"/>
+            <DamageTakenFraction index="Ranged" value="-0.15"/>
+            <DamageTakenFraction index="Splash" value="-0.15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DefenderSpellShield1">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\war3_btnspellsteal.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="Temporary" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="3"/>
+        <Modification>
+            <DamageTakenFraction index="Spell" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="DifficultyModifier1P">
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorCategories index="Permanent" value="1"/>

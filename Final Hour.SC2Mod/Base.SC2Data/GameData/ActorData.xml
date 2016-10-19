@@ -145,6 +145,27 @@
     <CActorMissile id="CorrosiveSpitMissile" parent="GenericAttackMissile" unitName="CorrosiveSpit">
         <EditorCategories value=""/>
     </CActorMissile>
+    <CActorUnit id="DefenderHero" parent="GenericUnitStandard" unitName="Defender">
+        <EditorCategories value=""/>
+        <On Terms="Abil.DefenderShieldBash.SourceCastStart" Send="AnimPlay BSD Attack,Defend"/>
+        <Model value="Spellbreaker"/>
+        <BuildModel value="Spellbreaker"/>
+        <PlacementModel value="Spellbreaker"/>
+        <PortraitModel value="SpellbreakerPortrait"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <LifeArmorIcon value="Assets\Textures\war3_btnhumanarmorupthree.dds"/>
+        <SoundArray index="Birth" value="Spellbreaker_Warcry"/>
+        <SoundArray index="Ready" value="Spellbreaker_Ready"/>
+        <SoundArray index="Help" value="Spellbreaker_Warcry"/>
+        <SoundArray index="What" value="Spellbreaker_What"/>
+        <SoundArray index="Yes" value="Spellbreaker_Yes"/>
+        <SoundArray index="Attack" value="Spellbreaker_Ready"/>
+        <SoundArray index="Pissed" value="Spellbreaker_Pissed"/>
+        <SoundArray index="Movement" value="Spellbreaker_Yes"/>
+        <SoundArray index="Click" value="Spellbreaker_Ready"/>
+        <SoundArray index="Highlight" value="Spellbreaker_Ready"/>
+        <UnitIcon value="Assets\Textures\war3_btnspellbreaker.dds"/>
+    </CActorUnit>
     <CActorModel id="DivineFireImpact" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <On Terms="Effect.DivineFireImpact.Start" Send="Create"/>

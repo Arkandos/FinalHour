@@ -51,6 +51,16 @@
         <Tooltip value="Button/Tooltip/DanceofDeath1"/>
         <Icon value="Assets\Textures\btn-ability-kerrigan-heroicfortitude.dds"/>
     </CButton>
+    <CButton id="DefenderShieldBash">
+        <Icon value="Assets\Textures\war3_btnthoriumarmor.dds"/>
+    </CButton>
+    <CButton id="DefenderSpellShieldQuicken">
+        <Icon value="Assets\Textures\war3_btnspellstealon.dds"/>
+    </CButton>
+    <CButton id="SpellShieldStrengthen">
+        <Icon value="Assets\Textures\war3_btnspellstealon.dds"/>
+        <HotkeyAlias value="DefenderSpellShieldQuicken"/>
+    </CButton>
     <CButton id="DivineFire">
         <Icon value="Assets\Textures\btn-ability-terran-bombardmentstrike-color.dds"/>
     </CButton>
@@ -87,6 +97,9 @@
     </CButton>
     <CButton id="ReclaimerOverpower">
         <Icon value="Assets\Textures\btn-upgrade-protoss-structureovercharge.dds"/>
+    </CButton>
+    <CButton id="SpellShield">
+        <Icon value="Assets\Textures\war3_btnspellsteal.dds"/>
     </CButton>
     <CButton id="TemplateItem"/>
     <CButton id="LearnIceBoltLevel1">

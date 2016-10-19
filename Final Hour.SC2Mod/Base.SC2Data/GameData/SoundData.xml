@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <Catalog>
+    <CSound id="Spellbreaker_Attack" parent="TerranAck">
+        <EditorCategories value=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYesAttack1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYesAttack2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYesAttack3.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Spellbreaker_Ready" parent="TerranAck">
+        <EditorCategories value=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerReady1.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Spellbreaker_Pissed" parent="Pissed">
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerPissed1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerPissed2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerPissed3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerPissed4.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerPissed5.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Spellbreaker_Warcry" parent="TerranAck">
+        <EditorCategories value=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerWarcry1.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Spellbreaker_What" parent="TerranAck">
+        <EditorCategories value=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerWhat1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerWhat2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerWhat3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerWhat4.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Spellbreaker_Yes" parent="TerranAck">
+        <EditorCategories value=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYes1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYes2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYes3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYes4.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Units\Human\BloodElfSpellThief\SpellbreakerYes5.ogg" FacialGroup=""/>
+    </CSound>
     <CSound id="Raven_AutoTurretAttackLaunch2" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\Terran\Raven\Raven_AutoTurretAttack0.wav"/>

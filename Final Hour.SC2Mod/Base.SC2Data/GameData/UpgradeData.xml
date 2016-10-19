@@ -62,6 +62,27 @@
         <AffectedUnitArray value="HammerSecurity"/>
         <AffectedUnitArray value="DevilDog"/>
     </CUpgrade>
+    <!--Reduces the cooldown of Spellshield by 6s, reduces duration by 1.5s and protection by 20%.-->
+    <!--Apparently reduces 2 times? So 3x2.-->
+    <CUpgrade id="DefenderSpellShieldQuicken">
+        <InfoTooltipPriority value="1"/>
+        <Alert value="ResearchComplete"/>
+        <EffectArray Operation="Set" Reference="Behavior,DefenderSpellShield1,Duration" Value="1.500000"/>
+        <EffectArray Reference="Behavior,DefenderSpellShield1,Modification.DamageTakenFraction[Spell]" Value="0.2"/>
+        <EffectArray Operation="Subtract" Reference="Abil,DefenderSpellShield,Cost[0].Cooldown.TimeUse" Value="3.000000"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+        <AffectedUnitArray value="Defender"/>
+    </CUpgrade>
+    <!--Adds 3s to the cooldown, 0.5s to the duration and 15% to the protection.-->
+    <CUpgrade id="DefenderSpellShieldStrengthen">
+        <InfoTooltipPriority value="1"/>
+        <Alert value="ResearchComplete"/>
+        <EffectArray Reference="Abil,DefenderSpellShield,Cost[0].Cooldown.TimeUse" Value="3.000000"/>
+        <EffectArray Reference="Behavior,DefenderSpellShield1,Duration" Value="0.500000"/>
+        <EffectArray Reference="Behavior,DefenderSpellShield1,Modification.DamageTakenFraction[Spell]" Value="0.15"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+        <AffectedUnitArray value="Defender"/>
+    </CUpgrade>
     <CUpgrade id="DivineFireDamageUpgrade">
         <EffectArray Reference="Effect,DivineFireDamage1,Amount" Value="10"/>
         <EditorCategories value="UpgradeType:AttackBonus"/>

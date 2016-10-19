@@ -12,6 +12,9 @@
     <CRequirement id="DanceofDeathLevel1">
         <NodeArray index="Show" Link="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum1"/>
     </CRequirement>
+    <CRequirement id="SpellShieldLevel1">
+        <NodeArray index="Show" Link="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum1"/>
+    </CRequirement>
     <CRequirement id="DanceofDeathLevel2">
         <NodeArray index="Show" Link="EqCountAbilDanceofDeathCompleteOnlyAtUnitSum2"/>
     </CRequirement>
@@ -20,5 +23,14 @@
     </CRequirement>
     <CRequirement id="LearnTossGrenade1">
         <EditorCategories value="TechType:Ability"/>
+    </CRequirement>
+    <CRequirement id="SpellShieldAtleastLevel1">
+        <NodeArray index="Show" Link="GTECountAbilDefenderSpellShieldCompleteOnlyAtUnitSum1"/>
+    </CRequirement>
+    <CRequirement id="SpellShieldLevel3">
+        <NodeArray index="Show" Link="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum3"/>
+    </CRequirement>
+    <CRequirement id="SpellShieldLevel2">
+        <NodeArray index="Show" Link="EqCountAbilDefenderSpellShieldCompleteOnlyAtUnitSum2"/>
     </CRequirement>
 </Catalog>

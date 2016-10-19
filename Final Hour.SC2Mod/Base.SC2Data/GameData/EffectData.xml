@@ -436,6 +436,51 @@
         <EffectArray value="DanceofDeath1ApplyBehavior20"/>
         <EffectArray value="DanceofDeath1ApplyBehavior10"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="DefenderShieldBashApplyKnockbackBehavior">
+        <EditorCategories value=""/>
+        <Behavior value="DefenderShieldBashKnockback"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DefenderShieldBashApplyResistance">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="DefenderShieldsUp1"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="DefenderShieldBashDamage">
+        <EditorCategories value=""/>
+        <ArmorReduction value="1"/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectSet id="DefenderShieldBashInitial">
+        <EditorCategories value=""/>
+        <EffectArray value="DefenderShieldBashSearchArea"/>
+    </CEffectSet>
+    <CEffectApplyForce id="DefenderShieldBashKnockback">
+        <EditorCategories value=""/>
+        <Amount value="10"/>
+    </CEffectApplyForce>
+    <CEffectEnumArea id="DefenderShieldBashSearchArea">
+        <EditorCategories value=""/>
+        <ExcludeArray/>
+        <SearchFilters value="-;Player,Ally,Massive,Missile,Item,Buried,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <AreaArray Arc="180" Radius="4" Effect="DefenderShieldBashSearchSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="DefenderShieldBashSearchSet">
+        <EditorCategories value=""/>
+        <EffectArray value="DefenderShieldBashDamage"/>
+        <EffectArray value="DefenderShieldBashApplyResistance"/>
+        <EffectArray value="DefenderShieldBashApplyKnockbackBehavior"/>
+        <EffectArray value="DefenderShieldBashKnockback"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="DefenderSpellShieldApplyBehavior">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="DefenderSpellShield1"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="DefenderStrengthinNumbersModifyUnit">
+        <EditorCategories value=""/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Life" Change="10"/>
+    </CEffectModifyUnit>
     <CEffectDamage id="DivineFireDamage2">
         <ValidatorArray value="DivineFireRequireLevel2"/>
         <EditorCategories value=""/>
@@ -1185,4 +1230,9 @@
         <EffectArray value="UltraliskOutOfCombat2RB2"/>
         <EffectArray value="UltraliskOutOfCombat3RB2"/>
     </CEffectSet>
+    <CEffectEnumArea id="DefenderStrengthinNumbersSearchArea">
+        <EditorCategories value=""/>
+        <SearchFilters value="Visible;Self,Player,Ally,Neutral,Structure,User1,RawResource,HarvestableResource,Missile,Destructible,Item,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <AreaArray Radius="3.5" Effect="DefenderStrengthinNumbersModifyUnit"/>
+    </CEffectEnumArea>
 </Catalog>

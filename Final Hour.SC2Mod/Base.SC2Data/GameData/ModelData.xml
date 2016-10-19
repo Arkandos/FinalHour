@@ -129,6 +129,10 @@
         <Model value="Assets\Units\Other\War3_BloodElfLieutenant\War3_BloodElfLieutenant.m3"/>
         <EditorCategories value=""/>
     </CModel>
+    <CModel id="SpellbreakerPortrait" parent="Portrait">
+        <Model value="Assets\Units\Other\War3_BloodElfLieutenant_Portrait\War3_BloodElfLieutenant_Portrait.m3"/>
+        <EditorCategories value=""/>
+    </CModel>
     <CModel id="TerranSmallUnitDeathLow2" parent="UnitDeath" Race="Terran">
         <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath_Low.m3"/>
         <Flags index="TeenSafe" value="1"/>
